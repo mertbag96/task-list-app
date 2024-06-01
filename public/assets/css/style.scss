@@ -75,7 +75,7 @@ img {
 }
 
 .container {
-    padding-top: 0 $i;
+    padding-right: 0 $i;
     padding-left: 0 $i;
 }
 
@@ -135,7 +135,49 @@ footer {
     }
 }
 
-main {
+main, section {
     max-height: calc(100dvh - 116px);
     min-height: calc(100dvh - 116px);
+}
+
+/* Homepage */
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .home-content {
+        width: 50%;
+        .title {
+            font-family: $font700;
+            font-size: 4rem;
+            color: $color6;
+            span {
+                &:first-child {
+                    color: $color1;
+                }
+                &:last-child {
+                    color: $color2;
+                }
+            }
+        }
+        .description {
+            margin: 1.5rem 0 2rem 0;
+            font-size: 1.25rem;
+        }
+        .link {
+            background-color: $color1;
+            border-radius: .25rem;
+            padding: .5rem 1rem;
+            font-family: $font400;
+            font-size: 1.5rem;
+            color: $color5;
+            transition: .25s ease-out;
+            &:hover {
+                background-color: $color2;
+            }
+        }
+        img {
+            width: 640px;
+        }
+    }
 }
