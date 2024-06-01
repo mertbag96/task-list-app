@@ -30,8 +30,8 @@ $font300: "RobotoCondensed-Light";
 /* Colors */
 $color1: #4772fa;
 $color2: #ffb000;
-$color3: #32b877;
-$color4: #e85242;
+$color3: #06ce90;
+$color4: #ff3180;
 $color5: #f5f5f5;
 $color6: #333333;
 
@@ -186,5 +186,17 @@ main, section {
         img {
             width: 640px;
         }
+    }
+}
+
+/* Dashboard */
+.dashboard {
+    background: url("../images/dashboard.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    .dashboard-title {
+        font-family: $font600;
+        font-size: 4rem;
+        color: $color1;
     }
 }

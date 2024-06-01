@@ -169,4 +169,16 @@ main, section {
   width: 640px;
 }
 
+/* Dashboard */
+.dashboard {
+  background: url("../images/dashboard.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+.dashboard .dashboard-title {
+  font-family: "RobotoCondensed-SemiBold";
+  font-size: 4rem;
+  color: #4772fa;
+}
+
 /*# sourceMappingURL=style.css.map */

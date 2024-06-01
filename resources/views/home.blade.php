@@ -4,7 +4,7 @@
 
 @section("content")
 
-    <section class="home">
+    <section class="home container">
 
         <div class="home-content">
 
@@ -16,7 +16,7 @@
                 Create tasks, assign tasks to users, organize users with teams.
             </p>
 
-            <a href="{{ route("tasks.show") }}" class="link">Get started</a>
+            <a href="{{ route("dashboard") }}" class="link">Get started</a>
 
         </div>
 

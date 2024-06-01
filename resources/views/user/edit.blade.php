@@ -4,7 +4,7 @@
 
 @section("content")
 
-    <section>
+    <section class="container">
 
         <h1>Users page - Edit</h1>
 

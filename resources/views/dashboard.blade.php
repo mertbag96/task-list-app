@@ -4,9 +4,19 @@
 
 @section("content")
 
-    <section>
+    <section class="dashboard">
 
-        <h1>Dashboard page</h1>
+        <div class="container">
+
+            <h1 class="dashboard-title">
+                Dashboard
+            </h1>
+
+            <h1 class="dashboard-title">
+                coming soon...
+            </h1>
+
+        </div>
 
     </section>
 
