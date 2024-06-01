@@ -105,12 +105,19 @@ header {
             align-items: center;
             li {
                 a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     font-family: $font600;
                     font-size: 1.25rem;
                     color: $color6;
                     transition: .25s ease-in;
                     &:hover {
                         color: $color2;
+                    }
+                    i {
+                        margin-right: .25rem;
+                        font-size: 1rem;
                     }
                 }
                 .active {

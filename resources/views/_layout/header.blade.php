@@ -2,7 +2,7 @@
 
     <nav class="container">
 
-        <a href="/" class="logo">
+        <a href="{{ route("home") }}" class="logo">
             <svg viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg" >
                 <g fill="none" fill-rule="evenodd">
                     <path d="M30.755 33.292l-7.34 8.935L40.798 56.48a5.782 5.782 0 008.182-.854l31.179-38.93-9.026-7.228L43.614 43.83l-12.86-10.538z" fill="#FFB000"></path>
@@ -14,19 +14,34 @@
 
         <ul class="menu">
             <li>
-                <a href="#" class="me-5 active">Home</a>
+                <a href="{{ route("home") }}" class="me-5 @if(request()->route()->getName() == "home") active @endif">
+                    <i class="fa-solid fa-home"></i>
+                    Home
+                </a>
             </li>
             <li>
-                <a href="#" class="me-5">Dashboard</a>
+                <a href="{{ route("dashboard") }}" class="me-5 @if(request()->route()->getName() == "dashboard") active @endif">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Dashboard
+                </a>
             </li>
             <li>
-                <a href="#" class="me-5">Teams</a>
+                <a href="{{ route("tasks.show") }}" class="me-5 @if(request()->route()->getPrefix() == "/tasks") active @endif">
+                    <i class="fa-solid fa-list-check"></i>
+                    Tasks
+                </a>
             </li>
             <li>
-                <a href="#" class="me-5">Users</a>
+                <a href="{{ route("users.show") }}" class="me-5 @if(request()->route()->getPrefix() == "/users") active @endif">
+                    <i class="fa-solid fa-users"></i>
+                    Users
+                </a>
             </li>
             <li>
-                <a href="#">Tasks</a>
+                <a href="{{ route("teams.show") }}" class="@if(request()->route()->getPrefix() == "/teams") active @endif">
+                    <i class="fa-solid fa-people-group"></i>
+                    Teams
+                </a>
             </li>
         </ul>
 

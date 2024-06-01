@@ -91,6 +91,9 @@ header nav .menu {
   align-items: center;
 }
 header nav .menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "RobotoCondensed-SemiBold";
   font-size: 1.25rem;
   color: #333333;
@@ -98,6 +101,10 @@ header nav .menu li a {
 }
 header nav .menu li a:hover {
   color: #ffb000;
+}
+header nav .menu li a i {
+  margin-right: 0.25rem;
+  font-size: 1rem;
 }
 header nav .menu li .active {
   color: #4772fa;
