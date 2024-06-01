@@ -1,2 +1,3 @@
-# task-list-app
-This is a basic task list application.
+# Task List App
+
+This is a basic task list application built with Laravel.
