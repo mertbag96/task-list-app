@@ -22,7 +22,11 @@ use Illuminate\Support\Facades\Route;
 /* Authentication */
 Route::prefix('auth')->name('auth.')->group( function () {
     Route::get('/sign-in', [AuthController::class, 'sign_in'])->name('sign-in');
+    Route::post('/log-in', [AuthController::class, 'log_in'])->name('log-in');
     Route::get('/sign-up', [AuthController::class, 'sign_up'])->name('sign-up');
+    Route::post('/register', [AuthController::class, 'register'])->name('register');
+    Route::get('/forget-password', [AuthController::class, 'forget_password'])->name('forget-password');
+    Route::post('/reset-password', [AuthController::class, 'reset_password'])->name('reset-password');
 });
 
 /* Website */

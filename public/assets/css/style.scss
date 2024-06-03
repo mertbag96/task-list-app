@@ -36,6 +36,8 @@ $color5: #f5f5f5;
 $color6: #333333;
 $color7: #ececec;
 $color8: #dadada;
+$color9: rgba(255, 255, 255, 0.25);
+$color10: rgba(255, 255, 255, 0.75);
 
 /* Variables */
 $i : !important;
@@ -70,6 +72,11 @@ img {
     user-select: none;
 }
 
+/* Custom */
+.w-48 {
+    width: 48%;
+}
+
 /* Bootstrap */
 .container-fluid {
     margin: 0 $i;
@@ -79,6 +86,31 @@ img {
 .container {
     padding-right: 0 $i;
     padding-left: 0 $i;
+}
+
+.alert {
+    border-radius: .25rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    p {
+        margin: 0 1rem;
+        font-family: $font300;
+        font-size: 1rem;
+        color: $color6;
+    }
+    .fa-check {
+        color: $color3;
+    }
+    .fa-exclamation {
+        color: $color4;
+    }
+    .fa-times {
+        color: $color6;
+        cursor: pointer;
+    }
 }
 
 /* Layout */
@@ -205,6 +237,105 @@ main {
     min-height: calc(100dvh - 76px);
 }
 
+/* Authentication */
+.auth {
+    background: url("../images/auth.png") center/cover no-repeat;
+    .auth-bg {
+        background-color: $color9;
+        width: 100%;
+        height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .auth-content {
+            background-color: $color10;
+            border-radius: .25rem;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .logo {
+                margin-bottom: 3rem;
+                display: flex;
+                align-items: center;
+                svg {
+                    margin-right: .5rem;
+                    width: 44px;
+                    height: 44px;
+                }
+                span {
+                    font-family: $font600;
+                    font-size: 1.5rem;
+                    color: $color1;
+                }
+            }
+            form {
+                width: 320px;
+                .form-item {
+                    width: 100%;
+                    font-family: $font400;
+                    font-size: 1rem;
+                    color: $color6;
+                    label {
+                        margin-bottom: .25rem;
+                        width: 100%;
+                    }
+                    input {
+                        border: 1px solid $color8;
+                        outline: none;
+                        padding: .5rem 1rem;
+                        width: 100%;
+                        &:focus {
+                            border-color: $color6;
+                        }
+                    }
+                    a {
+                        width: 100%;
+                        color: $color1;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                    button {
+                        background-color: $color1;
+                        padding: .5rem 0;
+                        border: none;
+                        outline: none;
+                        width: 100%;
+                        font-family: $font400;
+                        font-size: 1.25rem;
+                        color: $color5;
+                        text-align: center;
+                        transition: .15s ease-in;
+                        &:hover {
+                            background-color: $color2;
+                        }
+                    }
+                    p {
+                        margin: 0;
+                        width: 100%;
+                        color: $color6;
+                    }
+                    .agreement {
+                        font-family: $font300;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .form-sign-up {
+                width: 480px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                .form-item-double {
+                    width: 48%;
+                }
+            }
+        }
+    }
+}
+
 /* Home */
 .home {
     max-height: calc(100dvh - 76px);
@@ -246,20 +377,6 @@ main {
         img {
             width: 640px;
         }
-    }
-}
-
-/* Dashboard */
-.dashboard {
-    background: url("../images/dashboard.png") center/cover no-repeat;
-    max-height: calc(100dvh - 76px);
-    min-height: calc(100dvh - 76px);
-    display: flex;
-    align-items: center;
-    .dashboard-title {
-        font-family: $font600;
-        font-size: 4rem;
-        color: $color1;
     }
 }
 
