@@ -1,0 +1,253 @@
+@import "../plugins/fontawesome/css/all.min.css";
+
+/* Fonts */
+@font-face {
+    font-family: "RobotoCondensed-Bold";
+    src: url("../fonts/RobotoCondensed-Bold.woff") format('woff');
+    src: url("../fonts/RobotoCondensed-Bold.woff2") format('woff2');
+}
+@font-face {
+    font-family: "RobotoCondensed-SemiBold";
+    src: url("../fonts/RobotoCondensed-SemiBold.woff") format('woff');
+    src: url("../fonts/RobotoCondensed-SemiBold.woff2") format('woff2');
+}
+@font-face {
+    font-family: "RobotoCondensed-Regular";
+    src: url("../fonts/RobotoCondensed-Regular.woff") format('woff');
+    src: url("../fonts/RobotoCondensed-Regular.woff2") format('woff2');
+}
+@font-face {
+    font-family: "RobotoCondensed-Light";
+    src: url("../fonts/RobotoCondensed-Light.woff") format('woff');
+    src: url("../fonts/RobotoCondensed-Light.woff2") format('woff2');
+}
+
+$font700: "RobotoCondensed-Bold";
+$font600: "RobotoCondensed-SemiBold";
+$font400: "RobotoCondensed-Regular";
+$font300: "RobotoCondensed-Light";
+
+/* Colors */
+$color1: #4772fa;
+$color2: #ffb000;
+$color3: #06ce90;
+$color4: #ff3180;
+$color5: #f5f5f5;
+$color6: #333333;
+$color7: #ececec;
+$color8: #dadada;
+$color9: #777777;
+$color10: #464646;
+
+/* Variables */
+$i : !important;
+
+/* Global */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: unset;
+}
+
+body {
+    background-color: $color5;
+    font-family: $font400;
+    font-size: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    user-select: none;
+}
+
+/* Bootstrap */
+.container-fluid {
+    margin: 0 $i;
+    padding: 0 $i;
+}
+
+/* Layout */
+main {
+    display: flex;
+}
+
+header {
+    nav {
+        display: flex;
+        .brand {
+            border-bottom: 1px solid $color8;
+            border-right: 1px solid $color8;
+            padding: 1rem 0;
+            width: 240px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .logo {
+                display: flex;
+                align-items: center;
+                svg {
+                    margin-right: .5rem;
+                    width: 44px;
+                    height: 44px;
+                }
+                span {
+                    font-family: $font600;
+                    font-size: 1.25rem;
+                    color: $color1;
+                }
+                small {
+                    font-family: $font300;
+                    font-size: 1rem;
+                    color: $color6;
+                }
+            }
+        }
+        .menu {
+            border-bottom: 1px solid $color8;
+            padding: 0 4rem;
+            width: calc(100% - 240px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            nav {
+                margin: 0;
+                padding: 0;
+                .breadcrumb {
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    .breadcrumb-item {
+                        font-family: $font300;
+                        font-size: 1rem;
+                        a {
+                            color: $color1;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                        .active {
+                            color: $color6;
+                        }
+                    }
+                }
+            }
+            ul {
+                display: flex;
+                align-items: center;
+                li {
+                    a {
+                        margin-right: 2rem;
+                        color: $color6;
+                    }
+                    .profile {
+                        margin-right: 0;
+                        display: flex;
+                        align-items: center;
+                        img {
+                            border: 1px solid $color8;
+                            border-radius: 50%;
+                            width: 48px;
+                            height: 48px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.aside {
+    border-right: 1px solid $color8;
+    padding-bottom: 2rem;
+    width: 240px;
+    height: calc(100dvh - 87px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .side-menu {
+        .side-menu-top {
+            border-bottom: 1px solid $color8;
+            padding: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .side-pp {
+                border: 1px solid $color8;
+                border-radius: 50%;
+                margin-bottom: 1rem;
+                width: 96px;
+                height: 96px;
+            }
+            p {
+                margin: 0;
+                font-family: $font400;
+                font-size: 18px;
+                color: $color6;
+                text-align: center;
+            }
+
+        }
+        .side-menu-item {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a {
+                border-bottom: 1px solid $color8;
+                padding: 1.25rem 2.5rem;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                color: $color10;
+                i {
+                    margin: -.1rem 1.5rem 0 0;
+                    width: 20px;
+                    height: 20px;
+                }
+                span {
+                    margin: 0;
+                }
+                &:hover {
+                    color: $color1;
+                }
+            }
+            .active {
+                border-bottom: 1px solid $color1;
+                background-color: $color1;
+                color: $color5;
+                &:hover {
+                    color: $color5;
+                }
+            }
+        }
+    }
+    .side-bottom {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        a {
+            color: $color1;
+        }
+    }
+}
+
+.panel-content {
+    background-color: $color7;
+    padding: 2rem 4rem;
+    width: calc(100% - 240px);
+    min-height: calc(100dvh - 87px);
+}
