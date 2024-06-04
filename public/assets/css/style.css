@@ -211,7 +211,6 @@ footer p {
 }
 
 main {
-  max-height: calc(100dvh - 76px);
   min-height: calc(100dvh - 76px);
 }
 
@@ -316,7 +315,6 @@ main {
 
 /* Home */
 .home {
-  max-height: calc(100dvh - 76px);
   min-height: calc(100dvh - 76px);
   display: flex;
   flex-wrap: wrap;
@@ -353,6 +351,34 @@ main {
   background-color: #ffb000;
 }
 .home .home-content img {
+  width: 640px;
+}
+
+/* Features */
+.features {
+  min-height: calc(100dvh - 76px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.features .features-content {
+  width: 50%;
+}
+.features .features-content .title {
+  font-family: "RobotoCondensed-Bold";
+  font-size: 4rem;
+  color: #333333;
+}
+.features .features-content .title span:first-child {
+  color: #4772fa;
+}
+.features .features-content .title span:nth-child(2) {
+  color: #ffb000;
+}
+.features .features-content .title span:last-child {
+  color: #06ce90;
+}
+.features .features-content img {
   width: 640px;
 }
 

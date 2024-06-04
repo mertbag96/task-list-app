@@ -38,6 +38,7 @@ $color7: #ececec;
 $color8: #dadada;
 $color9: rgba(255, 255, 255, 0.25);
 $color10: rgba(255, 255, 255, 0.75);
+$color11: rgba(71, 114, 250, 0.1);
 
 /* Variables */
 $i : !important;
@@ -233,7 +234,6 @@ footer {
 }
 
 main {
-    max-height: calc(100dvh - 76px);
     min-height: calc(100dvh - 76px);
 }
 
@@ -338,7 +338,6 @@ main {
 
 /* Home */
 .home {
-    max-height: calc(100dvh - 76px);
     min-height: calc(100dvh - 76px);
     display: flex;
     flex-wrap: wrap;
@@ -372,6 +371,36 @@ main {
             transition: .25s ease-out;
             &:hover {
                 background-color: $color2;
+            }
+        }
+        img {
+            width: 640px;
+        }
+    }
+}
+
+/* Features */
+.features {
+    min-height: calc(100dvh - 76px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .features-content {
+        width: 50%;
+        .title {
+            font-family: $font700;
+            font-size: 4rem;
+            color: $color6;
+            span {
+                &:first-child {
+                    color: $color1;
+                }
+                &:nth-child(2) {
+                    color: $color2;
+                }
+                &:last-child {
+                    color: $color3;
+                }
             }
         }
         img {
