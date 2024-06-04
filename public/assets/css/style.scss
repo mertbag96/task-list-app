@@ -409,6 +409,25 @@ main {
     }
 }
 
+/* Legal */
+.legal {
+    width: 50%;
+    padding: 4rem $i;
+    color: $color6;
+    .title {
+        font-family: $font400;
+        font-size: 2rem;
+    }
+    .sub-title {
+        font-family: $font400;
+        font-size: 1.5rem;
+    }
+    .text {
+        font-family: $font300;
+        font-size: 1rem;
+    }
+}
+
 /* Responsive */
 @media only screen and (max-width: 575px) {
     /* Bootstrap */
