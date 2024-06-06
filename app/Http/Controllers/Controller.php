@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class Controller extends BaseController
@@ -45,6 +47,10 @@ class Controller extends BaseController
     public function contact(): View
     {
         return view("website.contact");
+    }
+    public function contact_us(Request $request): RedirectResponse
+    {
+        return redirect()->route("contact")->with("successful", "Form was successfully submitted.");
     }
     public function terms(): View
     {

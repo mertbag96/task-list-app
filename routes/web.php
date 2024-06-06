@@ -41,6 +41,7 @@ Route::prefix('help-center')->name('help-center.')->group( function () {
 Route::get('/about', [Controller::class, 'about'])->name('about');
 Route::get('/blog', [Controller::class, 'blog'])->name('blog');
 Route::get('/contact', [Controller::class, 'contact'])->name('contact');
+Route::post('/contact-us', [Controller::class, 'contact_us'])->name('contact-us');
 Route::get('/terms', [Controller::class, 'terms'])->name('terms');
 Route::get('/privacy', [Controller::class, 'privacy'])->name('privacy');
 Route::get('/security', [Controller::class, 'security'])->name('security');

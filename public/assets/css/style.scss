@@ -90,6 +90,7 @@ img {
 }
 
 .alert {
+    background-color: $color5;
     border-radius: .25rem;
     position: fixed;
     top: 1rem;
@@ -684,6 +685,137 @@ main {
             align-items: center;
             img {
                 height: 64px;
+            }
+        }
+    }
+}
+
+/* Contact */
+.contact {
+    .contact-banner-container {
+        background-color: $color1;
+        .contact-banner-bg {
+            background: url("../images/contact/contact.png") center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .title {
+                margin: 0;
+                font-family: $font600;
+                font-size: 4rem;
+                color: $color5;
+                text-align: center;
+            }
+        }
+    }
+    .contact-content {
+        padding: 6rem 0 $i;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: start;
+        .contact-area {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            .title {
+                margin-bottom: 2rem;
+                font-family: $font600;
+                font-size: 2rem;
+                color: $color1;
+            }
+            .contact-detail {
+                background-color: $color10;
+                border: 2px solid $color8;
+                border-radius: .25rem;
+                margin-bottom: 2rem;
+                padding: 2rem 4rem;
+                width: 450px;
+                display: flex;
+                align-items: center;
+                font-size: 1.5rem;
+                i {
+                    margin-right: 1rem;
+                    width: 24px;
+                    color: $color1;
+                }
+                p {
+                    margin: 0;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            form {
+                border: 2px solid $color8;
+                background-color: $color10;
+                border-radius: .25rem;
+                padding: 2rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: start;
+                .form-element {
+                    margin-bottom: 2rem;
+                    width: 48%;
+                    display: flex;
+                    flex-direction: column;
+                    label {
+                        margin-bottom: .5rem;
+                        font-family: $font400;
+                        font-size: 1.25rem;
+                        color: $color6;
+                    }
+                    input {
+                        border: 1px solid $color6;
+                        border-radius: .25rem;
+                        outline: none;
+                        padding: .5rem 1rem;
+                        font-family: $font400;
+                        font-size: 1rem;
+                        color: $color6;
+                    }
+                    textarea {
+                        border: 1px solid $color6;
+                        border-radius: .25rem;
+                        outline: none;
+                        padding: .5rem 1rem;
+                        margin-bottom: 0;
+                        font-family: $font400;
+                        font-size: 1rem;
+                        color: $color6;
+                        resize: none;
+                    }
+                    button {
+                        background-color: $color1;
+                        border-radius: .25rem;
+                        outline: none;
+                        border: none;
+                        padding: .5rem 0;
+                        font-family: $font400;
+                        font-size: 1.25rem;
+                        color: $color5;
+                        text-align: center;
+                        transition: .25s ease;
+                        &:hover {
+                            background-color: $color2;
+                        }
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+                .agreement {
+                    margin: 0;
+                    font-family: $font300;
+                    a {
+                        color: $color1;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
             }
         }
     }
