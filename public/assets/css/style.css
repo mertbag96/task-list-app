@@ -382,6 +382,106 @@ main {
   width: 640px;
 }
 
+/* About */
+.about .about-banner-container {
+  padding-top: 2rem;
+}
+.about .about-banner-container .about-banner {
+  min-height: calc(100dvh - 76px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about .about-banner-container .about-banner .about-banner-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about .about-banner-container .about-banner .about-banner-content .title {
+  margin-bottom: 1rem;
+  font-family: "RobotoCondensed-SemiBold";
+  font-size: 2.25rem;
+  color: #4772fa;
+  text-align: center;
+}
+.about .about-banner-container .about-banner .about-banner-content .description {
+  margin-bottom: 2rem;
+  width: 60%;
+  font-family: "RobotoCondensed-Light";
+  font-size: 1.5rem;
+  color: #333333;
+  text-align: center;
+}
+.about .about-principles-container {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 3rem 0;
+}
+.about .about-principles-container .about-principles .title {
+  margin-bottom: 0.5rem;
+  font-family: "RobotoCondensed-SemiBold";
+  font-size: 2rem;
+}
+.about .about-principles-container .about-principles .detail {
+  font-family: "RobotoCondensed-Regular";
+  font-size: 1rem;
+  color: #333333;
+}
+.about .about-principles-container .about-principles .about-mission {
+  margin-bottom: 2.5rem;
+}
+.about .about-principles-container .about-principles .about-mission .title {
+  color: #4772fa;
+}
+.about .about-principles-container .about-principles .about-vision .title {
+  color: #ffb000;
+}
+.about .about-statistics-container {
+  background-color: #4772fa;
+  padding: 2.5rem 0;
+}
+.about .about-statistics-container .about-statistics {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.about .about-statistics-container .about-statistics .about-statistic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f5f5f5;
+}
+.about .about-statistics-container .about-statistics .about-statistic i {
+  margin-bottom: 1.25rem;
+  font-size: 2.5rem;
+}
+.about .about-statistics-container .about-statistics .about-statistic h1 {
+  margin-bottom: 0.25rem;
+  font-family: "RobotoCondensed-SemiBold";
+  font-size: 2rem;
+  text-align: center;
+}
+.about .about-statistics-container .about-statistics .about-statistic h6 {
+  font-family: "RobotoCondensed-SemiBold";
+  font-size: 1.5rem;
+  text-align: center;
+}
+.about .about-partners-container {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 4rem 0;
+}
+.about .about-partners-container .about-partners {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.about .about-partners-container .about-partners img {
+  height: 64px;
+}
+
 /* Legal */
 .legal {
   width: 50%;
@@ -406,19 +506,6 @@ main {
   /* Bootstrap */
   .container {
     max-width: 92% !important;
-  }
-  /* Layout */
-  footer .footer-container .footer-content ul li:last-child {
-    margin: 1.5rem 0 0.5rem 0;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-  }
-  footer .footer-container .footer-content ul li:last-child a {
-    margin-left: 1rem;
-  }
-  footer .footer-container .footer-content ul li:last-child a:first-child {
-    margin-left: 0 !important;
   }
 }
 

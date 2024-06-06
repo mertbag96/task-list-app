@@ -409,6 +409,112 @@ main {
     }
 }
 
+/* About */
+.about {
+    .about-banner-container {
+        padding-top: 2rem;
+        .about-banner {
+            min-height: calc(100dvh - 76px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .about-banner-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .title {
+                    margin-bottom: 1rem;
+                    font-family: $font600;
+                    font-size: 2.25rem;
+                    color: $color1;
+                    text-align: center;
+                }
+                .description {
+                    margin-bottom: 2rem;
+                    width: 60%;
+                    font-family: $font300;
+                    font-size: 1.5rem;
+                    color: $color6;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .about-principles-container {
+        background-color: $color10;
+        padding: 3rem 0;
+        .about-principles {
+            .title {
+                margin-bottom: .5rem;
+                font-family: $font600;
+                font-size: 2rem;
+            }
+            .detail {
+                font-family: $font400;
+                font-size: 1rem;
+                color: $color6;
+            }
+            .about-mission {
+                margin-bottom: 2.5rem;
+                .title {
+                    color: $color1;
+                }
+            }
+            .about-vision {
+                .title {
+                    color: $color2;
+                }
+            }
+        }
+    }
+    .about-statistics-container {
+        background-color: $color1;
+        padding: 2.5rem 0;
+        .about-statistics {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            .about-statistic {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: $color5;
+                i {
+                    margin-bottom: 1.25rem;
+                    font-size: 2.5rem;
+                }
+                h1 {
+                    margin-bottom: .25rem;
+                    font-family: $font600;
+                    font-size: 2rem;
+                    text-align: center;
+                }
+                h6 {
+                    font-family: $font600;
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .about-partners-container {
+        background-color: $color10;
+        padding: 4rem 0;
+        .about-partners {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            img {
+                height: 64px;
+            }
+        }
+    }
+}
+
 /* Legal */
 .legal {
     width: 50%;
@@ -433,29 +539,5 @@ main {
     /* Bootstrap */
     .container {
         max-width: 92% $i;
-    }
-
-    /* Layout */
-    footer {
-        .footer-container {
-            .footer-content {
-                ul {
-                    li {
-                        &:last-child {
-                            margin: 1.5rem 0 .5rem 0;
-                            width: 100%;
-                            display: flex;
-                            flex-direction: row;
-                            a {
-                                margin-left: 1rem;
-                                &:first-child {
-                                    margin-left: 0 $i;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 }
