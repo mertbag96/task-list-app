@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route("blog.blog") }}" class="me-5">
+                <a href="{{ route("blog") }}" class="me-5">
                     Blog
                 </a>
             </li>

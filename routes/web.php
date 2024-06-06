@@ -39,9 +39,7 @@ Route::prefix('help-center')->name('help-center.')->group( function () {
     Route::get('/faq', [Controller::class, 'faq'])->name('faq');
 });
 Route::get('/about', [Controller::class, 'about'])->name('about');
-Route::prefix('blog')->name('blog.')->group( function () {
-    Route::get('/{article?}', [Controller::class, 'blog'])->name('blog');
-});
+Route::get('/blog/{article?}', [Controller::class, 'blog'])->name('blog');
 Route::get('/contact', [Controller::class, 'contact'])->name('contact');
 Route::post('/contact-us', [Controller::class, 'contact_us'])->name('contact-us');
 Route::get('/terms', [Controller::class, 'terms'])->name('terms');

@@ -34,7 +34,7 @@
 
             </a>
 
-            <a href="{{ route("blog.blog") }}" class="help-topic shadow-sm">
+            <a href="{{ route("blog") }}" class="help-topic shadow-sm">
 
                 <img src="{{ asset("assets/images/help-center/blog-articles.png") }}" alt="Blog Articles">
 

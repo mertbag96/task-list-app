@@ -47,7 +47,7 @@
 
             </a>
 
-            <a href="{{ route("blog.blog") }}" class="article shadow-sm">
+            <a href="{{ route("blog") }}" class="article shadow-sm">
 
                 <img src="{{ asset("assets/images/help-center/blog-articles.png") }}" alt="Blog Articles">
 

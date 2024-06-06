@@ -12,7 +12,7 @@
 
                 <h1 class="title">Latest Post</h1>
 
-                <a href="{{ route("blog.blog", "example-article") }}" class="latest-post">
+                <a href="{{ route("blog", "example-article") }}" class="latest-post">
 
                     <img src="{{ asset("assets/images/blog/pomodoro-technique.jpg") }}" alt="Pomodoro Technique">
 
@@ -39,7 +39,7 @@
 
                 <h1 class="title">Recent Posts</h1>
 
-                <a href="{{ route("blog.blog", "example-article") }}" class="post">
+                <a href="{{ route("blog", "example-article") }}" class="post">
 
                     <img src="{{ asset("assets/images/blog/mindfulness.png") }}" alt="Mindfulness">
 
@@ -61,7 +61,7 @@
 
                 </a>
 
-                <a href="{{ route("blog.blog", "example-article") }}" class="post">
+                <a href="{{ route("blog", "example-article") }}" class="post">
 
                     <img src="{{ asset("assets/images/blog/procrastination.jpg") }}" alt="Procrastination">
 
@@ -83,7 +83,7 @@
 
                 </a>
 
-                <a href="{{ route("blog.blog", "example-article") }}" class="post">
+                <a href="{{ route("blog", "example-article") }}" class="post">
 
                     <img src="{{ asset("assets/images/blog/self-discipline-or-self-torture.png") }}" alt="Self Discipline Or Self Torture">
 
@@ -103,7 +103,7 @@
 
                 </a>
 
-                <a href="{{ route("blog.blog", "example-article") }}" class="post">
+                <a href="{{ route("blog", "example-article") }}" class="post">
 
                     <img src="{{ asset("assets/images/blog/staying-motivated-working-remotely.jpg") }}" alt="Staying Motivated Working Remotely">
 
@@ -125,7 +125,7 @@
 
                 </a>
 
-                <a href="{{ route("blog.blog", "example-article") }}" class="post">
+                <a href="{{ route("blog", "example-article") }}" class="post">
 
                     <img src="{{ asset("assets/images/blog/minimalism.png") }}" alt="Minimalism">
 
@@ -147,7 +147,7 @@
 
                 </a>
 
-                <a href="{{ route("blog.blog", "example-article") }}" class="post">
+                <a href="{{ route("blog", "example-article") }}" class="post">
 
                     <img src="{{ asset("assets/images/blog/work-from-home.png") }}" alt="Working From Home">
 
@@ -214,7 +214,7 @@
                     sollicitudin.
                 </p>
 
-                <a href="{{ route("blog.blog") }}">
+                <a href="{{ route("blog") }}">
                     Back to Blog
                 </a>
 

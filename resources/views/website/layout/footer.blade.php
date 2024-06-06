@@ -27,7 +27,7 @@
             </li>
             <li>
                 <span>Corporate</span>
-                <a href="{{ route("blog.blog") }}">
+                <a href="{{ route("blog") }}">
                     Blog
                 </a>
                 <a href="{{ route("about") }}">
