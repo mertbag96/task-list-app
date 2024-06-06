@@ -534,6 +534,50 @@ main {
     }
 }
 
+/* Errors */
+.errors {
+    background-color: $color1;
+    height: 100dvh;
+    .error-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 120px;
+        .logo {
+            display: flex;
+            align-items: center;
+            svg {
+                margin-right: .5rem;
+                width: 44px;
+                height: 44px;
+            }
+            span {
+                font-family: $font400;
+                font-size: 1.5rem;
+                color: $color5;
+            }
+        }
+    }
+    .error-content {
+        height: calc(100dvh - 120px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        .error-code {
+            font-family: $font700;
+            font-size: 8rem;
+            color: $color2;
+        }
+        .error-detail {
+            font-family: $font600;
+            font-size: 4rem;
+            color: $color5;
+        }
+    }
+}
+
 /* Responsive */
 @media only screen and (max-width: 575px) {
     /* Bootstrap */

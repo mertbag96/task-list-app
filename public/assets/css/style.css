@@ -501,6 +501,50 @@ main {
   font-size: 1rem;
 }
 
+/* Errors */
+.errors {
+  background-color: #4772fa;
+  height: 100dvh;
+}
+.errors .error-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+.errors .error-logo .logo {
+  display: flex;
+  align-items: center;
+}
+.errors .error-logo .logo svg {
+  margin-right: 0.5rem;
+  width: 44px;
+  height: 44px;
+}
+.errors .error-logo .logo span {
+  font-family: "RobotoCondensed-Regular";
+  font-size: 1.5rem;
+  color: #f5f5f5;
+}
+.errors .error-content {
+  height: calc(100dvh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.errors .error-content .error-code {
+  font-family: "RobotoCondensed-Bold";
+  font-size: 8rem;
+  color: #ffb000;
+}
+.errors .error-content .error-detail {
+  font-family: "RobotoCondensed-SemiBold";
+  font-size: 4rem;
+  color: #f5f5f5;
+}
+
 /* Responsive */
 @media only screen and (max-width: 575px) {
   /* Bootstrap */
