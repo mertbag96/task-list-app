@@ -419,7 +419,7 @@ main {
         align-items: center;
         .title {
             margin-bottom: 1.5rem;
-            font-family: $font600;
+            font-family: $font400;
             font-size: 3rem;
             color: $color6;
             text-align: center;
@@ -431,10 +431,13 @@ main {
             border: 2px solid $color6;
             background-color: $color5;
             border-radius: .25rem;
-            padding: 1rem;
+            padding: 1rem 1.5rem;
             width: 640px;
             font-family: $font400;
             font-size: 1.25rem;
+            &::placeholder {
+                letter-spacing: .15rem;
+            }
         }
     }
     .help-topics {
@@ -522,7 +525,7 @@ main {
         .title {
             margin-bottom: 1rem;
             width: 100%;
-            font-family: $font600;
+            font-family: $font400;
             font-size: 2rem;
             color: $color6;
         }
@@ -554,7 +557,7 @@ main {
         .other-articles {
             margin: 2rem 0 1.5rem 0;
             width: 100%;
-            font-family: $font600;
+            font-family: $font400;
             font-size: 1.5rem;
             color: $color6;
         }
