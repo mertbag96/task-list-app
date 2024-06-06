@@ -409,6 +409,177 @@ main {
     }
 }
 
+/* Help Center */
+.help-center {
+    .help-search {
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .title {
+            margin-bottom: 1.5rem;
+            font-family: $font600;
+            font-size: 3rem;
+            color: $color6;
+            text-align: center;
+            span {
+                color: $color1;
+            }
+        }
+        .search {
+            border: 2px solid $color6;
+            background-color: $color5;
+            border-radius: .25rem;
+            padding: 1rem;
+            width: 640px;
+            font-family: $font400;
+            font-size: 1.25rem;
+        }
+    }
+    .help-topics {
+        height: calc(100dvh - 356px);
+        padding: 4rem 0 $i;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        .title {
+            margin-bottom: 4rem;
+            width: 100%;
+            font-family: $font400;
+            font-size: 2rem;
+            color: $color6;
+            text-align: center;
+            span {
+                color: $color1;
+            }
+        }
+        .help-topic {
+            border: 2px solid $color7;
+            border-radius: .25rem;
+            padding: 1rem 2rem;
+            transition: .25s ease;
+            img {
+                width: 164px;
+            }
+            .topic {
+                margin: 0;
+                font-family: $font400;
+                font-size: 1.25rem;
+                color: $color6;
+                text-align: center;
+            }
+            &:hover {
+                scale: 1.1;
+            }
+        }
+    }
+    .help-contact-container {
+        background-color: $color1;
+        padding: 2rem 0;
+        .help-contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            .help-contact-content {
+                text-align: left;
+                color: $color5;
+                .title {
+                    font-family: $font600;
+                    font-size: 2.25rem;
+                }
+                .detail {
+                    margin: 0;
+                    font-family: $font400;
+                    font-size: 1.5rem;
+                }
+            }
+            a {
+                background-color: $color5;
+                border-radius: .25rem;
+                outline: none;
+                border: none;
+                padding: .75rem 1.5rem;
+                font-family: $font600;
+                font-size: 1.25rem;
+                color: $color1;
+                transition: .25s ease-in;
+                &:hover {
+                    background-color: $color2;
+                    color: $color5;
+                }
+            }
+        }
+    }
+    .help-center-detail {
+        padding: 4rem 16rem $i;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: start;
+        .title {
+            margin-bottom: 1rem;
+            width: 100%;
+            font-family: $font600;
+            font-size: 2rem;
+            color: $color6;
+        }
+        img {
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+        p {
+            width: 100%;
+        }
+        .accordion {
+            width: 100%;
+            .accordion-item {
+                margin-bottom: 1rem;
+                width: 100%;
+                .accordion-header {
+                    .accordion-button {
+                        background-color: $color10;
+                        border: 1px solid $color8;
+                        box-shadow: none;
+                        outline: none;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .other-articles {
+            margin: 2rem 0 1.5rem 0;
+            width: 100%;
+            font-family: $font600;
+            font-size: 1.5rem;
+            color: $color6;
+        }
+        .article {
+            border: 2px solid $color7;
+            border-radius: .25rem;
+            padding: 1rem 2rem;
+            transition: .25s ease;
+            img {
+                width: 150px;
+            }
+            .title {
+                margin: 0;
+                font-family: $font400;
+                font-size: 1.25rem;
+                color: $color6;
+                text-align: center;
+            }
+            &:hover {
+                scale: 1.1;
+            }
+        }
+    }
+}
+
 /* About */
 .about {
     .about-banner-container {

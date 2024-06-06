@@ -22,6 +22,18 @@ class Controller extends BaseController
     {
         return view("website.help-center");
     }
+    public function beginner_guide(): View
+    {
+        return view("website.beginner-guide");
+    }
+    public function feature_guide(): View
+    {
+        return view("website.feature-guide");
+    }
+    public function faq(): View
+    {
+        return view("website.faq");
+    }
     public function about(): View
     {
         return view("website.about");

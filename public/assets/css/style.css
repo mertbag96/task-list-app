@@ -382,6 +382,173 @@ main {
   width: 640px;
 }
 
+/* Help Center */
+.help-center .help-search {
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.help-center .help-search .title {
+  margin-bottom: 1.5rem;
+  font-family: "RobotoCondensed-SemiBold";
+  font-size: 3rem;
+  color: #333333;
+  text-align: center;
+}
+.help-center .help-search .title span {
+  color: #4772fa;
+}
+.help-center .help-search .search {
+  border: 2px solid #333333;
+  background-color: #f5f5f5;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  width: 640px;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 1.25rem;
+}
+.help-center .help-topics {
+  height: calc(100dvh - 356px);
+  padding: 4rem 0 !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.help-center .help-topics .title {
+  margin-bottom: 4rem;
+  width: 100%;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 2rem;
+  color: #333333;
+  text-align: center;
+}
+.help-center .help-topics .title span {
+  color: #4772fa;
+}
+.help-center .help-topics .help-topic {
+  border: 2px solid #ececec;
+  border-radius: 0.25rem;
+  padding: 1rem 2rem;
+  transition: 0.25s ease;
+}
+.help-center .help-topics .help-topic img {
+  width: 164px;
+}
+.help-center .help-topics .help-topic .topic {
+  margin: 0;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 1.25rem;
+  color: #333333;
+  text-align: center;
+}
+.help-center .help-topics .help-topic:hover {
+  scale: 1.1;
+}
+.help-center .help-contact-container {
+  background-color: #4772fa;
+  padding: 2rem 0;
+}
+.help-center .help-contact-container .help-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.help-center .help-contact-container .help-contact .help-contact-content {
+  text-align: left;
+  color: #f5f5f5;
+}
+.help-center .help-contact-container .help-contact .help-contact-content .title {
+  font-family: "RobotoCondensed-SemiBold";
+  font-size: 2.25rem;
+}
+.help-center .help-contact-container .help-contact .help-contact-content .detail {
+  margin: 0;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 1.5rem;
+}
+.help-center .help-contact-container .help-contact a {
+  background-color: #f5f5f5;
+  border-radius: 0.25rem;
+  outline: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-family: "RobotoCondensed-SemiBold";
+  font-size: 1.25rem;
+  color: #4772fa;
+  transition: 0.25s ease-in;
+}
+.help-center .help-contact-container .help-contact a:hover {
+  background-color: #ffb000;
+  color: #f5f5f5;
+}
+.help-center .help-center-detail {
+  padding: 4rem 16rem !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+}
+.help-center .help-center-detail .title {
+  margin-bottom: 1rem;
+  width: 100%;
+  font-family: "RobotoCondensed-SemiBold";
+  font-size: 2rem;
+  color: #333333;
+}
+.help-center .help-center-detail img {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.help-center .help-center-detail p {
+  width: 100%;
+}
+.help-center .help-center-detail .accordion {
+  width: 100%;
+}
+.help-center .help-center-detail .accordion .accordion-item {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.help-center .help-center-detail .accordion .accordion-item .accordion-header .accordion-button {
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid #dadada;
+  box-shadow: none;
+  outline: none;
+}
+.help-center .help-center-detail .accordion .accordion-item:last-child {
+  margin-bottom: 0;
+}
+.help-center .help-center-detail .other-articles {
+  margin: 2rem 0 1.5rem 0;
+  width: 100%;
+  font-family: "RobotoCondensed-SemiBold";
+  font-size: 1.5rem;
+  color: #333333;
+}
+.help-center .help-center-detail .article {
+  border: 2px solid #ececec;
+  border-radius: 0.25rem;
+  padding: 1rem 2rem;
+  transition: 0.25s ease;
+}
+.help-center .help-center-detail .article img {
+  width: 150px;
+}
+.help-center .help-center-detail .article .title {
+  margin: 0;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 1.25rem;
+  color: #333333;
+  text-align: center;
+}
+.help-center .help-center-detail .article:hover {
+  scale: 1.1;
+}
+
 /* About */
 .about .about-banner-container {
   padding-top: 2rem;

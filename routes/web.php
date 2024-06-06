@@ -32,7 +32,12 @@ Route::prefix('auth')->name('auth.')->group( function () {
 /* Website */
 Route::get('/', [Controller::class, 'home'])->name('home');
 Route::get('/features', [Controller::class, 'features'])->name('features');
-Route::get('/help-center', [Controller::class, 'help_center'])->name('help-center');
+Route::prefix('help-center')->name('help-center.')->group( function () {
+    Route::get('/', [Controller::class, 'help_center'])->name('help-center');
+    Route::get('/beginner-guide', [Controller::class, 'beginner_guide'])->name('beginner-guide');
+    Route::get('/feature-guide', [Controller::class, 'feature_guide'])->name('feature-guide');
+    Route::get('/faq', [Controller::class, 'faq'])->name('faq');
+});
 Route::get('/about', [Controller::class, 'about'])->name('about');
 Route::get('/blog', [Controller::class, 'blog'])->name('blog');
 Route::get('/contact', [Controller::class, 'contact'])->name('contact');
