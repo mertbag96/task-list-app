@@ -112,7 +112,7 @@ header nav .logo svg {
   height: 44px;
 }
 header nav .logo span {
-  font-family: "RobotoCondensed-SemiBold";
+  font-family: "RobotoCondensed-Regular";
   font-size: 1.5rem;
   color: #4772fa;
 }
@@ -121,7 +121,7 @@ header nav .menu {
   align-items: center;
 }
 header nav .menu li a {
-  font-family: "RobotoCondensed-SemiBold";
+  font-family: "RobotoCondensed-Regular";
   font-size: 1.25rem;
   color: #333333;
   transition: 0.25s ease-in;
@@ -168,7 +168,7 @@ footer .footer-container .logo svg {
   height: 44px;
 }
 footer .footer-container .logo span {
-  font-family: "RobotoCondensed-SemiBold";
+  font-family: "RobotoCondensed-Regular";
   font-size: 1.5rem;
   color: #4772fa;
 }
@@ -246,7 +246,7 @@ main {
   height: 44px;
 }
 .auth .auth-bg .auth-content .logo span {
-  font-family: "RobotoCondensed-SemiBold";
+  font-family: "RobotoCondensed-Regular";
   font-size: 1.5rem;
   color: #4772fa;
 }
@@ -324,7 +324,7 @@ main {
   width: 50%;
 }
 .home .home-content .title {
-  font-family: "RobotoCondensed-Bold";
+  font-family: "RobotoCondensed-Regular";
   font-size: 4rem;
   color: #333333;
 }
@@ -365,7 +365,7 @@ main {
   width: 50%;
 }
 .features .features-content .title {
-  font-family: "RobotoCondensed-Bold";
+  font-family: "RobotoCondensed-Regular";
   font-size: 4rem;
   color: #333333;
 }

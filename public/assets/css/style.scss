@@ -130,7 +130,7 @@ header  {
                 height: 44px;
             }
             span {
-                font-family: $font600;
+                font-family: $font400;
                 font-size: 1.5rem;
                 color: $color1;
             }
@@ -140,7 +140,7 @@ header  {
             align-items: center;
             li {
                 a {
-                    font-family: $font600;
+                    font-family: $font400;
                     font-size: 1.25rem;
                     color: $color6;
                     transition: .25s ease-in;
@@ -188,7 +188,7 @@ footer {
                 height: 44px;
             }
             span {
-                font-family: $font600;
+                font-family: $font400;
                 font-size: 1.5rem;
                 color: $color1;
             }
@@ -265,7 +265,7 @@ main {
                     height: 44px;
                 }
                 span {
-                    font-family: $font600;
+                    font-family: $font400;
                     font-size: 1.5rem;
                     color: $color1;
                 }
@@ -345,7 +345,7 @@ main {
     .home-content {
         width: 50%;
         .title {
-            font-family: $font700;
+            font-family: $font400;
             font-size: 4rem;
             color: $color6;
             span {
@@ -388,7 +388,7 @@ main {
     .features-content {
         width: 50%;
         .title {
-            font-family: $font700;
+            font-family: $font400;
             font-size: 4rem;
             color: $color6;
             span {
