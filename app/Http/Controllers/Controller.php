@@ -40,9 +40,23 @@ class Controller extends BaseController
     {
         return view("website.about");
     }
-    public function blog(): View
+    public function blog($article = null): View
     {
-        return view("website.blog");
+        if ($article == "example-article") {
+            $alt = "Example Article";
+            $title = "Example Article";
+            $picture = "assets/images/blog/pomodoro-technique.jpg";
+        } else {
+            $alt = null;
+            $title = null;
+            $picture = null;
+        }
+        return view("website.blog", [
+            "article" => $article,
+            "title" => $title,
+            "picture" => $picture,
+            "alt" => $alt
+        ]);
     }
     public function contact(): View
     {
