@@ -691,7 +691,7 @@ main {
                 height: 320px;
             }
             .article {
-                padding: 2rem;
+                padding: 2rem 2.5rem;
                 color: $color6;
                 .article-title {
                     margin-bottom: 1.5rem;
@@ -749,7 +749,7 @@ main {
                     -webkit-line-clamp: 4;
                     -webkit-box-orient: vertical;
                     overflow: hidden;
-                    font-family: $font300;
+                    font-family: $font400;
                     font-size: 1rem;
                     color: $color12;
                 }
@@ -766,17 +766,37 @@ main {
             color: $color6;
             text-align: center;
         }
+        .date {
+            margin: 0;
+            width: 100%;
+            font-family: $font400;
+            font-size: 1.25rem;
+            color: $color12;
+            text-align: center;
+        }
         img {
             margin: 2rem 0;
             width: 100%;
         }
-        a {
-            margin: 1rem 0 2rem 0;
-            font-size: 1rem;
-            color: $color1;
-            &:hover {
-                text-decoration: underline;
+        .pagination {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a {
+                font-size: 1rem;
+                color: $color1;
+                transition: .25s ease;
+                &:hover {
+                    color: $color2;
+                }
             }
+        }
+        .first {
+            justify-content: start;
+        }
+        .last {
+            justify-content: end;
         }
     }
 }

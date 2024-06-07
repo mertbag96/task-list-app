@@ -34,7 +34,7 @@ Route::get('/', [Controller::class, 'home'])->name('home');
 Route::get('/features', [Controller::class, 'features'])->name('features');
 Route::get('/help-center/{slug?}', [Controller::class, 'help_center'])->name('help-center');
 Route::get('/about', [Controller::class, 'about'])->name('about');
-Route::get('/blog/{article?}', [Controller::class, 'blog'])->name('blog');
+Route::get('/blog/{slug?}', [Controller::class, 'blog'])->name('blog');
 Route::get('/contact', [Controller::class, 'contact'])->name('contact');
 Route::post('/contact-us', [Controller::class, 'contact_us'])->name('contact-us');
 Route::get('/terms', [Controller::class, 'terms'])->name('terms');

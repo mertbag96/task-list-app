@@ -1,176 +1,66 @@
 @extends("website.app")
 
-@section("title", "Blog | Task List")
+@section("title", $page_title)
 
 @section("content")
 
     <section class="blog container">
 
-        @if(is_null($article))
+        @if(is_null($slug))
 
-            <div class="blog-latest">
+            @foreach($blog_articles as $article)
 
-                <h1 class="title">Latest Post</h1>
+                @if($loop->index == 0)
 
-                <a href="{{ route("blog", "example-article") }}" class="latest-post">
+                    <div class="blog-latest">
 
-                    <img src="{{ asset("assets/images/blog/pomodoro-technique.jpg") }}" alt="Pomodoro Technique">
+                        <h1 class="title">Latest Post</h1>
 
-                    <div class="article">
+                        <a href="{{ route("blog", $article["slug"]) }}" class="latest-post">
 
-                        <h1 class="article-title">The Pomodoro Technique</h1>
+                            <img src="{{ asset($article["image"]) }}" alt="{{ $article["title"] }}">
 
-                        <p class="article-detail">
-                            The Pomodoro Technique is a simple and effective time management method, which was proposed
-                            by an Italian, Francesco Cirillo, in 1992. The reason why it is named "Pomodoro" is simply
-                            because the timer he used during university was shaped like a tomato. The principle of the
-                            Pomodoro Technique is to divide time into several "Pomodoro timers", with each focused on
-                            for 25 minutes, followed by a 5-minute break. Completing 4 Pomodoro timers allows you to
-                            take a longer break.
-                        </p>
+                            <div class="article">
+
+                                <h1 class="article-title">{{ $article["title"] }}</h1>
+
+                                <p class="article-detail">{{ $article["description"] }}</p>
+
+                            </div>
+
+                        </a>
 
                     </div>
 
-                </a>
+                @endif
 
-            </div>
+            @endforeach
 
             <div class="posts">
 
                 <h1 class="title">Recent Posts</h1>
 
-                <a href="{{ route("blog", "example-article") }}" class="post">
+                @foreach($blog_articles as $article)
 
-                    <img src="{{ asset("assets/images/blog/mindfulness.png") }}" alt="Mindfulness">
+                    @if($loop->index > 0)
 
-                    <div class="post-detail">
+                        <a href="{{ route("blog", $article["slug"]) }}" class="post">
 
-                        <h1 class="title">
-                            How to Achieve a Happier Life with Mindfulness
-                        </h1>
+                            <img src="{{ asset($article["image"]) }}" alt="{{ $article["title"] }}">
 
-                        <p class="detail">
-                            Mindfulness simply means being in the present moment. It tells you to feel the flow of
-                            time by only paying attention to where you are, what you are doing, what is in your mind,
-                            and how you feel at this present moment. By channeling your concentration entirely towards
-                            your bodily sensations and inner experiences, it gets easier to calm yourself down and be
-                            closer to your inner selves.
-                        </p>
+                            <div class="post-detail">
 
-                    </div>
+                                <h1 class="title">{{ $article["title"] }}</h1>
 
-                </a>
+                                <p class="detail">{{ $article["description"] }}</p>
 
-                <a href="{{ route("blog", "example-article") }}" class="post">
+                            </div>
 
-                    <img src="{{ asset("assets/images/blog/procrastination.jpg") }}" alt="Procrastination">
+                        </a>
 
-                    <div class="post-detail">
+                    @endif
 
-                        <h1 class="title">
-                            Stop Being the Last-Minute Person: Everything You Need to Know about Procrastination
-                        </h1>
-
-                        <p class="detail">
-                            Usually, we think of procrastination as a bad habit, but this might not be the case.
-                            Research by Burka and Yuen, authors of Procrastination: Why You Do It, What to Do About It
-                            Now, have found that procrastination is not a bad habit, but a psychological syndrome
-                            caused by one’s fear. In other words, procrastination is not purely a problem of time
-                            management. Instead, it concerns people’s inner fears, expectations, doubts, and pressures.
-                        </p>
-
-                    </div>
-
-                </a>
-
-                <a href="{{ route("blog", "example-article") }}" class="post">
-
-                    <img src="{{ asset("assets/images/blog/self-discipline-or-self-torture.png") }}" alt="Self Discipline Or Self Torture">
-
-                    <div class="post-detail">
-
-                        <h1 class="title">
-                            Self-Discipline or Self-Torture?
-                        </h1>
-
-                        <p class="detail">
-                            Bombarded with numerous books and courses aimed at helping us develop self-discipline,
-                            together with numerous praises from people around us or on the internet, it seems quite
-                            obvious that self-discipline is such a highly-valued quality in today’s society.
-                        </p>
-
-                    </div>
-
-                </a>
-
-                <a href="{{ route("blog", "example-article") }}" class="post">
-
-                    <img src="{{ asset("assets/images/blog/staying-motivated-working-remotely.jpg") }}" alt="Staying Motivated Working Remotely">
-
-                    <div class="post-detail">
-
-                        <h1 class="title">
-                            5 Tips For Staying Motivated When Working Remotely
-                        </h1>
-
-                        <p class="detail">
-                            Keeping your motivation up when you're working in an office is relatively easy.
-                            You need to get your work done before you can return to the comfort and privacy of home,
-                            so dragging your feet will only cause you further inconvenience. And with your colleagues
-                            surrounding and observing you, you’ll at once be reminded that you’re part of a team and
-                            driven to show productivity.
-                        </p>
-
-                    </div>
-
-                </a>
-
-                <a href="{{ route("blog", "example-article") }}" class="post">
-
-                    <img src="{{ asset("assets/images/blog/minimalism.png") }}" alt="Minimalism">
-
-                    <div class="post-detail">
-
-                        <h1 class="title">
-                            Minimalism: How I Finally Found the True Beauty of Living with Less
-                        </h1>
-
-                        <p class="detail">
-                            A couple of months ago, I saw a TV series called Tidying Up with Marie Kondo, where a
-                            Japanese lady Konmari visited families to help them tidy their homes. The tiding process
-                            normally starts from clothes, books to sentimental items. A rule she’s given is only
-                            keeping what’s necessary and discarding those that don’t spark joy anymore. The basic
-                            concept embedded in the Konmari method is similar to minimalism.
-                        </p>
-
-                    </div>
-
-                </a>
-
-                <a href="{{ route("blog", "example-article") }}" class="post">
-
-                    <img src="{{ asset("assets/images/blog/work-from-home.png") }}" alt="Working From Home">
-
-                    <div class="post-detail">
-
-                        <h1 class="title">
-                            Working From Home? 5 Tips of Increasing Remote-Working Productivity
-                        </h1>
-
-                        <p class="detail">
-                            An unexpected COVID-19 pandemic has led to a global rollout of working from home for a
-                            long time and some may be for now too, whether it’s out of personal choices or out of
-                            no choices. Although this may be no different for those who’ve already been used to
-                            remote work, like some freelancers. However, for those newcomers to this, like myself,
-                            it could be a complete disaster. Not just the change of workplace, it’s the change of
-                            everything: work schedules, collaborative methods, work environment, and more importantly,
-                            the state of mind. Staying at home naturally makes me feel like doing nothing but
-                            binge-watching Netflix.
-                        </p>
-
-                    </div>
-
-                </a>
+                @endforeach
 
             </div>
 
@@ -178,29 +68,21 @@
 
             <div class="blog-post">
 
-                <h1 class="title">{{ $title }}</h1>
+                @foreach($blog_articles as $article)
 
-                <img src="{{ asset($picture) }}" alt="{{ $alt }}" class="shadow-sm">
+                    @if($article["slug"] == $slug)
 
-                <p>
-                    The Pomodoro Technique is a simple and effective time management method, which was proposed
-                    by an Italian, Francesco Cirillo, in 1992. The reason why it is named "Pomodoro" is simply
-                    because the timer he used during university was shaped like a tomato.
-                </p>
+                        <h1 class="title">{{ $article["title"] }}</h1>
 
-                <p>
-                    The principle of the Pomodoro Technique is to divide time into several "Pomodoro timers", with
-                    each focused on for 25 minutes, followed by a 5-minute break. Completing 4 Pomodoro timers
-                    allows you to take a longer break.
-                </p>
+                        <p class="date">{{ $article["date"] }}</p>
 
-                <p>
-                    The core of the Pomodoro Technique is to create a sense of ritual that guides you to quickly
-                    enter a state of concentration and maintain focus during this time until the Pomodoro timer ends.
-                    Due to its short duration, it is easy for you to stick with it, and the sense of achievement from
-                    completing a Pomodoro session will give you positive feedback, which in turn motivates you to
-                    persevere and achieve more difficult goals.
-                </p>
+                        <img src="{{ asset($article["image"]) }}" alt="{{ $article["title"] }}" class="shadow-sm">
+
+                        <p>{{ $article["description"] }}</p>
+
+                    @endif
+
+                @endforeach
 
                 <p>
                     Nulla sodales pulvinar augue, quis elementum mauris lobortis a. Mauris nec nibh eget purus
@@ -214,9 +96,60 @@
                     sollicitudin.
                 </p>
 
-                <a href="{{ route("blog") }}">
-                    Back to Blog
-                </a>
+                <p>
+                    Curabitur malesuada lacinia tellus, commodo rutrum enim auctor in. Phasellus pharetra auctor
+                    elementum. Integer vel mauris sollicitudin, luctus tortor id, rhoncus ipsum. Integer vitae
+                    pulvinar ipsum. Aenean aliquam dolor non purus malesuada rutrum.
+                </p>
+
+                <p>
+                    Nunc tempor tellus id sem venenatis dignissim. Morbi tellus purus, tristique non mauris quis,
+                    sagittis blandit ex. Sed convallis nisi malesuada nisl elementum, vitae iaculis mauris auctor.
+                    Phasellus sodales dignissim neque, at pharetra mauris. Curabitur vitae velit molestie, vehicula
+                    libero eget, tempus nisi. Donec at sem sed magna pretium venenatis eu non turpis. Phasellus
+                    vulputate euismod neque, ut volutpat nulla varius in. Nullam ullamcorper tincidunt facilisis.
+                    Aliquam quis lacinia leo, in tempor neque. Donec porttitor justo enim, sed lobortis mauris congue
+                    ullamcorper. Duis pulvinar, dolor eget iaculis faucibus, nisi dolor accumsan felis, eget viverra
+                    nunc sem a augue.
+                </p>
+
+                <p>
+                    Duis scelerisque pellentesque mi, quis varius ex imperdiet non. Aliquam sagittis ex facilisis laoreet
+                    egestas. Phasellus a purus mollis, mollis libero volutpat, maximus ante. Vivamus aliquet quam sit
+                    amet euismod mattis. Praesent vitae diam nunc. Duis porttitor, mi vel vehicula tincidunt, ex ipsum
+                    laoreet dolor, nec mollis odio nisl varius felis. Interdum et malesuada fames ac ante ipsum primis
+                    in faucibus. Donec fringilla malesuada eros vel sodales.
+                </p>
+
+                <div class="pagination">
+
+                    @foreach($blog_articles as $article)
+
+                        @if($article["slug"] == $slug)
+
+                            @if($article["previous"])
+                                <a href="{{ route("blog", $article["previous"]) }}">
+                                    <i class="fa-solid fa-caret-left"></i>
+                                    Previous
+                                </a>
+                            @else
+                                <span></span>
+                            @endif
+
+                            @if($article["next"])
+                                <a href="{{ route("blog", $article["next"]) }}">
+                                    Next
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </a>
+                            @else
+                                <span></span>
+                            @endif
+
+                        @endif
+
+                    @endforeach
+
+                </div>
 
             </div>
 
