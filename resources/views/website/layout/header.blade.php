@@ -35,6 +35,44 @@
             </li>
         </ul>
 
+        <button class="hamburger-menu" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#mobile-menu" aria-controls="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
     </nav>
 
 </header>
+
+<div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="mobile-menu"
+     aria-labelledby="mobile-menu-label">
+
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+            <i class="fa-solid fa-times"></i>
+        </button>
+    </div>
+
+    <hr>
+
+    <div class="offcanvas-body">
+        <ul>
+            <li>
+                <a href="{{ route("features") }}">Features</a>
+            </li>
+            <li>
+                <a href="{{ route("help-center.help-center") }}">Help Center</a>
+            </li>
+            <li>
+                <a href="{{ route("blog") }}">Blog</a>
+            </li>
+            <li>
+                <a href="{{ route("auth.sign-in") }}" class="link">
+                    Get Started
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>

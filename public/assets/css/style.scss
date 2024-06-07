@@ -149,15 +149,80 @@ header  {
                     &:hover {
                         color: $color2;
                     }
-                    i {
-                        margin-right: .25rem;
-                        font-size: 1rem;
+                }
+                .link {
+                    background-color: $color1;
+                    border-radius: .25rem;
+                    padding: .4rem .8rem;
+                    font-family: $font400;
+                    font-size: 1.25rem;
+                    color: $color5;
+                    transition: .25s ease-out;
+                    &:hover {
+                        background-color: $color2;
+                        color: $color5;
+                    }
+                }
+            }
+        }
+        .hamburger-menu {
+            display: none;
+            background-color: $color5;
+            border: 2px solid $color6;
+            border-radius: .25rem;
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+.offcanvas {
+    background-color: $color5;
+    .offcanvas-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        height: 76px;
+        .offcanvas-title {
+            margin: 0;
+        }
+        button {
+            background-color: $color5;
+            border: 2px solid $color6;
+            border-radius: .25rem;
+            width: 36px;
+            height: 36px;
+        }
+    }
+    hr {
+        margin: 0;
+    }
+    .offcanvas-body {
+        padding: 0;
+        ul {
+            width: 100%;
+            li {
+                width: 100%;
+                display: flex;
+                a {
+                    border-bottom: 1px solid $color8;
+                    padding: 1rem 2rem;
+                    min-width: 100%;
+                    font-family: $font400;
+                    font-size: 1rem;
+                    color: $color6;
+                    transition: .25s ease-in;
+                    &:hover {
+                        color: $color2;
                     }
                 }
                 .link {
                     background-color: $color1;
                     border-radius: .25rem;
                     padding: .4rem .8rem;
+                    margin: 1rem 0 0 2rem;
+                    min-width: unset;
                     font-family: $font400;
                     font-size: 1.25rem;
                     color: $color5;
@@ -1009,6 +1074,33 @@ main {
 }
 
 /* Responsive */
+@media only screen and (max-width: 767px) {
+    /* Layout */
+    header  {
+        nav {
+            .menu {
+                display: none;
+            }
+            .hamburger-menu {
+                display: block;
+            }
+        }
+    }
+
+    footer {
+        padding: 2rem 0;
+        .footer-container {
+            .menu {
+                margin-top: 2rem;
+                width: 100%;
+            }
+        }
+        hr {
+            margin: 1rem 0 2rem 0;
+        }
+    }
+}
+
 @media only screen and (max-width: 575px) {
     /* Bootstrap */
     .container {
