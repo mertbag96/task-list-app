@@ -8,7 +8,7 @@
 
         @if(is_null($slug))
 
-            <div class="help-search">
+            <div class="help-search container">
 
                 <label for="search" class="title">How can we <span>help</span> you?</label>
 
@@ -20,37 +20,41 @@
 
                 <h1 class="title">Articles that we can <span>help</span> you with</h1>
 
-                @foreach($help_center_articles as $article)
+                <div class="topics">
 
-                    @if($article["slug"] == "blog-articles")
+                    @foreach($help_center_articles as $article)
 
-                        <a href="{{ route("blog") }}" class="help-topic shadow-sm">
+                        @if($article["slug"] == "blog-articles")
 
-                            <img src="{{ asset($article["icon"]) }}"
-                                 alt="{{ Str::of($article["slug"])->replace('-', ' ')->title() }}">
+                            <a href="{{ route("blog") }}" class="help-topic shadow-sm">
 
-                            <p class="topic">
-                                {{ Str::of($article["slug"])->replace('-', ' ')->title() }}
-                            </p>
+                                <img src="{{ asset($article["icon"]) }}"
+                                     alt="{{ Str::of($article["slug"])->replace('-', ' ')->title() }}">
 
-                        </a>
+                                <p class="topic">
+                                    {{ Str::of($article["slug"])->replace('-', ' ')->title() }}
+                                </p>
 
-                    @else
+                            </a>
 
-                        <a href="{{ route("help-center", $article["slug"]) }}" class="help-topic shadow-sm">
+                        @else
 
-                            <img src="{{ asset($article["icon"]) }}"
-                                 alt="{{ Str::of($article["slug"])->replace('-', ' ')->title() }}">
+                            <a href="{{ route("help-center", $article["slug"]) }}" class="help-topic shadow-sm">
 
-                            <p class="topic @if($article["slug"] == "faq") text-uppercase @endif">
-                                {{ Str::of($article["slug"])->replace('-', ' ')->title() }}
-                            </p>
+                                <img src="{{ asset($article["icon"]) }}"
+                                     alt="{{ Str::of($article["slug"])->replace('-', ' ')->title() }}">
 
-                        </a>
+                                <p class="topic @if($article["slug"] == "faq") text-uppercase @endif">
+                                    {{ Str::of($article["slug"])->replace('-', ' ')->title() }}
+                                </p>
 
-                    @endif
+                            </a>
 
-                @endforeach
+                        @endif
+
+                    @endforeach
+
+                </div>
 
             </div>
 
@@ -306,10 +310,6 @@
                     @endif
 
                 @endforeach
-
-                <a href="{{ route("help-center") }}" class="link">
-                    Back to Help Center
-                </a>
 
             </div>
 

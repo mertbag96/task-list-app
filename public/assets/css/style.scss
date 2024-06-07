@@ -479,7 +479,7 @@ main {
 /* Help Center */
 .help-center {
     .help-search {
-        height: 280px;
+        padding: 4rem 0 $i;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -508,14 +508,12 @@ main {
         }
     }
     .help-topics {
-        height: calc(100dvh - 356px);
-        padding: 4rem 0 $i;
+        height: calc(100dvh - 366px);
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
         .title {
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
             width: 100%;
             font-family: $font400;
             font-size: 2rem;
@@ -525,23 +523,32 @@ main {
                 color: $color1;
             }
         }
-        .help-topic {
-            border: 2px solid $color7;
-            border-radius: .25rem;
-            padding: 1rem 2rem;
-            transition: .25s ease;
-            img {
-                width: 164px;
-            }
-            .topic {
-                margin: 0;
-                font-family: $font400;
-                font-size: 1.25rem;
-                color: $color6;
-                text-align: center;
-            }
-            &:hover {
-                scale: 1.025;
+        .topics {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            .help-topic {
+                border: 2px solid $color7;
+                border-radius: .25rem;
+                padding: 1rem 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: .25s ease;
+                img {
+                    width: 164px;
+                }
+                .topic {
+                    margin: 0;
+                    font-family: $font400;
+                    font-size: 1.25rem;
+                    color: $color6;
+                    text-align: center;
+                }
+                &:hover {
+                    scale: 1.025;
+                }
             }
         }
     }
@@ -645,14 +652,6 @@ main {
             }
             &:hover {
                 scale: 1.025;
-            }
-        }
-        .link {
-            margin-top: 4rem;
-            width: 100%;
-            color: $color1;
-            &:hover {
-                text-decoration: underline;
             }
         }
     }
@@ -1123,6 +1122,30 @@ main {
         }
     }
 
+    /* Help Center */
+    .help-center {
+        .help-search {
+            padding: 3rem 0 $i;
+            .title {
+                margin-bottom: 1.25rem;
+                font-size: 2.5rem;
+            }
+        }
+        .help-topics {
+            height: calc(100dvh - 318px);
+            .topics {
+                .help-topic {
+                    img {
+                        width: 120px;
+                    }
+                }
+            }
+        }
+        .help-center-detail {
+            padding: 4rem 12rem $i;
+        }
+    }
+
     /* About */
     .about {
         .about-banner-container {
@@ -1210,6 +1233,43 @@ main {
         }
     }
 
+    /* Help Center */
+    .help-center {
+        .help-search {
+            padding: 2.5rem 0 $i;
+            .title {
+                margin-bottom: 1rem;
+                font-size: 2rem;
+            }
+            .search {
+                padding: .75rem 1.25rem;
+                width: 480px;
+            }
+        }
+        .help-topics {
+            height: calc(100dvh - 278px);
+            .title {
+                margin-bottom: 1.5rem;
+                font-size: 1.5rem;
+            }
+            .topics {
+                .help-topic {
+                    img {
+                        width: 96px;
+                    }
+                }
+            }
+        }
+        .help-center-detail {
+            padding: 4rem 8rem $i;
+            .article {
+                img {
+                    width: 112px;
+                }
+            }
+        }
+    }
+
     /* Legal */
     .legal {
         width: 75%;
@@ -1276,6 +1336,40 @@ main {
                 margin-bottom: 6rem;
                 width: 92%;
             }
+        }
+    }
+
+    /* Help Center */
+    .help-center {
+        .help-search {
+            padding: 6rem 0 4rem 0 $i;
+            .title {
+                margin-bottom: 2rem;
+                font-size: 2.5rem;
+            }
+            .search {
+                padding: 1rem 1.5rem;
+                width: 560px;
+            }
+        }
+        .help-topics {
+            height: calc(100dvh - 394px);
+            .title {
+                margin-bottom: 2.5rem;
+                font-size: 2rem;
+            }
+            .topics {
+                .help-topic {
+                    margin-bottom: 2rem;
+                    width: 42%;
+                    img {
+                        width: 120px;
+                    }
+                }
+            }
+        }
+        .help-center-detail {
+            padding: 4rem 0 $i;
         }
     }
 
@@ -1385,6 +1479,91 @@ main {
             }
             img {
                 width: 75%;
+            }
+        }
+    }
+
+    /* Help Center */
+    .help-center {
+        .help-search {
+            padding: 4rem 0 $i;
+            .title {
+                margin-bottom: 1rem;
+                font-size: 2rem;
+                text-align: center;
+            }
+            .search {
+                width: 92%;
+            }
+        }
+        .help-topics {
+            padding-bottom: 4rem;
+            height: unset;
+            .title {
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            .topics {
+                justify-content: space-between;
+                .help-topic {
+                    margin-bottom: 1rem;
+                    width: 48%;
+                    img {
+                        width: 164px;
+                    }
+                }
+            }
+        }
+        .help-contact-container {
+            .help-contact {
+                .help-contact-content {
+                    width: 100%;
+                    text-align: center;
+                    .title {
+                        font-size: 2rem;
+                    }
+                    .detail {
+                        font-size: 1.25rem;
+                    }
+                }
+                a {
+                    margin: 1.25rem auto 0 auto;
+                    width: 50%;
+                    text-align: center;
+                }
+            }
+        }
+        .help-center-detail {
+            flex-wrap: unset;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .title {
+                margin-bottom: 1.5rem;
+                font-size: 1.5rem;
+            }
+            img {
+                margin-bottom: 1.5rem;
+            }
+            .other-articles {
+                margin: 1.5rem 0 1rem 1.5rem;
+                font-size: 1.25rem;
+            }
+            .article {
+                padding: .75rem 1.5rem;
+                margin-bottom: 1.25rem;
+                width: 92%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                img {
+                    width: 96px;
+                }
+                .title {
+                    font-size: 1rem;
+                }
             }
         }
     }
@@ -1588,6 +1767,53 @@ main {
             img {
                 margin-bottom: 4rem;
                 width: 75%;
+            }
+        }
+    }
+
+    /* Help Center */
+    .help-center {
+        .help-search {
+            padding: 2.5rem 0 $i;
+            .title {
+                font-size: 1.5rem;
+            }
+            .search {
+                padding: .75rem 1.25rem;
+                font-size: 1rem;
+            }
+        }
+        .help-topics {
+            padding-bottom: 2rem;
+            .title {
+                font-size: 1.25rem;
+            }
+            .topics {
+                justify-content: center;
+                .help-topic {
+                    margin-bottom: 1rem;
+                    width: 64%;
+                    img {
+                        width: 64px;
+                    }
+                }
+            }
+        }
+        .help-contact-container {
+            .help-contact {
+                .help-contact-content {
+                    .title {
+                        font-size: 1.5rem;
+                    }
+                    .detail {
+                        font-size: 1rem;
+                    }
+                }
+                a {
+                    margin: 1rem auto 0 auto;
+                    width: 50%;
+                    font-size: 1rem;
+                }
             }
         }
     }

@@ -450,7 +450,7 @@ main {
 
 /* Help Center */
 .help-center .help-search {
-  height: 280px;
+  padding: 4rem 0 !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -479,15 +479,13 @@ main {
   letter-spacing: 0.025rem;
 }
 .help-center .help-topics {
-  height: calc(100dvh - 356px);
-  padding: 4rem 0 !important;
+  height: calc(100dvh - 366px);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .help-center .help-topics .title {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   width: 100%;
   font-family: "RobotoCondensed-Regular";
   font-size: 2rem;
@@ -497,23 +495,32 @@ main {
 .help-center .help-topics .title span {
   color: #4772fa;
 }
-.help-center .help-topics .help-topic {
+.help-center .help-topics .topics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.help-center .help-topics .topics .help-topic {
   border: 2px solid #ececec;
   border-radius: 0.25rem;
   padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   transition: 0.25s ease;
 }
-.help-center .help-topics .help-topic img {
+.help-center .help-topics .topics .help-topic img {
   width: 164px;
 }
-.help-center .help-topics .help-topic .topic {
+.help-center .help-topics .topics .help-topic .topic {
   margin: 0;
   font-family: "RobotoCondensed-Regular";
   font-size: 1.25rem;
   color: #333333;
   text-align: center;
 }
-.help-center .help-topics .help-topic:hover {
+.help-center .help-topics .topics .help-topic:hover {
   scale: 1.025;
 }
 .help-center .help-contact-container {
@@ -616,14 +623,6 @@ main {
 }
 .help-center .help-center-detail .article:hover {
   scale: 1.025;
-}
-.help-center .help-center-detail .link {
-  margin-top: 4rem;
-  width: 100%;
-  color: #4772fa;
-}
-.help-center .help-center-detail .link:hover {
-  text-decoration: underline;
 }
 
 /* Blog */
@@ -1071,6 +1070,23 @@ main {
   .features .features-content img {
     width: 560px;
   }
+  /* Help Center */
+  .help-center .help-search {
+    padding: 3rem 0 !important;
+  }
+  .help-center .help-search .title {
+    margin-bottom: 1.25rem;
+    font-size: 2.5rem;
+  }
+  .help-center .help-topics {
+    height: calc(100dvh - 318px);
+  }
+  .help-center .help-topics .topics .help-topic img {
+    width: 120px;
+  }
+  .help-center .help-center-detail {
+    padding: 4rem 12rem !important;
+  }
   /* About */
   .about .about-banner-container .about-banner .about-banner-content .description {
     margin-bottom: 2rem;
@@ -1129,6 +1145,34 @@ main {
   }
   .features .features-content img {
     width: 480px;
+  }
+  /* Help Center */
+  .help-center .help-search {
+    padding: 2.5rem 0 !important;
+  }
+  .help-center .help-search .title {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  .help-center .help-search .search {
+    padding: 0.75rem 1.25rem;
+    width: 480px;
+  }
+  .help-center .help-topics {
+    height: calc(100dvh - 278px);
+  }
+  .help-center .help-topics .title {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+  .help-center .help-topics .topics .help-topic img {
+    width: 96px;
+  }
+  .help-center .help-center-detail {
+    padding: 4rem 8rem !important;
+  }
+  .help-center .help-center-detail .article img {
+    width: 112px;
   }
   /* Legal */
   .legal {
@@ -1195,6 +1239,35 @@ main {
   .features .features-content img {
     margin-bottom: 6rem;
     width: 92%;
+  }
+  /* Help Center */
+  .help-center .help-search {
+    padding: 6rem 0 4rem 0 !important;
+  }
+  .help-center .help-search .title {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  }
+  .help-center .help-search .search {
+    padding: 1rem 1.5rem;
+    width: 560px;
+  }
+  .help-center .help-topics {
+    height: calc(100dvh - 394px);
+  }
+  .help-center .help-topics .title {
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+  }
+  .help-center .help-topics .topics .help-topic {
+    margin-bottom: 2rem;
+    width: 42%;
+  }
+  .help-center .help-topics .topics .help-topic img {
+    width: 120px;
+  }
+  .help-center .help-center-detail {
+    padding: 4rem 0 !important;
   }
   /* About */
   .about .about-banner-container .about-banner .about-banner-content .description {
@@ -1272,6 +1345,84 @@ main {
   }
   .features .features-content img {
     width: 75%;
+  }
+  /* Help Center */
+  .help-center .help-search {
+    padding: 4rem 0 !important;
+  }
+  .help-center .help-search .title {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .help-center .help-search .search {
+    width: 92%;
+  }
+  .help-center .help-topics {
+    padding-bottom: 4rem;
+    height: unset;
+  }
+  .help-center .help-topics .title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .help-center .help-topics .topics {
+    justify-content: space-between;
+  }
+  .help-center .help-topics .topics .help-topic {
+    margin-bottom: 1rem;
+    width: 48%;
+  }
+  .help-center .help-topics .topics .help-topic img {
+    width: 164px;
+  }
+  .help-center .help-contact-container .help-contact .help-contact-content {
+    width: 100%;
+    text-align: center;
+  }
+  .help-center .help-contact-container .help-contact .help-contact-content .title {
+    font-size: 2rem;
+  }
+  .help-center .help-contact-container .help-contact .help-contact-content .detail {
+    font-size: 1.25rem;
+  }
+  .help-center .help-contact-container .help-contact a {
+    margin: 1.25rem auto 0 auto;
+    width: 50%;
+    text-align: center;
+  }
+  .help-center .help-center-detail {
+    flex-wrap: unset;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .help-center .help-center-detail .title {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+  .help-center .help-center-detail img {
+    margin-bottom: 1.5rem;
+  }
+  .help-center .help-center-detail .other-articles {
+    margin: 1.5rem 0 1rem 1.5rem;
+    font-size: 1.25rem;
+  }
+  .help-center .help-center-detail .article {
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 1.25rem;
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .help-center .help-center-detail .article img {
+    width: 96px;
+  }
+  .help-center .help-center-detail .article .title {
+    font-size: 1rem;
   }
   /* About */
   .about .about-partners-container {
@@ -1419,6 +1570,44 @@ main {
   .home .home-content img {
     margin-bottom: 4rem;
     width: 75%;
+  }
+  /* Help Center */
+  .help-center .help-search {
+    padding: 2.5rem 0 !important;
+  }
+  .help-center .help-search .title {
+    font-size: 1.5rem;
+  }
+  .help-center .help-search .search {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+  }
+  .help-center .help-topics {
+    padding-bottom: 2rem;
+  }
+  .help-center .help-topics .title {
+    font-size: 1.25rem;
+  }
+  .help-center .help-topics .topics {
+    justify-content: center;
+  }
+  .help-center .help-topics .topics .help-topic {
+    margin-bottom: 1rem;
+    width: 64%;
+  }
+  .help-center .help-topics .topics .help-topic img {
+    width: 64px;
+  }
+  .help-center .help-contact-container .help-contact .help-contact-content .title {
+    font-size: 1.5rem;
+  }
+  .help-center .help-contact-container .help-contact .help-contact-content .detail {
+    font-size: 1rem;
+  }
+  .help-center .help-contact-container .help-contact a {
+    margin: 1rem auto 0 auto;
+    width: 50%;
+    font-size: 1rem;
   }
   /* About */
   .about .about-banner-container .about-banner .about-banner-content .title {
