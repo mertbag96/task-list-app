@@ -18,7 +18,7 @@
                 <a href="{{ route("features") }}">
                     Features
                 </a>
-                <a href="{{ route("help-center.help-center") }}">
+                <a href="{{ route("help-center") }}">
                     Help Center
                 </a>
                 <a href="{{ route("auth.sign-in") }}">

@@ -19,7 +19,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route("help-center.help-center") }}" class="me-5">
+                <a href="{{ route("help-center") }}" class="me-5">
                     Help Center
                 </a>
             </li>
@@ -62,7 +62,7 @@
                 <a href="{{ route("features") }}">Features</a>
             </li>
             <li>
-                <a href="{{ route("help-center.help-center") }}">Help Center</a>
+                <a href="{{ route("help-center") }}">Help Center</a>
             </li>
             <li>
                 <a href="{{ route("blog") }}">Blog</a>

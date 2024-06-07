@@ -503,7 +503,7 @@ main {
             font-family: $font400;
             font-size: 1.25rem;
             &::placeholder {
-                letter-spacing: .15rem;
+                letter-spacing: .025rem;
             }
         }
     }
@@ -541,7 +541,7 @@ main {
                 text-align: center;
             }
             &:hover {
-                scale: 1.1;
+                scale: 1.025;
             }
         }
     }
@@ -590,7 +590,7 @@ main {
         justify-content: space-between;
         align-items: start;
         .title {
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             width: 100%;
             font-family: $font400;
             font-size: 2rem;
@@ -644,7 +644,15 @@ main {
                 text-align: center;
             }
             &:hover {
-                scale: 1.1;
+                scale: 1.025;
+            }
+        }
+        .link {
+            margin-top: 4rem;
+            width: 100%;
+            color: $color1;
+            &:hover {
+                text-decoration: underline;
             }
         }
     }
