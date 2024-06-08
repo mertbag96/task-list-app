@@ -68,32 +68,6 @@ img {
   padding-left: 0 !important;
 }
 
-.alert {
-  background-color: #f5f5f5;
-  border-radius: 0.25rem;
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  display: flex;
-  align-items: center;
-}
-.alert p {
-  margin: 0 1rem;
-  font-family: "RobotoCondensed-Light";
-  font-size: 1rem;
-  color: #333333;
-}
-.alert .fa-check {
-  color: #06ce90;
-}
-.alert .fa-exclamation {
-  color: #ff3180;
-}
-.alert .fa-times {
-  color: #333333;
-  cursor: pointer;
-}
-
 /* Layout */
 header {
   background-color: #f5f5f5;
@@ -1073,6 +1047,36 @@ main {
   font-family: "RobotoCondensed-SemiBold";
   font-size: 4rem;
   color: #f5f5f5;
+}
+
+/* Alerts & Modals */
+.alert {
+  -webkit-box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+  background-color: #f5f5f5;
+  border-radius: 0;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+}
+.alert i {
+  font-size: 1.25rem;
+}
+.alert .fa-check {
+  color: #06ce90;
+}
+.alert .fa-exclamation {
+  color: #ff3180;
+}
+.alert p {
+  margin: 0 1rem;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 1.15rem;
+  color: #333333;
 }
 
 /* Responsive */

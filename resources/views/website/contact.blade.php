@@ -115,3 +115,20 @@
     </section>
 
 @endsection
+
+@section("scripts")
+
+    @if(session()->has("form_successful"))
+
+        <script>
+            $(".alert .fa-check").removeClass("d-none");
+            $(".alert p").text("{{ session("form_successful") }}");
+            $(".alert").removeClass("d-none");
+            setTimeout( function () {
+                $(".alert").addClass("animate__fadeOutRight");
+            }, 5000);
+        </script>
+
+    @endif
+
+@endsection

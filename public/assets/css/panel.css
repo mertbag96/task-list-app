@@ -205,4 +205,34 @@ header nav .menu li form .profile img {
   color: #333333;
 }
 
+/* Alerts & Modals */
+.alert {
+  -webkit-box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+  background-color: #f5f5f5;
+  border-radius: 0;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+}
+.alert i {
+  font-size: 1.25rem;
+}
+.alert .fa-check {
+  color: #06ce90;
+}
+.alert .fa-exclamation {
+  color: #ff3180;
+}
+.alert p {
+  margin: 0 1rem;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 1.15rem;
+  color: #333333;
+}
+
 /*# sourceMappingURL=panel.css.map */

@@ -231,7 +231,7 @@ class Controller extends BaseController
     }
     public function contact_us(ContactRequest $request): RedirectResponse
     {
-        return redirect()->route("contact")->with("successful", "Form was successfully submitted.");
+        return redirect()->route("contact")->with("form_successful", "Form was successfully submitted.");
     }
     public function terms(): View
     {

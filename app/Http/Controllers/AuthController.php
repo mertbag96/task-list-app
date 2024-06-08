@@ -21,17 +21,17 @@ class AuthController extends Controller
         $credentials = $request->only("email", "password");
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route("panel.dashboard")->with("signed_in", "You successfully signed in.");
+            return redirect()->route("panel.dashboard")->with("signed_in", "You successfully signed in. Welcome back!");
         }
-        return redirect()->back()->with("invalid_credentials", "Invalid credentials!");
+        return redirect()->back()->with("invalid_credentials", "The email or password you entered is incorrect. Please check your credentials and try again!");
     }
     public function sign_up(): View
     {
         return view("auth.sign-up");
     }
-    public function register(RegisterRequest $request): View
+    public function register(RegisterRequest $request): RedirectResponse
     {
-        return view("panel.dashboard")->with("success", "Your account was successfully created. Sign in now!");
+        return redirect()->route("auth.sign-in")->with("registered", "You signed up successfully. Sign in now!");
     }
     public function forget_password(): View
     {

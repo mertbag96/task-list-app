@@ -233,3 +233,33 @@ header {
         }
     }
 }
+
+/* Alerts & Modals */
+.alert {
+    -webkit-box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+    background-color: $color5;
+    border-radius: 0;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    i {
+        font-size: 1.25rem;
+    }
+    .fa-check {
+        color: $color3;
+    }
+    .fa-exclamation {
+        color: $color4;
+    }
+    p {
+        margin: 0 1rem;
+        font-family: $font400;
+        font-size: 1.15rem;
+        color: $color6;
+    }
+}

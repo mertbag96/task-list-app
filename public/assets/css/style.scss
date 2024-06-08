@@ -90,32 +90,6 @@ img {
     padding-left: 0 $i;
 }
 
-.alert {
-    background-color: $color5;
-    border-radius: .25rem;
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    display: flex;
-    align-items: center;
-    p {
-        margin: 0 1rem;
-        font-family: $font300;
-        font-size: 1rem;
-        color: $color6;
-    }
-    .fa-check {
-        color: $color3;
-    }
-    .fa-exclamation {
-        color: $color4;
-    }
-    .fa-times {
-        color: $color6;
-        cursor: pointer;
-    }
-}
-
 /* Layout */
 header  {
     background-color: $color5;
@@ -1114,6 +1088,36 @@ main {
             font-size: 4rem;
             color: $color5;
         }
+    }
+}
+
+/* Alerts & Modals */
+.alert {
+    -webkit-box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
+    background-color: $color5;
+    border-radius: 0;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    i {
+        font-size: 1.25rem;
+    }
+    .fa-check {
+        color: $color3;
+    }
+    .fa-exclamation {
+        color: $color4;
+    }
+    p {
+        margin: 0 1rem;
+        font-family: $font400;
+        font-size: 1.15rem;
+        color: $color6;
     }
 }
 

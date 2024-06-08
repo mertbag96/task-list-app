@@ -12,24 +12,15 @@
     <link rel="apple-touch-icon" sizes="152x152" href="{{ asset("assets/icons/apple-touch-icon-152x152.png") }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset("assets/icons/apple-touch-icon-180x180.png") }}">
     <link rel="stylesheet" href="{{ asset("assets/plugins/bootstrap/css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/plugins/animate.css/animate.min.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
 </head>
 <body class="container-fluid">
 
-<div class="alert alert-success shadow d-none" role="alert">
-    <i class="fa-solid fa-check"></i>
-    <p>
-        Your account was successfully created. Sign in now!
-    </p>
-    <i class="fa-solid fa-times"></i>
-</div>
-
-<div class="alert alert-danger shadow d-none" role="alert" >
-    <i class="fa-solid fa-exclamation"></i>
-    <p>
-        Your credentials are incorrect!
-    </p>
-    <i class="fa-solid fa-times"></i>
+<div class="alert animate__animated animate__fadeInRight d-none" role="alert">
+    <i class="fa-solid fa-check d-none"></i>
+    <i class="fa-solid fa-exclamation d-none"></i>
+    <p></p>
 </div>
 
 <section class="auth">
@@ -59,6 +50,8 @@
 <script src="{{ asset("assets/plugins/jQuery/jquery-3.7.1.min.js") }}"></script>
 <script src="{{ asset("assets/plugins/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
 <script src="{{ asset("assets/js/script.js") }}"></script>
+
+@yield("scripts")
 
 </body>
 </html>
