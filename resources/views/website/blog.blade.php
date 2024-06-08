@@ -16,7 +16,7 @@
 
                         <h1 class="title">Latest Post</h1>
 
-                        <a href="{{ route("blog", $article["slug"]) }}" class="latest-post">
+                        <a href="{{ route("blog", $article["slug"]) }}" class="latest-post" title="{{ $article["title"] }}">
 
                             <img src="{{ asset($article["image"]) }}" alt="{{ $article["title"] }}">
 
@@ -44,7 +44,7 @@
 
                     @if($loop->index > 0)
 
-                        <a href="{{ route("blog", $article["slug"]) }}" class="post">
+                        <a href="{{ route("blog", $article["slug"]) }}" class="post" title="{{ $article["title"] }}">
 
                             <img src="{{ asset($article["image"]) }}" alt="{{ $article["title"] }}">
 

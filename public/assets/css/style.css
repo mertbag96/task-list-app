@@ -671,6 +671,10 @@ main {
 }
 .blog .blog-latest .latest-post .article .article-detail {
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   font-family: "RobotoCondensed-Regular";
   font-size: 1.25rem;
 }
@@ -710,6 +714,10 @@ main {
 .blog .posts .post .post-detail .title {
   margin-bottom: 1rem;
   min-height: 48px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   font-family: "RobotoCondensed-Regular";
   font-size: 1.25rem;
   color: #333333;
@@ -760,12 +768,6 @@ main {
 }
 .blog .blog-post .pagination a:hover {
   color: #ffb000;
-}
-.blog .blog-post .first {
-  justify-content: start;
-}
-.blog .blog-post .last {
-  justify-content: end;
 }
 
 /* About */
@@ -1087,6 +1089,19 @@ main {
   .help-center .help-center-detail {
     padding: 4rem 12rem !important;
   }
+  /* Blog */
+  .blog .blog-latest .latest-post img {
+    height: 280px;
+  }
+  .blog .blog-latest .latest-post .article {
+    padding: 2rem;
+  }
+  .blog .blog-latest .latest-post .article .article-detail {
+    -webkit-line-clamp: 5;
+  }
+  .blog .blog-post {
+    width: 60%;
+  }
   /* About */
   .about .about-banner-container .about-banner .about-banner-content .description {
     margin-bottom: 2rem;
@@ -1173,6 +1188,53 @@ main {
   }
   .help-center .help-center-detail .article img {
     width: 112px;
+  }
+  /* Blog */
+  .blog {
+    padding: 2.5rem 0 1rem 0 !important;
+  }
+  .blog .blog-latest {
+    margin-bottom: 2.5rem;
+  }
+  .blog .blog-latest .title {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+  .blog .blog-latest .latest-post img {
+    width: 50%;
+    height: unset;
+    object-fit: contain;
+  }
+  .blog .blog-latest .latest-post .article {
+    padding: 1.25rem;
+  }
+  .blog .blog-latest .latest-post .article .article-title {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+  }
+  .blog .blog-latest .latest-post .article .article-detail {
+    -webkit-line-clamp: 5;
+    font-size: 1rem;
+  }
+  .blog .posts .title {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+  .blog .posts .post {
+    margin-bottom: 1.5rem;
+    width: 48%;
+  }
+  .blog .blog-post {
+    width: 75%;
+  }
+  .blog .blog-post .title {
+    font-size: 1.5rem;
+  }
+  .blog .blog-post img {
+    margin: 1.5rem 0;
+  }
+  .blog .blog-post .pagination {
+    margin: 1.5rem 0;
   }
   /* Legal */
   .legal {
@@ -1424,6 +1486,51 @@ main {
   .help-center .help-center-detail .article .title {
     font-size: 1rem;
   }
+  /* Blog */
+  .blog {
+    padding: 2rem 0 1rem 0 !important;
+  }
+  .blog .blog-latest {
+    margin-bottom: 2rem;
+  }
+  .blog .blog-latest .latest-post {
+    flex-direction: column;
+  }
+  .blog .blog-latest .latest-post img {
+    border-radius: 0.25rem 0.25rem 0 0;
+    width: 100%;
+  }
+  .blog .blog-latest .latest-post .article {
+    padding: 1.25rem;
+  }
+  .blog .blog-latest .latest-post .article .article-title {
+    margin-bottom: 1rem;
+  }
+  .blog .blog-latest .latest-post .article .article-detail {
+    -webkit-line-clamp: 4;
+    font-size: 1rem;
+  }
+  .blog .posts .title {
+    margin-bottom: 1rem;
+  }
+  .blog .posts .post {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  .blog .posts .post img {
+    object-fit: contain;
+    width: 100%;
+    height: unset;
+  }
+  .blog .posts .post .post-detail {
+    padding: 1.25rem;
+  }
+  .blog .posts .post .post-detail .title {
+    margin-bottom: 1rem;
+  }
+  .blog .blog-post {
+    width: 92%;
+  }
   /* About */
   .about .about-partners-container {
     padding: 2rem 0 0 0;
@@ -1504,6 +1611,19 @@ main {
   }
   .features .features-content img {
     margin-bottom: 4rem;
+  }
+  /* Blog */
+  .blog .blog-post {
+    width: 96%;
+  }
+  .blog .blog-post .date {
+    font-size: 1rem;
+  }
+  .blog .blog-post img {
+    margin: 1.25rem 0;
+  }
+  .blog .blog-post .pagination {
+    margin: 1.25rem 0;
   }
   /* About */
   .about .about-banner-container .about-banner .about-banner-content .title {
@@ -1608,6 +1728,13 @@ main {
     margin: 1rem auto 0 auto;
     width: 50%;
     font-size: 1rem;
+  }
+  /* Blog */
+  .blog .blog-post {
+    width: 98%;
+  }
+  .blog .blog-post .title {
+    font-size: 1.25rem;
   }
   /* About */
   .about .about-banner-container .about-banner .about-banner-content .title {
