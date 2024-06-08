@@ -16,7 +16,11 @@
                 Create tasks, assign tasks to users, organize users with teams.
             </p>
 
-            <a href="{{ route("auth.sign-in") }}" class="link">Get started</a>
+            @unless(auth()->check())
+                <a href="{{ route("auth.sign-in") }}" class="link">Get started</a>
+            @else
+                <a href="{{ route("panel.dashboard") }}" class="link">Visit Panel</a>
+            @endunless
 
         </div>
 

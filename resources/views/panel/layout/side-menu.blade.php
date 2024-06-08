@@ -3,8 +3,10 @@
     <ul class="side-menu">
 
         <li class="side-menu-top">
-            <img src="{{ asset("assets/images/avatars/male/1.png") }}" alt="Mert Bağ" class="side-pp shadow-sm">
-            <p>Mert Bağ</p>
+            <img src="{{ asset("assets/images/avatars/male/1.png") }}" alt="Avatar" class="side-pp shadow-sm">
+            <p>
+                {{ auth()->user()["first_name"] . " " . auth()->user()["last_name"] }}
+            </p>
         </li>
 
         <li class="side-menu-item">

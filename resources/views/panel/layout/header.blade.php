@@ -19,40 +19,23 @@
 
         </div>
 
-        <div class="menu">
+        <ul class="menu">
 
-            <nav aria-label="breadcrumb">
+            <li>
 
-                <ol class="breadcrumb">
+                <form action="{{ route("auth.log-out") }}" method="POST">
 
-                    <li class="breadcrumb-item">
-                        <a href="{{ route("panel.dashboard") }}">
-                            Panel
-                        </a>
-                    </li>
+                    @csrf
 
-                    <li class="breadcrumb-item active" aria-current="page">
-                        Dashboard
-                    </li>
+                    <button type="submit" class="profile">
+                        <img src="{{ asset("assets/images/avatars/male/1.png") }}" alt="Avatar" class="shadow-sm">
+                    </button>
 
-                </ol>
+                </form>
 
-            </nav>
+            </li>
 
-            <ul>
-
-                <li>
-
-                    <a href="#" class="profile">
-                        <img src="{{ asset("assets/images/avatars/male/1.png") }}" alt="Mert Bağ"
-                             class="profile shadow-sm">
-                    </a>
-
-                </li>
-
-            </ul>
-
-        </div>
+        </ul>
 
     </nav>
 

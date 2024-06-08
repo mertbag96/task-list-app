@@ -21,12 +21,15 @@ use Illuminate\Support\Facades\Route;
 
 /* Authentication */
 Route::prefix('auth')->name('auth.')->group( function () {
-    Route::get('/sign-in', [AuthController::class, 'sign_in'])->name('sign-in');
-    Route::post('/log-in', [AuthController::class, 'log_in'])->name('log-in');
-    Route::get('/sign-up', [AuthController::class, 'sign_up'])->name('sign-up');
-    Route::post('/register', [AuthController::class, 'register'])->name('register');
-    Route::get('/forget-password', [AuthController::class, 'forget_password'])->name('forget-password');
-    Route::post('/reset-password', [AuthController::class, 'reset_password'])->name('reset-password');
+    Route::middleware('guest')->group( function () {
+        Route::get('/sign-in', [AuthController::class, 'sign_in'])->name('sign-in');
+        Route::post('/log-in', [AuthController::class, 'log_in'])->name('log-in');
+        Route::get('/sign-up', [AuthController::class, 'sign_up'])->name('sign-up');
+        Route::post('/register', [AuthController::class, 'register'])->name('register');
+        Route::get('/forget-password', [AuthController::class, 'forget_password'])->name('forget-password');
+        Route::post('/reset-password', [AuthController::class, 'reset_password'])->name('reset-password');
+    });
+    Route::post('/log-out', [AuthController::class, 'log_out'])->name('log-out');
 });
 
 /* Website */
@@ -42,7 +45,7 @@ Route::get('/privacy', [Controller::class, 'privacy'])->name('privacy');
 Route::get('/security', [Controller::class, 'security'])->name('security');
 
 /* Panel */
-Route::prefix('panel')->name('panel.')->group( function () {
+Route::middleware("auth")->prefix('panel')->name('panel.')->group( function () {
     /* Dashboard */
     Route::get('/', function () {
         return redirect()->route('panel.dashboard');

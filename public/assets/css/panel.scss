@@ -119,41 +119,14 @@ header {
             padding: 0 4rem;
             width: calc(100% - 240px);
             display: flex;
-            justify-content: space-between;
+            justify-content: end;
             align-items: center;
-            nav {
-                margin: 0;
-                padding: 0;
-                .breadcrumb {
-                    margin: 0;
-                    padding: 0;
-                    display: flex;
-                    align-items: center;
-                    .breadcrumb-item {
-                        font-family: $font300;
-                        font-size: 1rem;
-                        a {
-                            color: $color1;
-                            &:hover {
-                                text-decoration: underline;
-                            }
-                        }
-                        .active {
-                            color: $color6;
-                        }
-                    }
-                }
-            }
-            ul {
-                display: flex;
-                align-items: center;
-                li {
-                    a {
-                        margin-right: 2rem;
-                        color: $color6;
-                    }
+            li {
+                form {
                     .profile {
-                        margin-right: 0;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
                         display: flex;
                         align-items: center;
                         img {
@@ -247,7 +220,16 @@ header {
 
 .panel-content {
     background-color: $color7;
-    padding: 2rem 4rem;
+    padding: 2rem;
     width: calc(100% - 240px);
     min-height: calc(100dvh - 87px);
+    .dashboard {
+        background: url("../images/panel/dashboard.png") center/cover no-repeat;
+        height: 100%;
+        .title {
+            font-family: $font300;
+            font-size: 4rem;
+            color: $color6;
+        }
+    }
 }

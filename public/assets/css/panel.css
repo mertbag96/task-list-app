@@ -99,46 +99,17 @@ header nav .menu {
   padding: 0 4rem;
   width: calc(100% - 240px);
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
 }
-header nav .menu nav {
-  margin: 0;
-  padding: 0;
-}
-header nav .menu nav .breadcrumb {
-  margin: 0;
-  padding: 0;
+header nav .menu li form .profile {
+  background-color: transparent;
+  border: none;
+  outline: none;
   display: flex;
   align-items: center;
 }
-header nav .menu nav .breadcrumb .breadcrumb-item {
-  font-family: "RobotoCondensed-Light";
-  font-size: 1rem;
-}
-header nav .menu nav .breadcrumb .breadcrumb-item a {
-  color: #4772fa;
-}
-header nav .menu nav .breadcrumb .breadcrumb-item a:hover {
-  text-decoration: underline;
-}
-header nav .menu nav .breadcrumb .breadcrumb-item .active {
-  color: #333333;
-}
-header nav .menu ul {
-  display: flex;
-  align-items: center;
-}
-header nav .menu ul li a {
-  margin-right: 2rem;
-  color: #333333;
-}
-header nav .menu ul li .profile {
-  margin-right: 0;
-  display: flex;
-  align-items: center;
-}
-header nav .menu ul li .profile img {
+header nav .menu li form .profile img {
   border: 1px solid #dadada;
   border-radius: 50%;
   width: 48px;
@@ -220,9 +191,18 @@ header nav .menu ul li .profile img {
 
 .panel-content {
   background-color: #ececec;
-  padding: 2rem 4rem;
+  padding: 2rem;
   width: calc(100% - 240px);
   min-height: calc(100dvh - 87px);
+}
+.panel-content .dashboard {
+  background: url("../images/panel/dashboard.png") center/cover no-repeat;
+  height: 100%;
+}
+.panel-content .dashboard .title {
+  font-family: "RobotoCondensed-Light";
+  font-size: 4rem;
+  color: #333333;
 }
 
 /*# sourceMappingURL=panel.css.map */

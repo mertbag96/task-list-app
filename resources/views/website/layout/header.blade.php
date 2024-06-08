@@ -28,11 +28,20 @@
                     Blog
                 </a>
             </li>
-            <li>
-                <a href="{{ route("auth.sign-in") }}" class="link">
-                    Get Started
-                </a>
-            </li>
+            @unless(auth()->check())
+                <li>
+                    <a href="{{ route("auth.sign-in") }}" class="link">
+                        Get Started
+                    </a>
+                </li>
+            @else
+                <li>
+                    <a href="{{ route("panel.dashboard") }}" class="link">
+                        Visit Panel
+                    </a>
+                </li>
+            @endunless
+
         </ul>
 
         <button class="hamburger-menu" type="button" data-bs-toggle="offcanvas"
@@ -48,31 +57,49 @@
      aria-labelledby="mobile-menu-label">
 
     <div class="offcanvas-header">
+
         <h5 class="offcanvas-title">Menu</h5>
+
         <button type="button" data-bs-dismiss="offcanvas" aria-label="Close">
             <i class="fa-solid fa-times"></i>
         </button>
+
     </div>
 
     <hr>
 
     <div class="offcanvas-body">
+
         <ul>
+
             <li>
                 <a href="{{ route("features") }}">Features</a>
             </li>
+
             <li>
                 <a href="{{ route("help-center") }}">Help Center</a>
             </li>
+
             <li>
                 <a href="{{ route("blog") }}">Blog</a>
             </li>
-            <li>
-                <a href="{{ route("auth.sign-in") }}" class="link">
-                    Get Started
-                </a>
-            </li>
+
+            @unless(auth()->check())
+                <li>
+                    <a href="{{ route("auth.sign-in") }}" class="link">
+                        Get Started
+                    </a>
+                </li>
+            @else
+                <li>
+                    <a href="{{ route("panel.dashboard") }}" class="link">
+                        Visit Panel
+                    </a>
+                </li>
+            @endunless
+
         </ul>
+
     </div>
 
 </div>

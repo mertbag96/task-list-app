@@ -21,9 +21,15 @@
                 <a href="{{ route("help-center") }}">
                     Help Center
                 </a>
-                <a href="{{ route("auth.sign-in") }}">
-                    Get Started
-                </a>
+                @unless(auth()->check())
+                    <a href="{{ route("auth.sign-in") }}">
+                        Get Started
+                    </a>
+                @else
+                    <a href="{{ route("panel.dashboard") }}">
+                        Visit Panel
+                    </a>
+                @endunless
             </li>
             <li>
                 <span>Corporate</span>

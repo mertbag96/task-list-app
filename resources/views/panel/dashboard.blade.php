@@ -4,6 +4,12 @@
 
 @section("content")
 
-    Dashboard
+    <section class="dashboard">
+
+        <h1 class="title">
+            Dashboard coming soon...
+        </h1>
+
+    </section>
 
 @endsection
