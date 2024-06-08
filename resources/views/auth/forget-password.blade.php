@@ -10,7 +10,11 @@
 
         <div class="form-item mb-4">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
+            <input type="email" name="email" id="email"
+                   maxlength="48" value="{{ old("email") }}" required>
+            @error("email")
+            <p class="form-error">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="form-item mb-4">

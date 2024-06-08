@@ -357,6 +357,12 @@ main {
                             border-color: $color6;
                         }
                     }
+                    .form-error {
+                        margin: .5rem 0 0 0;
+                        font-family: $font400;
+                        font-size: .85rem;
+                        color: $color4;
+                    }
                     a {
                         width: 100%;
                         color: $color1;

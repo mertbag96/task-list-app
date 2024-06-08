@@ -10,27 +10,44 @@
 
         <div class="form-item form-item-double mb-4">
             <label for="first-name">First name</label>
-            <input type="text" name="first_name" id="first-name" required>
+            <input type="text" name="first_name" id="first-name"
+                   maxlength="24" value="{{ old("first_name") }}" required>
+            @error("first_name")
+            <p class="form-error">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="form-item form-item-double mb-4">
             <label for="last-name">Last name</label>
-            <input type="text" name="last_name" id="last-name" required>
+            <input type="text" name="last_name" id="last-name"
+                   maxlength="24" value="{{ old("last_name") }}" required>
+            @error("last_name")
+            <p class="form-error">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="form-item mb-4">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" required>
+            <input type="email" name="email" id="email"
+                   maxlength="48" value="{{ old("email") }}" required>
+            @error("email")
+            <p class="form-error">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="form-item form-item-double mb-4">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
+            <input type="password" name="password" id="password"
+                   minlength="8" maxlength="24" required>
+            @error("password")
+            <p class="form-error">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="form-item form-item-double mb-4">
-            <label for="password-confirm">Confirm Password</label>
-            <input type="password" name="password_confirm" id="password-confirm" required>
+            <label for="password-confirmation">Confirm Password</label>
+            <input type="password" name="password_confirmation" id="password-confirmation"
+                   minlength="8" maxlength="24" required>
         </div>
 
         <div class="form-item mb-3">

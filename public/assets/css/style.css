@@ -338,6 +338,12 @@ main {
 .auth .auth-bg .auth-content form .form-item input:focus {
   border-color: #333333;
 }
+.auth .auth-bg .auth-content form .form-item .form-error {
+  margin: 0.5rem 0 0 0;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 0.85rem;
+  color: #ff3180;
+}
 .auth .auth-bg .auth-content form .form-item a {
   width: 100%;
   color: #4772fa;
