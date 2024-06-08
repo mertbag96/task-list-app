@@ -118,6 +118,7 @@ img {
 
 /* Layout */
 header  {
+    background-color: $color5;
     padding: 1rem 0;
     nav {
         display: flex;
@@ -1012,6 +1013,12 @@ main {
                         font-size: 1rem;
                         color: $color6;
                         resize: none;
+                    }
+                    .form-error {
+                        margin: .5rem 0 0 0;
+                        font-family: $font400;
+                        font-size: .85rem;
+                        color: $color4;
                     }
                     button {
                         background-color: $color1;

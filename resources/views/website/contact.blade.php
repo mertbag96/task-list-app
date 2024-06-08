@@ -49,27 +49,47 @@
 
                     <div class="form-element">
                         <label for="first-name">First name</label>
-                        <input type="text" name="first_name" id="first-name" required>
+                        <input type="text" name="first_name" id="first-name"
+                               maxlength="24" value="{{ old("first_name") }}" required>
+                        @error("first_name")
+                        <p class="form-error">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="form-element">
                         <label for="last-name">Last name</label>
-                        <input type="text" name="last_name" id="last-name" required>
+                        <input type="text" name="last_name" id="last-name"
+                               maxlength="24" value="{{ old("last_name") }}" required>
+                        @error("last_name")
+                        <p class="form-error">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="form-element">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email" required>
+                        <input type="email" name="email" id="email"
+                               maxlength="48" value="{{ old("email") }}" required>
+                        @error("email")
+                        <p class="form-error">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="form-element">
                         <label for="phone">Phone</label>
-                        <input type="text" name="phone" id="phone" required>
+                        <input type="text" name="phone" id="phone"
+                               maxlength="15" value="{{ old("phone") }}" required>
+                        @error("phone")
+                        <p class="form-error">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="form-element w-100">
                         <label for="message">Message</label>
-                        <textarea name="message" id="message" rows="4"></textarea>
+                        <textarea name="message" id="message" rows="4"
+                                  maxlength="500" required>{{ old("message") }}</textarea>
+                        @error("message")
+                        <p class="form-error">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="form-element w-100">
