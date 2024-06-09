@@ -47,16 +47,20 @@ Route::get('/security', [Controller::class, 'security'])->name('security');
 
 /* Panel */
 Route::middleware('auth')->prefix('panel')->name('panel.')->group( function () {
-    /* Dashboard */
+    /* Index */
     Route::get('/', function () {
         return redirect()->route('panel.dashboard');
     });
     /* Account */
     Route::prefix('account')->name('account.')->group( function () {
         Route::get('/profile', [AccountController::class, 'profile'])->name('profile');
+        Route::put('/update-profile', [AccountController::class, 'update_profile'])->name('update-profile');
+        Route::put('/change-password', [AccountController::class, 'change_password'])->name('change-password');
+        Route::put('/update-avatar', [AccountController::class, 'update_avatar'])->name('update-avatar');
         Route::get('/messages', [AccountController::class, 'messages'])->name('messages');
         Route::get('/notifications', [AccountController::class, 'notifications'])->name('notifications');
     });
+    /* Dashboard */
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     /* Tasks */
     Route::prefix('tasks')->name('tasks.')->group( function () {

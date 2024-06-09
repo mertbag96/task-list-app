@@ -131,14 +131,14 @@ header {
         }
         .menu {
             border-bottom: 1px solid $color8;
-            padding: 0 4rem;
+            padding: 0 2rem;
             width: calc(100% - 240px);
             display: flex;
             justify-content: end;
             align-items: center;
             li {
                 .profile {
-                    background-color: transparent;
+                    background-color: white;
                     border: 2px solid $color8;
                     border-radius: .25rem;
                     outline: none;
@@ -176,7 +176,7 @@ header {
                     }
                 }
                 .profile-menu {
-                    background-color: $color5;
+                    background-color: white;
                     border: 2px solid $color8;
                     border-radius: .25rem;
                     padding: 0;
@@ -192,7 +192,7 @@ header {
                                 margin-right: .5rem;
                             }
                             &:hover {
-                                background-color: $color7;
+                                background-color: $color5;
                             }
                         }
                     }
@@ -233,7 +233,13 @@ header {
                 color: $color6;
                 text-align: center;
             }
-
+            .team {
+                margin-top: .25rem;
+                font-family: $font300;
+                font-size: .85rem;
+                color: $color1;
+                text-align: center;
+            }
         }
         .side-menu-item {
             width: 100%;
@@ -305,15 +311,213 @@ footer {
         background-color: $color7;
         padding: 2rem;
         overflow-y: auto;
-
-        .dashboard {
-            background: url("../images/panel/dashboard.png") center/cover no-repeat;
-            .title {
-                font-family: $font300;
-                font-size: 4rem;
+        .card {
+            -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+            -o-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+            background-color: $color5;
+            border: 1px solid $color7;
+            border-radius: .25rem;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            .card-title {
+                margin: 0;
+                font-family: $font400;
+                font-size: 2rem;
+                color: $color6;
+            }
+            .card-sub-title {
+                margin: 0;
+                font-family: $font400;
+                font-size: 1.5rem;
                 color: $color6;
             }
         }
+    }
+}
+
+/* Dashboard */
+.dashboard {
+    background: url("../images/panel/dashboard.png") center/cover no-repeat;
+    .title {
+        font-family: $font300;
+        font-size: 4rem;
+        color: $color6;
+    }
+}
+
+/* Profile */
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    .card-profile {
+        padding: 2rem;
+        width: 48%;
+        .profile-avatar {
+            border: 1px solid $color8;
+            border-radius: 50%;
+            margin-right: 1rem;
+            width: 50px;
+            height: 50px;
+        }
+        .form-profile {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: start;
+            .form-element-gender {
+                margin-bottom: 2rem;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: start;
+                .gender {
+                    background-color: white;
+                    border: 2px solid $color8;
+                    border-radius: 1rem;
+                    outline: none;
+                    padding: .75rem 0 .5rem 0;
+                    width: 32%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        border-radius: 50%;
+                        width: 72px;
+                        height: 72px;
+                    }
+                    span {
+                        margin-top: .5rem;
+                        font-size: 1.25rem;
+                        color: $color6;
+                    }
+                }
+                .active {
+                    border-color: $color6;
+                }
+                .form-error {
+                    margin: 1rem 0 0 0;
+                    font-family: $font400;
+                    font-size: .85rem;
+                    color: $color4;
+                }
+            }
+            .form-element-avatar {
+                margin-bottom: 2rem;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: start;
+                .avatar {
+                    background-color: white;
+                    border: 2px solid $color8;
+                    border-radius: 1rem;
+                    outline: none;
+                    padding: .75rem 0 .5rem 0;
+                    width: 32%;
+                    img {
+                        border-radius: 50%;
+                        width: 72px;
+                        height: 72px;
+                    }
+                }
+                .active {
+                    border-color: $color6;
+                }
+                .form-error {
+                    margin: .5rem 0 0 0;
+                    width: 100%;
+                    font-family: $font400;
+                    font-size: .85rem;
+                    color: $color4;
+                }
+            }
+            .form-element {
+                margin-bottom: 2rem;
+                width: 48%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: start;
+                font-family: $font400;
+                label {
+                    margin-bottom: .5rem;
+                    width: 100%;
+                    font-size: 1.25rem;
+                }
+                input, select {
+                    border: 1px solid $color6;
+                    border-radius: .25rem;
+                    padding: .5rem 1rem;
+                    width: 100%;
+                }
+                .form-error {
+                    margin: .5rem 0 0 0;
+                    font-family: $font400;
+                    font-size: .85rem;
+                    color: $color4;
+                }
+            }
+            button {
+                border-radius: .25rem;
+                border: none;
+                outline: none;
+                margin: 0;
+                padding: .5rem 2rem;
+                font-family: $font400;
+                font-size: 1rem;
+                color: $color5;
+                transition: .25s ease-in;
+            }
+            .btn-avatar {
+                background-color: $color2;
+                margin-right: 1rem;
+                &:hover {
+                    filter: brightness(108%);
+                }
+            }
+            .btn-change-password {
+                background-color: $color1;
+                &:hover {
+                    filter: brightness(120%);
+                }
+            }
+        }
+    }
+    .profile-extra {
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        .card-profile {
+            width: 100%;
+        }
+        .card-change-password {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+/* Custom */
+.btn-save {
+    background-color: $color3;
+    border-radius: .25rem;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: .4rem 2rem;
+    font-family: $font400;
+    font-size: 1.25rem;
+    color: $color5;
+    transition: .25s ease-in;
+    &:hover {
+        filter: brightness(106%);
     }
 }
 

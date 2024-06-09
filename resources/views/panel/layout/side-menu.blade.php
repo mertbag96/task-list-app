@@ -35,6 +35,9 @@
             <p>
                 {{ auth()->user()["first_name"] . " " . auth()->user()["last_name"] }}
             </p>
+            <p class="team">
+                {{ auth()->user()->team["name"] ?? '' }}
+            </p>
         </li>
 
         <li class="side-menu-item">

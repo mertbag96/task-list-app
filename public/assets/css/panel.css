@@ -111,14 +111,14 @@ header nav .brand .logo small {
 }
 header nav .menu {
   border-bottom: 1px solid #dadada;
-  padding: 0 4rem;
+  padding: 0 2rem;
   width: calc(100% - 240px);
   display: flex;
   justify-content: end;
   align-items: center;
 }
 header nav .menu li .profile {
-  background-color: transparent;
+  background-color: white;
   border: 2px solid #dadada;
   border-radius: 0.25rem;
   outline: none;
@@ -156,7 +156,7 @@ header nav .menu li .profile::after {
   color: #777777;
 }
 header nav .menu li .profile-menu {
-  background-color: #f5f5f5;
+  background-color: white;
   border: 2px solid #dadada;
   border-radius: 0.25rem;
   padding: 0;
@@ -173,7 +173,7 @@ header nav .menu li .profile-menu li .dropdown-item i {
   margin-right: 0.5rem;
 }
 header nav .menu li .profile-menu li .dropdown-item:hover {
-  background-color: #ececec;
+  background-color: #f5f5f5;
 }
 
 .aside {
@@ -206,6 +206,13 @@ header nav .menu li .profile-menu li .dropdown-item:hover {
   font-family: "RobotoCondensed-Regular";
   font-size: 18px;
   color: #333333;
+  text-align: center;
+}
+.aside .side-menu .side-menu-top .team {
+  margin-top: 0.25rem;
+  font-family: "RobotoCondensed-Light";
+  font-size: 0.85rem;
+  color: #4772fa;
   text-align: center;
 }
 .aside .side-menu .side-menu-item {
@@ -278,13 +285,212 @@ footer p span {
   padding: 2rem;
   overflow-y: auto;
 }
-.panel-container .panel-content .dashboard {
+.panel-container .panel-content .card {
+  -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+  border: 1px solid #ececec;
+  border-radius: 0.25rem;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.panel-container .panel-content .card .card-title {
+  margin: 0;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 2rem;
+  color: #333333;
+}
+.panel-container .panel-content .card .card-sub-title {
+  margin: 0;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 1.5rem;
+  color: #333333;
+}
+
+/* Dashboard */
+.dashboard {
   background: url("../images/panel/dashboard.png") center/cover no-repeat;
 }
-.panel-container .panel-content .dashboard .title {
+.dashboard .title {
   font-family: "RobotoCondensed-Light";
   font-size: 4rem;
   color: #333333;
+}
+
+/* Profile */
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.profile .card-profile {
+  padding: 2rem;
+  width: 48%;
+}
+.profile .card-profile .profile-avatar {
+  border: 1px solid #dadada;
+  border-radius: 50%;
+  margin-right: 1rem;
+  width: 50px;
+  height: 50px;
+}
+.profile .card-profile .form-profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+}
+.profile .card-profile .form-profile .form-element-gender {
+  margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+}
+.profile .card-profile .form-profile .form-element-gender .gender {
+  background-color: white;
+  border: 2px solid #dadada;
+  border-radius: 1rem;
+  outline: none;
+  padding: 0.75rem 0 0.5rem 0;
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile .card-profile .form-profile .form-element-gender .gender img {
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+}
+.profile .card-profile .form-profile .form-element-gender .gender span {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+  color: #333333;
+}
+.profile .card-profile .form-profile .form-element-gender .active {
+  border-color: #333333;
+}
+.profile .card-profile .form-profile .form-element-gender .form-error {
+  margin: 1rem 0 0 0;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 0.85rem;
+  color: #ff3180;
+}
+.profile .card-profile .form-profile .form-element-avatar {
+  margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+}
+.profile .card-profile .form-profile .form-element-avatar .avatar {
+  background-color: white;
+  border: 2px solid #dadada;
+  border-radius: 1rem;
+  outline: none;
+  padding: 0.75rem 0 0.5rem 0;
+  width: 32%;
+}
+.profile .card-profile .form-profile .form-element-avatar .avatar img {
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+}
+.profile .card-profile .form-profile .form-element-avatar .active {
+  border-color: #333333;
+}
+.profile .card-profile .form-profile .form-element-avatar .form-error {
+  margin: 0.5rem 0 0 0;
+  width: 100%;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 0.85rem;
+  color: #ff3180;
+}
+.profile .card-profile .form-profile .form-element {
+  margin-bottom: 2rem;
+  width: 48%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+  font-family: "RobotoCondensed-Regular";
+}
+.profile .card-profile .form-profile .form-element label {
+  margin-bottom: 0.5rem;
+  width: 100%;
+  font-size: 1.25rem;
+}
+.profile .card-profile .form-profile .form-element input, .profile .card-profile .form-profile .form-element select {
+  border: 1px solid #333333;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+.profile .card-profile .form-profile .form-element .form-error {
+  margin: 0.5rem 0 0 0;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 0.85rem;
+  color: #ff3180;
+}
+.profile .card-profile .form-profile button {
+  border-radius: 0.25rem;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0.5rem 2rem;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 1rem;
+  color: #f5f5f5;
+  transition: 0.25s ease-in;
+}
+.profile .card-profile .form-profile .btn-avatar {
+  background-color: #ffb000;
+  margin-right: 1rem;
+}
+.profile .card-profile .form-profile .btn-avatar:hover {
+  filter: brightness(108%);
+}
+.profile .card-profile .form-profile .btn-change-password {
+  background-color: #4772fa;
+}
+.profile .card-profile .form-profile .btn-change-password:hover {
+  filter: brightness(120%);
+}
+.profile .profile-extra {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+}
+.profile .profile-extra .card-profile {
+  width: 100%;
+}
+.profile .profile-extra .card-change-password {
+  margin-bottom: 2rem;
+}
+
+/* Custom */
+.btn-save {
+  background-color: #06ce90;
+  border-radius: 0.25rem;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0.4rem 2rem;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 1.25rem;
+  color: #f5f5f5;
+  transition: 0.25s ease-in;
+}
+.btn-save:hover {
+  filter: brightness(106%);
 }
 
 /* Alerts & Modals */
