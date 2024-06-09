@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Panel\AccountController;
 use App\Http\Controllers\Panel\DashboardController;
 use App\Http\Controllers\Panel\TaskController;
 use App\Http\Controllers\Panel\TeamController;
@@ -45,10 +46,16 @@ Route::get('/privacy', [Controller::class, 'privacy'])->name('privacy');
 Route::get('/security', [Controller::class, 'security'])->name('security');
 
 /* Panel */
-Route::middleware("auth")->prefix('panel')->name('panel.')->group( function () {
+Route::middleware('auth')->prefix('panel')->name('panel.')->group( function () {
     /* Dashboard */
     Route::get('/', function () {
         return redirect()->route('panel.dashboard');
+    });
+    /* Account */
+    Route::prefix('account')->name('account.')->group( function () {
+        Route::get('/profile', [AccountController::class, 'profile'])->name('profile');
+        Route::get('/messages', [AccountController::class, 'messages'])->name('messages');
+        Route::get('/notifications', [AccountController::class, 'notifications'])->name('notifications');
     });
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     /* Tasks */

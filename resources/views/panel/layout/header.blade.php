@@ -23,15 +23,100 @@
 
             <li>
 
-                <form action="{{ route("auth.log-out") }}" method="POST">
+                <button type="button" class="profile dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    @switch(auth()->user()["avatar"])
+                        @case(1)
+                            <img src="{{ asset("assets/images/panel/avatars/male/1.png") }}" alt="Avatar"
+                                 class="shadow-sm">
+                            @break
+                        @case(2)
+                            <img src="{{ asset("assets/images/panel/avatars/male/2.png") }}" alt="Avatar"
+                                 class="shadow-sm">
+                            @break
+                        @case(3)
+                            <img src="{{ asset("assets/images/panel/avatars/male/3.png") }}" alt="Avatar"
+                                 class="shadow-sm">
+                            @break
+                        @case(4)
+                            <img src="{{ asset("assets/images/panel/avatars/female/1.png") }}" alt="Avatar"
+                                 class="shadow-sm">
+                            @break
+                        @case(5)
+                            <img src="{{ asset("assets/images/panel/avatars/female/2.png") }}" alt="Avatar"
+                                 class="shadow-sm">
+                            @break
+                        @case(6)
+                            <img src="{{ asset("assets/images/panel/avatars/female/3.png") }}" alt="Avatar"
+                                 class="shadow-sm">
+                            @break
+                        @default
+                            <img src="{{ asset("assets/images/panel/avatars/default.png") }}" alt="Avatar"
+                                 class="shadow-sm">
+                    @endswitch
 
-                    @csrf
+                    <span class="user-details">
 
-                    <button type="submit" class="profile">
-                        <img src="{{ asset("assets/images/avatars/male/1.png") }}" alt="Avatar" class="shadow-sm">
-                    </button>
+                        <span class="full-name">
+                            {{ auth()->user()["first_name"] . ' ' . auth()->user()["last_name"]  }}
+                        </span>
 
-                </form>
+                        <span class="team">
+                            {{ auth()->user()->team["name"] ?? 'Temporary Team' }}
+                        </span>
+
+                    </span>
+
+                </button>
+
+                <ul class="profile-menu dropdown-menu dropdown-menu-end">
+
+                    <li>
+
+                        <a class="dropdown-item" href="{{ route("panel.account.profile") }}">
+                            <i class="fa-regular fa-user"></i>
+                            <span>Profile</span>
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a class="dropdown-item" href="{{ route("panel.account.messages") }}">
+                            <i class="fa-regular fa-message"></i>
+                            <span>Messages</span>
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a class="dropdown-item" href="{{ route("panel.account.notifications") }}">
+                            <i class="fa-regular fa-bell"></i>
+                            <span>Notifications</span>
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <hr class="m-0 p-0">
+                    </li>
+
+                    <li>
+
+                        <form action="{{ route("auth.log-out") }}" method="POST">
+
+                            @csrf
+
+                            <button type="submit" class="dropdown-item">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <span>Sign out</span>
+                            </button>
+
+                        </form>
+
+                    </li>
+
+                </ul>
 
             </li>
 

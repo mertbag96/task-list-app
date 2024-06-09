@@ -29,11 +29,17 @@
 
     @include("panel.layout.side-menu")
 
-    <div class="panel-content">
+    <section class="panel-container panel-area">
 
-        @yield("content")
+        <section class="panel-content panel-area">
 
-    </div>
+            @yield("content")
+
+        </section>
+
+        @include("panel.layout.footer")
+
+    </section>
 
 </main>
 

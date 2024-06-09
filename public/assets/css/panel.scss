@@ -56,6 +56,16 @@ body {
     font-family: $font400;
     font-size: 100%;
     overflow-x: hidden;
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+    ::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
 }
 
 a {
@@ -81,6 +91,11 @@ img {
 /* Layout */
 main {
     display: flex;
+}
+
+section {
+    min-height: calc(100dvh - 144px);
+    max-height: calc(100dvh - 144px);
 }
 
 header {
@@ -122,18 +137,63 @@ header {
             justify-content: end;
             align-items: center;
             li {
-                form {
-                    .profile {
-                        background-color: transparent;
-                        border: none;
-                        outline: none;
+                .profile {
+                    background-color: transparent;
+                    border: 2px solid $color8;
+                    border-radius: .25rem;
+                    outline: none;
+                    margin-left: 2rem;
+                    padding: .5rem 1rem;
+                    display: flex;
+                    align-items: center;
+                    img {
+                        border: 1px solid $color8;
+                        border-radius: 50%;
+                        width: 42px;
+                        height: 42px;
+                    }
+                    .user-details {
+                        margin: 0 1rem;
                         display: flex;
+                        flex-direction: column;
+                        justify-content: center;
                         align-items: center;
-                        img {
-                            border: 1px solid $color8;
-                            border-radius: 50%;
-                            width: 48px;
-                            height: 48px;
+                        .full-name {
+                            font-family: $font400;
+                            font-size: 1rem;
+                            color: $color6;
+                            text-align: center;
+                        }
+                        .team {
+                            font-family: $font300;
+                            font-size: .85rem;
+                            color: $color1;
+                            text-align: center;
+                        }
+                    }
+                    &::after {
+                        color: $color9;
+                    }
+                }
+                .profile-menu {
+                    background-color: $color5;
+                    border: 2px solid $color8;
+                    border-radius: .25rem;
+                    padding: 0;
+                    li {
+                        .dropdown-item {
+                            padding: .75rem 1.5rem;
+                            display: flex;
+                            align-items: center;
+                            font-size: 1rem;
+                            color: $color6;
+                            i {
+                                width: 1rem;
+                                margin-right: .5rem;
+                            }
+                            &:hover {
+                                background-color: $color7;
+                            }
                         }
                     }
                 }
@@ -146,7 +206,8 @@ header {
     border-right: 1px solid $color8;
     padding-bottom: 2rem;
     width: 240px;
-    height: calc(100dvh - 87px);
+    min-height: calc(100dvh - 87px);
+    max-height: calc(100dvh - 87px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -218,18 +279,40 @@ header {
     }
 }
 
-.panel-content {
+footer {
+    border-top: 1px solid $color8;
+    background-color: $color5;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        margin: 0;
+        font-family: $font400;
+        font-size: 1rem;
+        color: $color6;
+        text-align: center;
+        span {
+            color: $color1;
+        }
+    }
+}
+
+.panel-container {
     background-color: $color7;
-    padding: 2rem;
     width: calc(100% - 240px);
-    min-height: calc(100dvh - 87px);
-    .dashboard {
-        background: url("../images/panel/dashboard.png") center/cover no-repeat;
-        height: 100%;
-        .title {
-            font-family: $font300;
-            font-size: 4rem;
-            color: $color6;
+    .panel-content {
+        background-color: $color7;
+        padding: 2rem;
+        overflow-y: auto;
+
+        .dashboard {
+            background: url("../images/panel/dashboard.png") center/cover no-repeat;
+            .title {
+                font-family: $font300;
+                font-size: 4rem;
+                color: $color6;
+            }
         }
     }
 }

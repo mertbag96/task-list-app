@@ -21,7 +21,7 @@ class AuthController extends Controller
         $credentials = $request->only("email", "password");
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route("panel.dashboard")->with("signed_in", "You successfully signed in. Welcome back!");
+            return redirect()->route("panel.dashboard")->with("signed_in", "You successfully signed in.");
         }
         return redirect()->back()->with("invalid_credentials", "The email or password you entered is incorrect. Please check your credentials and try again!");
     }

@@ -20,7 +20,6 @@ class UserFactory extends Factory
     {
         return [
             'team_id' => 1,
-            'gender' => 'male',
             'first_name' => 'Admin',
             'last_name' => 'User',
             'birth_date' => '1990-01-01',
