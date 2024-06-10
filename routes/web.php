@@ -62,14 +62,6 @@ Route::middleware('auth')->prefix('panel')->name('panel.')->group( function () {
     });
     /* Dashboard */
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    /* Tasks */
-    Route::prefix('tasks')->name('tasks.')->group( function () {
-        Route::get('/', [TaskController::class, 'show'])->name('show');
-        Route::get('/create', [TaskController::class, 'create'])->name('create');
-        Route::post('/store', [TaskController::class, 'store'])->name('store');
-        Route::get('/edit', [TaskController::class, 'edit'])->name('edit');
-        Route::put('/update', [TaskController::class, 'update'])->name('update');
-    });
     /* Users */
     Route::prefix('users')->name('users.')->group( function () {
         Route::get('/', [UserController::class, 'show'])->name('show');
@@ -85,5 +77,13 @@ Route::middleware('auth')->prefix('panel')->name('panel.')->group( function () {
         Route::post('/store', [TeamController::class, 'store'])->name('store');
         Route::get('/edit', [TeamController::class, 'edit'])->name('edit');
         Route::put('/update', [TeamController::class, 'update'])->name('update');
+    });
+    /* Tasks */
+    Route::prefix('tasks')->name('tasks.')->group( function () {
+        Route::get('/', [TaskController::class, 'show'])->name('show');
+        Route::get('/create', [TaskController::class, 'create'])->name('create');
+        Route::post('/store', [TaskController::class, 'store'])->name('store');
+        Route::get('/edit', [TaskController::class, 'edit'])->name('edit');
+        Route::put('/update', [TaskController::class, 'update'])->name('update');
     });
 });

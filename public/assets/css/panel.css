@@ -37,15 +37,15 @@ body {
   font-size: 100%;
   overflow-x: hidden;
 }
-body ::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+body::-webkit-scrollbar {
+  width: 0.75rem;
 }
-body ::-webkit-scrollbar-thumb {
-  background-color: transparent;
+body::-webkit-scrollbar-thumb {
+  background-color: #dadada;
+  cursor: pointer;
 }
-body ::-webkit-scrollbar-track {
-  background-color: transparent;
+body::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
 }
 
 a {
@@ -214,13 +214,21 @@ header nav .menu li .profile-menu li .dropdown-item:hover {
   text-align: center;
 }
 .aside .side-menu .side-menu-item {
+  position: relative;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-x: visible;
 }
 .aside .side-menu .side-menu-item a {
+  background-color: transparent;
   border-bottom: 1px solid #dadada;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
   padding: 1.25rem 2.5rem;
   width: 100%;
   display: flex;
@@ -236,15 +244,122 @@ header nav .menu li .profile-menu li .dropdown-item:hover {
   margin: 0;
 }
 .aside .side-menu .side-menu-item a:hover {
-  color: #4772fa;
+  color: #ffb000;
 }
 .aside .side-menu .side-menu-item .active {
-  border-bottom: 1px solid #4772fa;
-  background-color: #4772fa;
-  color: #f5f5f5;
+  color: #4772fa;
 }
 .aside .side-menu .side-menu-item .active:hover {
-  color: #f5f5f5;
+  color: #4772fa;
+}
+.aside .side-menu .accordion {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.aside .side-menu .accordion .accordion-item {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  width: 100%;
+}
+.aside .side-menu .accordion .accordion-item .accordion-header {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  width: 100%;
+}
+.aside .side-menu .accordion .accordion-item .accordion-header .accordion-button {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-bottom: 1px solid #dadada;
+  padding: 1.25rem 2.5rem;
+  outline: none !important;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #464646;
+}
+.aside .side-menu .accordion .accordion-item .accordion-header .accordion-button i {
+  margin: -0.1rem 1.5rem 0 0;
+  width: 20px;
+  height: 20px;
+}
+.aside .side-menu .accordion .accordion-item .accordion-header .accordion-button .fa-angle-down {
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.85rem;
+}
+.aside .side-menu .accordion .accordion-item .accordion-header .accordion-button span {
+  margin: 0;
+}
+.aside .side-menu .accordion .accordion-item .accordion-header .accordion-button:hover {
+  color: #ffb000;
+}
+.aside .side-menu .accordion .accordion-item .accordion-header .accordion-button::after {
+  content: none;
+}
+.aside .side-menu .accordion .accordion-item .accordion-header .active {
+  color: #4772fa;
+}
+.aside .side-menu .accordion .accordion-item .accordion-header .active:hover {
+  color: #4772fa;
+}
+.aside .side-menu .accordion .accordion-item .accordion-collapse .accordion-body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.aside .side-menu .accordion .accordion-item .accordion-collapse .accordion-body .side-sub-menu {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.aside .side-menu .accordion .accordion-item .accordion-collapse .accordion-body .side-sub-menu .side-sub-menu-item {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border-bottom: 1px solid #dadada;
+}
+.aside .side-menu .accordion .accordion-item .accordion-collapse .accordion-body .side-sub-menu .side-sub-menu-item a {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 1rem 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #464646;
+}
+.aside .side-menu .accordion .accordion-item .accordion-collapse .accordion-body .side-sub-menu .side-sub-menu-item a i {
+  margin: 0 1rem 0 0;
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.85rem;
+}
+.aside .side-menu .accordion .accordion-item .accordion-collapse .accordion-body .side-sub-menu .side-sub-menu-item a span {
+  margin: -0.2rem 0 0 0;
+}
+.aside .side-menu .accordion .accordion-item .accordion-collapse .accordion-body .side-sub-menu .side-sub-menu-item a:hover {
+  color: #ffb000;
+}
+.aside .side-menu .accordion .accordion-item .accordion-collapse .accordion-body .side-sub-menu .side-sub-menu-item .active {
+  color: #4772fa;
+}
+.aside .side-menu .accordion .accordion-item .accordion-collapse .accordion-body .side-sub-menu .side-sub-menu-item .active:hover {
+  color: #4772fa;
 }
 
 footer {
@@ -571,6 +686,12 @@ footer p span {
   .aside .side-menu .side-menu-item a {
     padding: 1rem 2rem;
   }
+  .aside .side-menu .accordion .accordion-item .accordion-header .accordion-button {
+    padding: 1rem 2rem;
+  }
+  .aside .side-menu .accordion .accordion-item .accordion-collapse .accordion-body .side-sub-menu .side-sub-menu-item a {
+    padding: 1rem 3rem;
+  }
   .panel-container {
     width: calc(100% - 200px);
   }
@@ -677,6 +798,39 @@ footer p span {
   }
   .aside .side-menu .side-menu-item a span {
     display: none;
+  }
+  .aside .side-menu .accordion .accordion-item .accordion-header .accordion-button {
+    padding: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .aside .side-menu .accordion .accordion-item .accordion-header .accordion-button i {
+    margin: 0;
+  }
+  .aside .side-menu .accordion .accordion-item .accordion-header .accordion-button span {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .aside .side-menu .accordion .accordion-item .accordion-header .accordion-button .span, .aside .side-menu .accordion .accordion-item .accordion-header .accordion-button .fa-angle-down {
+    display: none;
+  }
+  .aside .side-menu .accordion .accordion-item .accordion-collapse .accordion-body .side-sub-menu .side-sub-menu-item a {
+    padding: 0;
+    height: 30px;
+    justify-content: center;
+  }
+  .aside .side-menu .accordion .accordion-item .accordion-collapse .accordion-body .side-sub-menu .side-sub-menu-item a i {
+    margin: 0;
+  }
+  .aside .side-menu .accordion .accordion-item .accordion-collapse .accordion-body .side-sub-menu .side-sub-menu-item a span {
+    display: none;
+  }
+  .aside .side-menu .accordion .accordion-item .accordion-collapse .accordion-body .side-sub-menu .side-sub-menu-item a:hover {
+    color: #ffb000;
   }
   footer {
     height: 30px;
