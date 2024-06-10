@@ -82,11 +82,4 @@
 
     </ul>
 
-    <p class="side-bottom">
-        Visit
-        <a href="{{ route("home") }}">
-            Task List
-        </a>
-    </p>
-
 </div>

@@ -94,12 +94,12 @@ main {
 }
 
 section {
-    min-height: calc(100dvh - 144px);
-    max-height: calc(100dvh - 144px);
+    min-height: calc(100dvh - 90px);
 }
 
 header {
     nav {
+        height: 90px;
         display: flex;
         .brand {
             border-bottom: 1px solid $color8;
@@ -204,13 +204,11 @@ header {
 
 .aside {
     border-right: 1px solid $color8;
-    padding-bottom: 2rem;
     width: 240px;
-    min-height: calc(100dvh - 87px);
-    max-height: calc(100dvh - 87px);
+    min-height: calc(100dvh - 90px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    overflow-y: auto;
     .side-menu {
         .side-menu-top {
             border-bottom: 1px solid $color8;
@@ -275,27 +273,19 @@ header {
             }
         }
     }
-    .side-bottom {
-        margin: 0;
-        width: 100%;
-        text-align: center;
-        a {
-            color: $color1;
-        }
-    }
 }
 
 footer {
     border-top: 1px solid $color8;
     background-color: $color5;
-    padding: 1rem 0;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     p {
         margin: 0;
         font-family: $font400;
-        font-size: 1rem;
+        font-size: .85rem;
         color: $color6;
         text-align: center;
         span {
@@ -310,7 +300,6 @@ footer {
     .panel-content {
         background-color: $color7;
         padding: 2rem;
-        overflow-y: auto;
         .card {
             -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
             -moz-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
@@ -352,6 +341,7 @@ footer {
 /* Profile */
 .profile {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: start;
     .card-profile {
@@ -548,5 +538,385 @@ footer {
         font-family: $font400;
         font-size: 1.15rem;
         color: $color6;
+    }
+}
+
+/* Responsive */
+@media only screen and (max-width: 1499px) {
+    /* Layout */
+    header {
+        nav {
+            .menu {
+                padding: 0 1.5rem;
+            }
+        }
+    }
+
+    .panel-container {
+        .panel-content {
+            padding: 1.5rem;
+        }
+    }
+
+    /* Profile */
+    .profile {
+        .card-profile {
+            width: 100%;
+        }
+        .profile-extra {
+            width: 100%;
+            .card-change-password {
+                margin-top: 2rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    /* Layout */
+    header {
+        nav {
+            .brand {
+                width: 200px;
+                .logo {
+                    svg {
+                        width: 36px;
+                        height: 36px;
+                    }
+                    span {
+                        font-size: 1rem;
+                    }
+                    small {
+                        font-size: .8rem;
+                    }
+                }
+            }
+            .menu {
+                padding: 0 1rem;
+                width: calc(100% - 200px);
+            }
+        }
+    }
+
+    .aside {
+        width: 200px;
+        .side-menu {
+            .side-menu-top {
+                padding: 1.5rem 0;
+                .side-pp {
+                    width: 78px;
+                    height: 78px;
+                }
+                p {
+                    font-size: 1rem;
+                }
+                .team {
+                    font-size: .75rem;
+                }
+            }
+            .side-menu-item {
+                a {
+                    padding: 1rem 2rem;
+                }
+            }
+        }
+    }
+
+    .panel-container {
+        width: calc(100% - 200px);
+        .panel-content {
+            padding: 1rem;
+            .card {
+                .card-title {
+                    font-size: 1.5rem;
+                }
+                .card-sub-title {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+    }
+
+    /* Profile */
+    .profile {
+        .card-profile {
+            .profile-avatar {
+                width: 36px;
+                height: 36px;
+            }
+            .form-profile {
+                .form-element-gender {
+                    .gender {
+                        width: 32%;
+                        img {
+                            width: 60px;
+                            height: 60px;
+                        }
+                        span {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                .form-element-avatar {
+                    .avatar {
+                        padding: 1rem 0;
+                        width: 32%;
+                    }
+                }
+                .form-element {
+                    label {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    /* Layout */
+    section {
+        min-height: calc(100dvh - 60px);
+    }
+
+    header {
+        nav {
+            height: 60px;
+            .brand {
+                padding: .5rem 0;
+                width: 72px;
+                .logo {
+                    svg {
+                        margin-right: 0;
+                        width: 30px;
+                        height: 30px;
+                    }
+                    span {
+                        display: none;
+                    }
+                    small {
+                        display: none;
+                    }
+                }
+            }
+            .menu {
+                padding: 0 .5rem;
+                width: calc(100% - 72px);
+                li {
+                    .profile {
+                        margin-left: 1rem;
+                        padding: .25rem .5rem;
+                        img {
+                            width: 30px;
+                            height: 30px;
+                        }
+                        .user-details {
+                            margin: 0 .5rem;
+                            .full-name {
+                                font-size: .85rem;
+                            }
+                            .team {
+                                font-size: .75rem;
+                            }
+                        }
+                    }
+                    .profile-menu {
+                        li {
+                            .dropdown-item {
+                                padding: .5rem .75rem;
+                                font-size: .85rem;
+                                i {
+                                    width: 1rem;
+                                    margin-right: .5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .aside {
+        width: 72px;
+        min-height: calc(100dvh - 60px);
+        .side-menu {
+            .side-menu-top {
+                display: none;
+            }
+            .side-menu-item {
+                a {
+                    padding: 0;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    i {
+                        margin: 0;
+                    }
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        height: 30px;
+        p {
+            font-size: .75rem;
+        }
+    }
+
+    .panel-container {
+        width: calc(100% - 72px);
+        .panel-content {
+            padding: .5rem;
+            .card {
+                padding: 1rem;
+                .card-title {
+                    font-size: 1.25rem;
+                }
+                .card-sub-title {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    /* Profile */
+    .profile {
+        .card-profile {
+            padding: 1rem;
+            .profile-avatar {
+                width: 30px;
+                height: 30px;
+            }
+            .form-profile {
+                .form-element-gender {
+                    margin-bottom: 1rem;
+                    .gender {
+                        padding: .5rem 0 .25rem 0;
+                        width: 32%;
+                        img {
+                            width: 40px;
+                            height: 40px;
+                        }
+                        span {
+                            font-size: .85rem;
+                        }
+                    }
+                }
+                .form-element-avatar {
+                    margin-bottom: 1rem;
+                    .avatar {
+                        padding: .5rem 0 .25rem 0;
+                        img {
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                }
+                .form-element {
+                    margin-bottom: 1rem;
+                    width: 100%;
+                    label {
+                        width: 100%;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+        .profile-extra {
+            .card-change-password {
+                margin: 1rem 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 399px) {
+    /* Layout */
+    header {
+        nav {
+            .brand {
+                width: 50px;
+                .logo {
+                    svg {
+                        width: 26px;
+                        height: 26px;
+                    }
+                }
+            }
+            .menu {
+                width: calc(100% - 50px);
+            }
+        }
+    }
+
+    .aside {
+        width: 50px;
+    }
+
+    .panel-container {
+        width: calc(100% - 50px);
+        .panel-content {
+            .card {
+                padding: .75rem;
+                .card-title {
+                    font-size: 1rem;
+                }
+                .card-sub-title {
+                    font-size: .85rem;
+                }
+            }
+        }
+    }
+
+    /* Profile */
+    .profile {
+        .card-profile {
+            padding: .75rem;
+            .profile-avatar {
+                width: 26px;
+                height: 26px;
+            }
+            .form-profile {
+                .form-element-gender {
+                    .gender {
+                        padding: .25rem 0 0 0;
+                        width: 32%;
+                        img {
+                            width: 32px;
+                            height: 32px;
+                        }
+                        span {
+                            font-size: .75rem;
+                        }
+                    }
+                }
+                .form-element-avatar {
+                    .avatar {
+                        padding: .5rem 0;
+                        img {
+                            width: 38px;
+                            height: 38px;
+                        }
+                    }
+                }
+                .form-element {;
+                    label {
+                        font-size: .85rem;
+                    }
+                }
+                button {
+                    margin-right: 0 $i;
+                    padding: .5rem 0;
+                    width: 100%;
+                    font-size: .85rem;
+                }
+            }
+        }
     }
 }

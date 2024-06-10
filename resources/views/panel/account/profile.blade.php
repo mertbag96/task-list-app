@@ -140,7 +140,7 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn-save me-2">Save</button>
+                <button type="submit" class="btn-save">Save</button>
 
             </form>
 

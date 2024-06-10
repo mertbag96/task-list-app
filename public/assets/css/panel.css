@@ -74,11 +74,11 @@ main {
 }
 
 section {
-  min-height: calc(100dvh - 144px);
-  max-height: calc(100dvh - 144px);
+  min-height: calc(100dvh - 90px);
 }
 
 header nav {
+  height: 90px;
   display: flex;
 }
 header nav .brand {
@@ -178,13 +178,11 @@ header nav .menu li .profile-menu li .dropdown-item:hover {
 
 .aside {
   border-right: 1px solid #dadada;
-  padding-bottom: 2rem;
   width: 240px;
-  min-height: calc(100dvh - 87px);
-  max-height: calc(100dvh - 87px);
+  min-height: calc(100dvh - 90px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  overflow-y: auto;
 }
 .aside .side-menu .side-menu-top {
   border-bottom: 1px solid #dadada;
@@ -248,19 +246,11 @@ header nav .menu li .profile-menu li .dropdown-item:hover {
 .aside .side-menu .side-menu-item .active:hover {
   color: #f5f5f5;
 }
-.aside .side-bottom {
-  margin: 0;
-  width: 100%;
-  text-align: center;
-}
-.aside .side-bottom a {
-  color: #4772fa;
-}
 
 footer {
   border-top: 1px solid #dadada;
   background-color: #f5f5f5;
-  padding: 1rem 0;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -268,7 +258,7 @@ footer {
 footer p {
   margin: 0;
   font-family: "RobotoCondensed-Regular";
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: #333333;
   text-align: center;
 }
@@ -283,7 +273,6 @@ footer p span {
 .panel-container .panel-content {
   background-color: #ececec;
   padding: 2rem;
-  overflow-y: auto;
 }
 .panel-container .panel-content .card {
   -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
@@ -324,6 +313,7 @@ footer p span {
 /* Profile */
 .profile {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: start;
 }
@@ -521,6 +511,300 @@ footer p span {
   font-family: "RobotoCondensed-Regular";
   font-size: 1.15rem;
   color: #333333;
+}
+
+/* Responsive */
+@media only screen and (max-width: 1499px) {
+  /* Layout */
+  header nav .menu {
+    padding: 0 1.5rem;
+  }
+  .panel-container .panel-content {
+    padding: 1.5rem;
+  }
+  /* Profile */
+  .profile .card-profile {
+    width: 100%;
+  }
+  .profile .profile-extra {
+    width: 100%;
+  }
+  .profile .profile-extra .card-change-password {
+    margin-top: 2rem;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  /* Layout */
+  header nav .brand {
+    width: 200px;
+  }
+  header nav .brand .logo svg {
+    width: 36px;
+    height: 36px;
+  }
+  header nav .brand .logo span {
+    font-size: 1rem;
+  }
+  header nav .brand .logo small {
+    font-size: 0.8rem;
+  }
+  header nav .menu {
+    padding: 0 1rem;
+    width: calc(100% - 200px);
+  }
+  .aside {
+    width: 200px;
+  }
+  .aside .side-menu .side-menu-top {
+    padding: 1.5rem 0;
+  }
+  .aside .side-menu .side-menu-top .side-pp {
+    width: 78px;
+    height: 78px;
+  }
+  .aside .side-menu .side-menu-top p {
+    font-size: 1rem;
+  }
+  .aside .side-menu .side-menu-top .team {
+    font-size: 0.75rem;
+  }
+  .aside .side-menu .side-menu-item a {
+    padding: 1rem 2rem;
+  }
+  .panel-container {
+    width: calc(100% - 200px);
+  }
+  .panel-container .panel-content {
+    padding: 1rem;
+  }
+  .panel-container .panel-content .card .card-title {
+    font-size: 1.5rem;
+  }
+  .panel-container .panel-content .card .card-sub-title {
+    font-size: 1.25rem;
+  }
+  /* Profile */
+  .profile .card-profile .profile-avatar {
+    width: 36px;
+    height: 36px;
+  }
+  .profile .card-profile .form-profile .form-element-gender .gender {
+    width: 32%;
+  }
+  .profile .card-profile .form-profile .form-element-gender .gender img {
+    width: 60px;
+    height: 60px;
+  }
+  .profile .card-profile .form-profile .form-element-gender .gender span {
+    font-size: 1rem;
+  }
+  .profile .card-profile .form-profile .form-element-avatar .avatar {
+    padding: 1rem 0;
+    width: 32%;
+  }
+  .profile .card-profile .form-profile .form-element label {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  /* Layout */
+  section {
+    min-height: calc(100dvh - 60px);
+  }
+  header nav {
+    height: 60px;
+  }
+  header nav .brand {
+    padding: 0.5rem 0;
+    width: 72px;
+  }
+  header nav .brand .logo svg {
+    margin-right: 0;
+    width: 30px;
+    height: 30px;
+  }
+  header nav .brand .logo span {
+    display: none;
+  }
+  header nav .brand .logo small {
+    display: none;
+  }
+  header nav .menu {
+    padding: 0 0.5rem;
+    width: calc(100% - 72px);
+  }
+  header nav .menu li .profile {
+    margin-left: 1rem;
+    padding: 0.25rem 0.5rem;
+  }
+  header nav .menu li .profile img {
+    width: 30px;
+    height: 30px;
+  }
+  header nav .menu li .profile .user-details {
+    margin: 0 0.5rem;
+  }
+  header nav .menu li .profile .user-details .full-name {
+    font-size: 0.85rem;
+  }
+  header nav .menu li .profile .user-details .team {
+    font-size: 0.75rem;
+  }
+  header nav .menu li .profile-menu li .dropdown-item {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  header nav .menu li .profile-menu li .dropdown-item i {
+    width: 1rem;
+    margin-right: 0.5rem;
+  }
+  .aside {
+    width: 72px;
+    min-height: calc(100dvh - 60px);
+  }
+  .aside .side-menu .side-menu-top {
+    display: none;
+  }
+  .aside .side-menu .side-menu-item a {
+    padding: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .aside .side-menu .side-menu-item a i {
+    margin: 0;
+  }
+  .aside .side-menu .side-menu-item a span {
+    display: none;
+  }
+  footer {
+    height: 30px;
+  }
+  footer p {
+    font-size: 0.75rem;
+  }
+  .panel-container {
+    width: calc(100% - 72px);
+  }
+  .panel-container .panel-content {
+    padding: 0.5rem;
+  }
+  .panel-container .panel-content .card {
+    padding: 1rem;
+  }
+  .panel-container .panel-content .card .card-title {
+    font-size: 1.25rem;
+  }
+  .panel-container .panel-content .card .card-sub-title {
+    font-size: 1rem;
+  }
+  /* Profile */
+  .profile .card-profile {
+    padding: 1rem;
+  }
+  .profile .card-profile .profile-avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .profile .card-profile .form-profile .form-element-gender {
+    margin-bottom: 1rem;
+  }
+  .profile .card-profile .form-profile .form-element-gender .gender {
+    padding: 0.5rem 0 0.25rem 0;
+    width: 32%;
+  }
+  .profile .card-profile .form-profile .form-element-gender .gender img {
+    width: 40px;
+    height: 40px;
+  }
+  .profile .card-profile .form-profile .form-element-gender .gender span {
+    font-size: 0.85rem;
+  }
+  .profile .card-profile .form-profile .form-element-avatar {
+    margin-bottom: 1rem;
+  }
+  .profile .card-profile .form-profile .form-element-avatar .avatar {
+    padding: 0.5rem 0 0.25rem 0;
+  }
+  .profile .card-profile .form-profile .form-element-avatar .avatar img {
+    width: 40px;
+    height: 40px;
+  }
+  .profile .card-profile .form-profile .form-element {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .profile .card-profile .form-profile .form-element label {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .profile .profile-extra .card-change-password {
+    margin: 1rem 0;
+  }
+}
+@media only screen and (max-width: 399px) {
+  /* Layout */
+  header nav .brand {
+    width: 50px;
+  }
+  header nav .brand .logo svg {
+    width: 26px;
+    height: 26px;
+  }
+  header nav .menu {
+    width: calc(100% - 50px);
+  }
+  .aside {
+    width: 50px;
+  }
+  .panel-container {
+    width: calc(100% - 50px);
+  }
+  .panel-container .panel-content .card {
+    padding: 0.75rem;
+  }
+  .panel-container .panel-content .card .card-title {
+    font-size: 1rem;
+  }
+  .panel-container .panel-content .card .card-sub-title {
+    font-size: 0.85rem;
+  }
+  /* Profile */
+  .profile .card-profile {
+    padding: 0.75rem;
+  }
+  .profile .card-profile .profile-avatar {
+    width: 26px;
+    height: 26px;
+  }
+  .profile .card-profile .form-profile .form-element-gender .gender {
+    padding: 0.25rem 0 0 0;
+    width: 32%;
+  }
+  .profile .card-profile .form-profile .form-element-gender .gender img {
+    width: 32px;
+    height: 32px;
+  }
+  .profile .card-profile .form-profile .form-element-gender .gender span {
+    font-size: 0.75rem;
+  }
+  .profile .card-profile .form-profile .form-element-avatar .avatar {
+    padding: 0.5rem 0;
+  }
+  .profile .card-profile .form-profile .form-element-avatar .avatar img {
+    width: 38px;
+    height: 38px;
+  }
+  .profile .card-profile .form-profile .form-element label {
+    font-size: 0.85rem;
+  }
+  .profile .card-profile .form-profile button {
+    margin-right: 0 !important;
+    padding: 0.5rem 0;
+    width: 100%;
+    font-size: 0.85rem;
+  }
 }
 
 /*# sourceMappingURL=panel.css.map */
