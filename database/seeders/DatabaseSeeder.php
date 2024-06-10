@@ -14,9 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-         $temporary_team = Team::factory(1)->create();
-         if ($temporary_team) {
-             User::factory(1)->create();
-         }
+        User::factory(1)->create();
     }
 }

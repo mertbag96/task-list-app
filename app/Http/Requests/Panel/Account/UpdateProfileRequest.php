@@ -24,11 +24,11 @@ class UpdateProfileRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "team_id" => ["required", "integer", "gt:0"],
+            "team_id" => ["nullable", "integer", "gt:0"],
             "gender" => ["required", "string"],
             "first_name" => ["required", "string", "max:24"],
             "last_name" => ["required", "string", "max:24"],
-            "birth_date" => ["required", "date_format:Y-m-d"],
+            "birth_date" => ["nullable", "date_format:Y-m-d"],
             "email" => ["required", "email", Rule::unique('users')->ignore(auth()->user()["id"]), "max:48"],
         ];
     }
@@ -42,7 +42,6 @@ class UpdateProfileRequest extends FormRequest
     {
         return [
             "required" => ":attribute is required.",
-            "team_id.required" => "Please select a team.",
             "team_id.gt" => "Please select a team.",
             "gender.required" => "Please select a gender.",
             "birth_date.date_format" => "Please enter a valid date.",

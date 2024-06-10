@@ -61,7 +61,7 @@
                         </span>
 
                         <span class="team">
-                            {{ auth()->user()->team["name"] ?? 'Temporary Team' }}
+                            {{ auth()->user()->team["name"] ?? '' }}
                         </span>
 
                     </span>

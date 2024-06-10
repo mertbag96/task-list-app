@@ -105,7 +105,7 @@
                 <div class="form-element">
                     <label for="birth-date">Birth date</label>
                     <input type="date" name="birth_date" id="birth-date"
-                           value="{{ old("birth_date", $user->birth_date) }}" required>
+                           value="{{ old("birth_date", $user->birth_date) }}">
                      @error("birth_date")
                     <p class="form-error">
                         {{ $message }}
@@ -124,9 +124,10 @@
                     @enderror
                 </div>
 
-                <div class="form-element w-100">
+                <div class="form-element">
                     <label for="team-id">Team</label>
-                    <select name="team_id" id="team-id" required>
+                    <select name="team_id" id="team-id">
+                        <option value="">Select a team</option>
                         @foreach($teams as $team)
                             <option value="{{ $team->id }}" @if($team->id == $user->team->id) selected @endif>
                                 {{ $team->name }}
@@ -140,7 +141,9 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn-save">Save</button>
+                <div class="w-100">
+                    <button type="submit" class="btn-save">Save</button>
+                </div>
 
             </form>
 

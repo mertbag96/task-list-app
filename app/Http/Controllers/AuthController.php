@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Auth\LogInRequest;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Http\Requests\Auth\ResetPasswordRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -16,6 +17,7 @@ class AuthController extends Controller
     {
         return view("auth.sign-in");
     }
+
     public function log_in(LogInRequest $request): RedirectResponse
     {
         $credentials = $request->only("email", "password");
@@ -25,22 +27,28 @@ class AuthController extends Controller
         }
         return redirect()->back()->with("invalid_credentials", "The email or password you entered is incorrect. Please check your credentials and try again!");
     }
+
     public function sign_up(): View
     {
         return view("auth.sign-up");
     }
+
     public function register(RegisterRequest $request): RedirectResponse
     {
+        User::create($request->validated());
         return redirect()->route("auth.sign-in")->with("registered", "You signed up successfully. Sign in now!");
     }
+
     public function forget_password(): View
     {
         return view("auth.forget-password");
     }
+
     public function reset_password(ResetPasswordRequest $request): View
     {
         return view("auth.forget-password")->with("success", "A password reset link was sent to your email.");
     }
+
     public function log_out(Request $request): RedirectResponse
     {
         Auth::logout();

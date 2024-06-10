@@ -177,10 +177,12 @@ class Controller extends BaseController
     {
         return view("website.home");
     }
+
     public function features(): View
     {
         return view("website.features");
     }
+
     public function help_center($slug = null): View
     {
         if ($slug) {
@@ -201,10 +203,12 @@ class Controller extends BaseController
             "help_center_articles" => $this->help_center_articles,
         ]);
     }
+
     public function about(): View
     {
         return view("website.about");
     }
+
     public function blog($slug = null): View
     {
         if ($slug) {
@@ -225,22 +229,27 @@ class Controller extends BaseController
             "blog_articles" => $this->blog_articles,
         ]);
     }
+
     public function contact(): View
     {
         return view("website.contact");
     }
+
     public function contact_us(ContactRequest $request): RedirectResponse
     {
         return redirect()->route("contact")->with("form_successful", "Form was successfully submitted.");
     }
+
     public function terms(): View
     {
         return view("website.terms");
     }
+
     public function privacy(): View
     {
         return view("website.privacy");
     }
+
     public function security(): View
     {
         return view("website.security");
