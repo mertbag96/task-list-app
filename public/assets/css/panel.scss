@@ -38,6 +38,7 @@ $color7: #ececec;
 $color8: #dadada;
 $color9: #777777;
 $color10: #464646;
+$color11: #d3d3d3;
 
 /* Variables */
 $i : !important;
@@ -318,6 +319,17 @@ footer {
             padding: 2rem;
             display: flex;
             flex-direction: column;
+            .card-header {
+                background-color: transparent;
+                border: none;
+                margin-bottom: 2rem;
+                padding: 0;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+            }
             .card-title {
                 margin: 0;
                 font-family: $font400;
@@ -516,8 +528,67 @@ footer {
         filter: brightness(106%);
     }
 }
+.btn-create {
+    background-color: $color1;
+    border-radius: .25rem;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: .4rem 2rem;
+    font-family: $font400;
+    font-size: 1.25rem;
+    color: $color5;
+    transition: .25s ease-in;
+    &:hover {
+        filter: brightness(108%);
+    }
+}
 
-/* Alerts & Modals */
+.dataTables_wrapper {
+    .dataTables_length {
+        margin-bottom: 1rem;
+        label {
+            select {
+                background-color: white;
+                margin: 0 .25rem;
+            }
+        }
+    }
+    .dataTables_filter {
+        margin-bottom: 1rem;
+        input {
+            border: 2px solid $color8;
+            background-color: white;
+            margin-left: .75rem;
+            outline: none;
+            padding: .25rem .5rem;
+            &:focus {
+                border-color: $color6;
+            }
+        }
+    }
+    .dataTable {
+        border: 1px solid $color11;
+        thead {
+            tr {
+                th {
+                    background-color: white;
+                    font-family: $font600;
+                    font-size: 1rem;
+                    color: $color6;
+                }
+            }
+        }
+    }
+    .dataTables_info {
+        margin-top: .5rem;
+    }
+    .dataTables_paginate {
+        margin-top: .5rem;
+    }
+}
+
+    /* Alerts & Modals */
 .alert {
     -webkit-box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.15);

@@ -293,6 +293,17 @@ footer p span {
   display: flex;
   flex-direction: column;
 }
+.panel-container .panel-content .card .card-header {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 2rem;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
 .panel-container .panel-content .card .card-title {
   margin: 0;
   font-family: "RobotoCondensed-Regular";
@@ -487,6 +498,58 @@ footer p span {
 }
 .btn-save:hover {
   filter: brightness(106%);
+}
+
+.btn-create {
+  background-color: #4772fa;
+  border-radius: 0.25rem;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0.4rem 2rem;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 1.25rem;
+  color: #f5f5f5;
+  transition: 0.25s ease-in;
+}
+.btn-create:hover {
+  filter: brightness(108%);
+}
+
+.dataTables_wrapper .dataTables_length {
+  margin-bottom: 1rem;
+}
+.dataTables_wrapper .dataTables_length label select {
+  background-color: white;
+  margin: 0 0.25rem;
+}
+.dataTables_wrapper .dataTables_filter {
+  margin-bottom: 1rem;
+}
+.dataTables_wrapper .dataTables_filter input {
+  border: 2px solid #dadada;
+  background-color: white;
+  margin-left: 0.75rem;
+  outline: none;
+  padding: 0.25rem 0.5rem;
+}
+.dataTables_wrapper .dataTables_filter input:focus {
+  border-color: #333333;
+}
+.dataTables_wrapper .dataTable {
+  border: 1px solid #d3d3d3;
+}
+.dataTables_wrapper .dataTable thead tr th {
+  background-color: white;
+  font-family: "RobotoCondensed-SemiBold";
+  font-size: 1rem;
+  color: #333333;
+}
+.dataTables_wrapper .dataTables_info {
+  margin-top: 0.5rem;
+}
+.dataTables_wrapper .dataTables_paginate {
+  margin-top: 0.5rem;
 }
 
 /* Alerts & Modals */

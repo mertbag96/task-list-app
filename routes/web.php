@@ -65,6 +65,7 @@ Route::middleware('auth')->prefix('panel')->name('panel.')->group( function () {
     /* Users */
     Route::prefix('users')->name('users.')->group( function () {
         Route::get('/', [UserController::class, 'show'])->name('show');
+        Route::get('/get-users', [UserController::class, 'get_users'])->name('get-users');
         Route::get('/create', [UserController::class, 'create'])->name('create');
         Route::post('/store', [UserController::class, 'store'])->name('store');
         Route::get('/edit', [UserController::class, 'edit'])->name('edit');
