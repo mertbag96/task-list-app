@@ -50,142 +50,39 @@
 
         </li>
 
-        <li class="accordion" id="side-menu-accordion">
+        <li class="side-menu-item">
 
-            <div class="accordion-item" data-item="users">
+            @php $user_group = ["panel.users.show", "panel.users.create", "panel.users.edit"]; @endphp
 
-                <h2 class="accordion-header">
+            <a href="{{ route("panel.users.show") }}"
+               @if(in_array(request()->route()->getName(), $user_group)) class="active" @endif>
+                <i class="fa-regular fa-user"></i>
+                <span>Users</span>
+            </a>
 
-                    <button type="button" class="accordion-button" data-bs-toggle="collapse"
-                            data-bs-target="#side-users" aria-expanded="true" aria-controls="side-users">
-                        <span class="d-flex justify-content-between align-items-center w-100">
-                            <span>
-                                <i class="fa-regular fa-user"></i>
-                                <span class="span">Users</span>
-                            </span>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </span>
-                    </button>
+        </li>
 
-                </h2>
+        <li class="side-menu-item">
 
-                <div id="side-users" class="accordion-collapse collapse" data-bs-parent="#side-menu-accordion">
+            @php $team_group = ["panel.teams.show", "panel.teams.create", "panel.teams.edit"]; @endphp
 
-                    <div class="accordion-body">
+            <a href="{{ route("panel.teams.show") }}"
+               @if(in_array(request()->route()->getName(), $team_group)) class="active" @endif>
+                <i class="fa-regular fa-flag"></i>
+                <span>Teams</span>
+            </a>
 
-                        <ul class="side-sub-menu">
+        </li>
 
-                            <li class="side-sub-menu-item">
-                                <a href="{{ route("panel.users.create") }}">
-                                    <i class="fa-solid fa-plus"></i>
-                                    <span>Create</span>
-                                </a>
-                            </li>
+        <li class="side-menu-item">
 
-                            <li class="side-sub-menu-item">
-                                <a href="{{ route("panel.users.show") }}">
-                                    <i class="fa-solid fa-bars"></i>
-                                    <span>List</span>
-                                </a>
-                            </li>
+            @php $task_group = ["panel.tasks.show", "panel.tasks.create", "panel.tasks.edit"]; @endphp
 
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="accordion-item" data-item="teams">
-
-                <h2 class="accordion-header">
-
-                    <button type="button" class="accordion-button" data-bs-toggle="collapse"
-                            data-bs-target="#side-teams" aria-expanded="true" aria-controls="side-teams">
-                        <span class="d-flex justify-content-between align-items-center w-100">
-                            <span>
-                                <i class="fa-regular fa-flag"></i>
-                                <span class="span">Teams</span>
-                            </span>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </span>
-                    </button>
-
-                </h2>
-
-                <div id="side-teams" class="accordion-collapse collapse" data-bs-parent="#side-menu-accordion">
-
-                    <div class="accordion-body">
-
-                        <ul class="side-sub-menu">
-
-                            <li class="side-sub-menu-item">
-                                <a href="{{ route("panel.teams.create") }}">
-                                    <i class="fa-solid fa-plus"></i>
-                                    <span>Create</span>
-                                </a>
-                            </li>
-
-                            <li class="side-sub-menu-item">
-                                <a href="{{ route("panel.teams.show") }}">
-                                    <i class="fa-solid fa-bars"></i>
-                                    <span>List</span>
-                                </a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="accordion-item" data-item="tasks">
-
-                <h2 class="accordion-header">
-
-                    <button type="button" class="accordion-button" data-bs-toggle="collapse"
-                            data-bs-target="#side-tasks" aria-expanded="true" aria-controls="side-tasks">
-                        <span class="d-flex justify-content-between align-items-center w-100">
-                            <span>
-                                <i class="fa-solid fa-list-check"></i>
-                                <span class="span">Tasks</span>
-                            </span>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </span>
-                    </button>
-
-                </h2>
-
-                <div id="side-tasks" class="accordion-collapse collapse" data-bs-parent="#side-menu-accordion">
-
-                    <div class="accordion-body">
-
-                        <ul class="side-sub-menu">
-
-                            <li class="side-sub-menu-item">
-                                <a href="{{ route("panel.tasks.create") }}">
-                                    <i class="fa-solid fa-plus"></i>
-                                    <span>Create</span>
-                                </a>
-                            </li>
-
-                            <li class="side-sub-menu-item">
-                                <a href="{{ route("panel.tasks.show") }}">
-                                    <i class="fa-solid fa-bars"></i>
-                                    <span>List</span>
-                                </a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
+            <a href="{{ route("panel.tasks.show") }}"
+               @if(in_array(request()->route()->getName(), $task_group)) class="active" @endif>
+                <i class="fa-solid fa-list-check"></i>
+                <span>Tasks</span>
+            </a>
 
         </li>
 
