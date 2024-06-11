@@ -68,7 +68,7 @@ Route::middleware('auth')->prefix('panel')->name('panel.')->group( function () {
         Route::get('/get-users', [UserController::class, 'get_users'])->name('get-users');
         Route::get('/create', [UserController::class, 'create'])->name('create');
         Route::post('/store', [UserController::class, 'store'])->name('store');
-        Route::get('/edit', [UserController::class, 'edit'])->name('edit');
+        Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
         Route::put('/update', [UserController::class, 'update'])->name('update');
     });
     /* Teams */

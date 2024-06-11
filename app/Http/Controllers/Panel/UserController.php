@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use Ramsey\Uuid\Type\Integer;
 use Yajra\DataTables\DataTables;
@@ -41,12 +42,16 @@ class UserController extends Controller
                 if ($row->birth_date == null) {
                     return "-";
                 } else {
-                    return Carbon::parse($row->birth_date)->format("d.m.Y");
+                    return $row->birth_date;
                 }
             })
             ->editColumn("created_at", function ($row) {
-                return Carbon::parse($row->created_at)->format("d.m.Y");
+                return $row->created_at;
             })
+            ->addColumn("action", function () {
+                return Auth::user()["id"];
+            })
+            ->rawColumns(["action"])
             ->toJson();
     }
 
@@ -60,9 +65,10 @@ class UserController extends Controller
         return 1;
     }
 
-    public function edit(): View
+    public function edit($id): View
     {
-        return view("panel.user.edit");
+        $user = User::where("id", $id)->first();
+        return view("panel.user.edit", ["user" => $user]);
     }
 
     public function update(): Integer
