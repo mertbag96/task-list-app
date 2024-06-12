@@ -75,7 +75,6 @@ main {
 
 section {
   min-height: calc(100dvh - 130px);
-  max-height: calc(100dvh - 130px);
 }
 
 header nav {
@@ -147,7 +146,7 @@ header nav .menu li .profile .user-details .full-name {
   color: #333333;
   text-align: center;
 }
-header nav .menu li .profile .user-details .team {
+header nav .menu li .profile .user-details .role {
   font-family: "RobotoCondensed-Light";
   font-size: 0.85rem;
   color: #4772fa;
@@ -207,7 +206,7 @@ header nav .menu li .profile-menu li .dropdown-item:hover {
   color: #333333;
   text-align: center;
 }
-.aside .side-menu .side-menu-top .team {
+.aside .side-menu .side-menu-top .role {
   margin-top: 0.25rem;
   font-family: "RobotoCondensed-Light";
   font-size: 0.85rem;
@@ -276,14 +275,10 @@ footer p span {
 .panel-container {
   background-color: #ececec;
   width: calc(100% - 240px);
-  min-height: calc(100dvh - 130px);
-  max-height: calc(100dvh - 130px);
 }
 .panel-container .panel-content {
   background-color: #ececec;
   padding: 2rem;
-  min-height: calc(100dvh - 130px);
-  max-height: calc(100dvh - 130px);
 }
 .panel-container .panel-content .card {
   -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
@@ -597,6 +592,9 @@ footer p span {
 .table-actions .button-orange {
   background-color: #ffb000;
 }
+.table-actions .button-blue {
+  background-color: #4772fa;
+}
 .table-actions .button-red {
   background-color: #ff3180;
   margin-left: 1rem;
@@ -684,7 +682,7 @@ footer p span {
   .aside .side-menu .side-menu-top p {
     font-size: 1rem;
   }
-  .aside .side-menu .side-menu-top .team {
+  .aside .side-menu .side-menu-top .role {
     font-size: 0.75rem;
   }
   .aside .side-menu .side-menu-item a {
@@ -766,7 +764,7 @@ footer p span {
   header nav .menu li .profile .user-details .full-name {
     font-size: 0.85rem;
   }
-  header nav .menu li .profile .user-details .team {
+  header nav .menu li .profile .user-details .role {
     font-size: 0.75rem;
   }
   header nav .menu li .profile-menu li .dropdown-item {

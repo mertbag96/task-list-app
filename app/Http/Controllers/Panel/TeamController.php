@@ -8,9 +8,9 @@ use Ramsey\Uuid\Type\Integer;
 
 class TeamController extends Controller
 {
-    public function show(): View
+    public function list(): View
     {
-        return view("panel.team.show");
+        return view("panel.team.list");
     }
 
     public function create(): View
@@ -23,7 +23,12 @@ class TeamController extends Controller
         return 1;
     }
 
-    public function edit(): View
+    public function show($id): View
+    {
+        return view("panel.team.show");
+    }
+
+    public function edit($id): View
     {
         return view("panel.team.edit");
     }

@@ -4,24 +4,30 @@ namespace App\Http\Controllers\Panel;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Policies\UserPolicy;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\View\View;
 use Ramsey\Uuid\Type\Integer;
 use Yajra\DataTables\DataTables;
 
 class UserController extends Controller
 {
-    public function show(): View
+    public function list(): View
     {
-        return view("panel.user.show");
+        return view("panel.user.list");
     }
 
     public function get_users(): JsonResponse
     {
         $users = User::all();
         return DataTables::of($users)
+            ->editColumn("role_id", function ($row) {
+                $user = User::where("id", $row->id)->first();
+                return $user->role->name;
+            })
             ->editColumn("team_id", function ($row) {
                 if ($row->team_id == null) {
                     return "-";
@@ -48,15 +54,20 @@ class UserController extends Controller
             ->editColumn("created_at", function ($row) {
                 return $row->created_at;
             })
-            ->addColumn("action", function () {
-                return Auth::user()["id"];
+            ->addColumn("action", function ($row) {
+                $user = User::where("id", Auth::user()["id"])->first();
+                return $user->role->name;
             })
             ->rawColumns(["action"])
             ->toJson();
     }
 
-    public function create(): View
+    public function create(User $user): View
     {
+        if (Gate::denies('create-users', $user)) {
+            abort(403);
+        }
+
         return view("panel.user.create");
     }
 
@@ -65,9 +76,20 @@ class UserController extends Controller
         return 1;
     }
 
-    public function edit($id): View
+    public function show($id): View
     {
         $user = User::where("id", $id)->first();
+        return view("panel.user.show", ["user" => $user]);
+    }
+
+    public function edit(User $user, $id): View
+    {
+        if (Gate::denies('update-users', $user)) {
+            abort(403);
+        }
+
+        $user = User::where("id", $id)->first();
+
         return view("panel.user.edit", ["user" => $user]);
     }
 

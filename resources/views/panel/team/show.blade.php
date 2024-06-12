@@ -1,6 +1,6 @@
 @extends("panel.app")
 
-@section("title", "Teams | Panel")
+@section("title", "Show team | Panel")
 
 @section("content")
 

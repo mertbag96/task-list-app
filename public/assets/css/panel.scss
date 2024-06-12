@@ -96,7 +96,6 @@ main {
 
 section {
     min-height: calc(100dvh - 130px);
-    max-height: calc(100dvh - 130px);
 }
 
 header {
@@ -166,7 +165,7 @@ header {
                             color: $color6;
                             text-align: center;
                         }
-                        .team {
+                        .role {
                             font-family: $font300;
                             font-size: .85rem;
                             color: $color1;
@@ -233,7 +232,7 @@ header {
                 color: $color6;
                 text-align: center;
             }
-            .team {
+            .role {
                 margin-top: .25rem;
                 font-family: $font300;
                 font-size: .85rem;
@@ -305,13 +304,9 @@ footer {
 .panel-container {
     background-color: $color7;
     width: calc(100% - 240px);
-    min-height: calc(100dvh - 130px);
-    max-height: calc(100dvh - 130px);
     .panel-content {
         background-color: $color7;
         padding: 2rem;
-        min-height: calc(100dvh - 130px);
-        max-height: calc(100dvh - 130px);
         .card {
             -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
             -moz-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
@@ -634,6 +629,9 @@ footer {
     .button-orange {
         background-color: $color2;
     }
+    .button-blue {
+        background-color: $color1;
+    }
     .button-red {
         background-color: $color4;
         margin-left: 1rem;
@@ -739,7 +737,7 @@ footer {
                 p {
                     font-size: 1rem;
                 }
-                .team {
+                .role {
                     font-size: .75rem;
                 }
             }
@@ -844,7 +842,7 @@ footer {
                             .full-name {
                                 font-size: .85rem;
                             }
-                            .team {
+                            .role {
                                 font-size: .75rem;
                             }
                         }

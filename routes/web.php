@@ -64,27 +64,30 @@ Route::middleware('auth')->prefix('panel')->name('panel.')->group( function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     /* Users */
     Route::prefix('users')->name('users.')->group( function () {
-        Route::get('/', [UserController::class, 'show'])->name('show');
+        Route::get('/', [UserController::class, 'list'])->name('list');
         Route::get('/get-users', [UserController::class, 'get_users'])->name('get-users');
         Route::get('/create', [UserController::class, 'create'])->name('create');
         Route::post('/store', [UserController::class, 'store'])->name('store');
+        Route::get('/show/{id}', [UserController::class, 'show'])->name('show');
         Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
         Route::put('/update', [UserController::class, 'update'])->name('update');
     });
     /* Teams */
     Route::prefix('teams')->name('teams.')->group( function () {
-        Route::get('/', [TeamController::class, 'show'])->name('show');
+        Route::get('/', [TeamController::class, 'list'])->name('list');
         Route::get('/create', [TeamController::class, 'create'])->name('create');
         Route::post('/store', [TeamController::class, 'store'])->name('store');
-        Route::get('/edit', [TeamController::class, 'edit'])->name('edit');
+        Route::get('/show{id}', [TeamController::class, 'show'])->name('show');
+        Route::get('/edit{id}', [TeamController::class, 'edit'])->name('edit');
         Route::put('/update', [TeamController::class, 'update'])->name('update');
     });
     /* Tasks */
     Route::prefix('tasks')->name('tasks.')->group( function () {
-        Route::get('/', [TaskController::class, 'show'])->name('show');
+        Route::get('/', [TaskController::class, 'list'])->name('list');
         Route::get('/create', [TaskController::class, 'create'])->name('create');
         Route::post('/store', [TaskController::class, 'store'])->name('store');
-        Route::get('/edit', [TaskController::class, 'edit'])->name('edit');
+        Route::get('/show{id}', [TaskController::class, 'show'])->name('show');
+        Route::get('/edit{id}', [TaskController::class, 'edit'])->name('edit');
         Route::put('/update', [TaskController::class, 'update'])->name('update');
     });
 });

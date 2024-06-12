@@ -1,9 +1,9 @@
 @extends("panel.app")
 
-@section("title", "Show user | Panel")
+@section("title", "Tasks | Panel")
 
 @section("content")
 
-    Users - Show
+    Tasks - List
 
 @endsection

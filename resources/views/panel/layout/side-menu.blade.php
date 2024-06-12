@@ -35,8 +35,8 @@
             <p>
                 {{ auth()->user()["first_name"] . " " . auth()->user()["last_name"] }}
             </p>
-            <p class="team">
-                {{ auth()->user()->team["name"] ?? '' }}
+            <p class="role">
+                {{ auth()->user()->role["name"] ?? '' }}
             </p>
         </li>
 
@@ -52,9 +52,16 @@
 
         <li class="side-menu-item">
 
-            @php $user_group = ["panel.users.show", "panel.users.create", "panel.users.edit"]; @endphp
+            @php
+                $user_group = [
+                    "panel.users.list",
+                    "panel.users.create",
+                    "panel.users.show",
+                    "panel.users.edit"
+                ];
+           @endphp
 
-            <a href="{{ route("panel.users.show") }}"
+            <a href="{{ route("panel.users.list") }}"
                @if(in_array(request()->route()->getName(), $user_group)) class="active" @endif>
                 <i class="fa-regular fa-user"></i>
                 <span>Users</span>
@@ -64,9 +71,16 @@
 
         <li class="side-menu-item">
 
-            @php $team_group = ["panel.teams.show", "panel.teams.create", "panel.teams.edit"]; @endphp
+            @php
+                $team_group = [
+                    "panel.teams.list",
+                    "panel.teams.create",
+                    "panel.teams.show",
+                    "panel.teams.edit"
+                ];
+            @endphp
 
-            <a href="{{ route("panel.teams.show") }}"
+            <a href="{{ route("panel.teams.list") }}"
                @if(in_array(request()->route()->getName(), $team_group)) class="active" @endif>
                 <i class="fa-regular fa-flag"></i>
                 <span>Teams</span>
@@ -76,9 +90,16 @@
 
         <li class="side-menu-item">
 
-            @php $task_group = ["panel.tasks.show", "panel.tasks.create", "panel.tasks.edit"]; @endphp
+            @php
+                $task_group = [
+                    "panel.tasks.list",
+                    "panel.tasks.create",
+                    "panel.tasks.show",
+                    "panel.tasks.edit",
+                ];
+            @endphp
 
-            <a href="{{ route("panel.tasks.show") }}"
+            <a href="{{ route("panel.tasks.list") }}"
                @if(in_array(request()->route()->getName(), $task_group)) class="active" @endif>
                 <i class="fa-solid fa-list-check"></i>
                 <span>Tasks</span>

@@ -60,8 +60,8 @@
                             {{ auth()->user()["first_name"] . ' ' . auth()->user()["last_name"]  }}
                         </span>
 
-                        <span class="team">
-                            {{ auth()->user()->team["name"] ?? '' }}
+                        <span class="role">
+                            {{ auth()->user()->role["name"] ?? '' }}
                         </span>
 
                     </span>

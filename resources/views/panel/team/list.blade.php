@@ -1,9 +1,9 @@
 @extends("panel.app")
 
-@section("title", "Show user | Panel")
+@section("title", "Teams | Panel")
 
 @section("content")
 
-    Users - Show
+    Teams - List
 
 @endsection

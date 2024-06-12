@@ -125,8 +125,27 @@
                 </div>
 
                 <div class="form-element">
+                    <label for="role-id">Role</label>
+                    <select name="role_id" id="role-id"
+                            @unless(auth()->user()->role["name"] === "Admin") disabled @endunless>
+                        <option value="">Select a role</option>
+                        @foreach($roles as $role)
+                            <option value="{{ $role->id }}" @if($role->id == $user->role->id) selected @endif>
+                                {{ $role->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error("role_id")
+                    <p class="form-error">
+                        {{ $message }}
+                    </p>
+                    @enderror
+                </div>
+
+                <div class="form-element">
                     <label for="team-id">Team</label>
-                    <select name="team_id" id="team-id">
+                    <select name="team_id" id="team-id"
+                            @unless(auth()->user()->role["name"] === "Admin") disabled @endunless>
                         <option value="">Select a team</option>
                         @foreach($teams as $team)
                             <option value="{{ $team->id }}" @if($team->id == $user->team->id) selected @endif>

@@ -8,9 +8,9 @@ use Ramsey\Uuid\Type\Integer;
 
 class TaskController extends Controller
 {
-    public function show(): View
+    public function list(): View
     {
-        return view("panel.task.show");
+        return view("panel.task.list");
     }
 
     public function create(): View
@@ -23,7 +23,12 @@ class TaskController extends Controller
         return 1;
     }
 
-    public function edit(): View
+    public function show($id): View
+    {
+        return view("panel.task.show");
+    }
+
+    public function edit($id): View
     {
         return view("panel.task.edit");
     }

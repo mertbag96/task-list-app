@@ -24,6 +24,7 @@ class UpdateProfileRequest extends FormRequest
     public function rules(): array
     {
         return [
+            "role_id" => ["nullable", "integer", "gt:0"],
             "team_id" => ["nullable", "integer", "gt:0"],
             "gender" => ["required", "string"],
             "first_name" => ["required", "string", "max:24"],
@@ -42,6 +43,7 @@ class UpdateProfileRequest extends FormRequest
     {
         return [
             "required" => ":attribute is required.",
+            "role_id.gt" => "Please select a role.",
             "team_id.gt" => "Please select a team.",
             "gender.required" => "Please select a gender.",
             "birth_date.date_format" => "Please enter a valid date.",

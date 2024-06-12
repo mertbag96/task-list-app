@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Panel\Account\ChangePasswordRequest;
 use App\Http\Requests\Panel\Account\UpdateAvatarRequest;
 use App\Http\Requests\Panel\Account\UpdateProfileRequest;
+use App\Models\Role;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
@@ -15,11 +16,13 @@ class AccountController extends Controller
 {
     public function profile(): View
     {
+        $roles = Role::all();
         $teams = Team::all();
         $user = User::where("id", auth()->user()["id"])->first();
         return view("panel.account.profile", [
-            "user" => $user,
+            "roles" => $roles,
             "teams" => $teams,
+            "user" => $user,
         ]);
     }
 
