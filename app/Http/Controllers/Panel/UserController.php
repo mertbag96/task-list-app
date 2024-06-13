@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Policies\UserPolicy;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -45,11 +46,7 @@ class UserController extends Controller
                 }
             })
             ->editColumn("birth_date", function ($row) {
-                if ($row->birth_date == null) {
-                    return "-";
-                } else {
-                    return $row->birth_date;
-                }
+                return $row->birth_date;
             })
             ->editColumn("created_at", function ($row) {
                 return $row->created_at;
@@ -96,5 +93,11 @@ class UserController extends Controller
     public function update(): Integer
     {
         return 1;
+    }
+
+    public function destroy(User $user): RedirectResponse
+    {
+        $user->delete();
+        return redirect()->back()->with("user_deleted", "User was successfully deleted.");
     }
 }

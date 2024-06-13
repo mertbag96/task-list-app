@@ -14,9 +14,7 @@
 
         <div class="card-header">
 
-            <h1 class="card-title">
-                Users
-            </h1>
+            <h1 class="card-title">Users</h1>
 
             @can("create-users")
             <a href="{{ route("panel.users.create") }}" class="btn-create">
@@ -126,11 +124,15 @@
                         data: 'birth_date',
                         name: 'birth_date',
                         render: function (data) {
-                            let day = data.split("-")[2];
-                            let month = data.split("-")[1];
-                            let year = data.split("-")[0];
+                            if (["", " ", null].includes(data)) {
+                                return "-";
+                            } else {
+                                let day = data.split("-")[2];
+                                let month = data.split("-")[1];
+                                let year = data.split("-")[0];
 
-                            return day + "." + month + "." + year;
+                                return day + "." + month + "." + year;
+                            }
                         }
                     },
                     {
@@ -154,12 +156,17 @@
                         orderable: false,
                         searchable: false,
                         render: function (data, type, row) {
+                            let disabled = "";
                             let html = `<div class="table-actions">`;
+
+                            if (row['id'] === {{ auth()->id() }}) {
+                                disabled = "disabled";
+                            }
 
                             if (["Admin", "Team Leader"].includes(data)) {
                                 html += `<a href="/panel/users/edit/${row['id']}" class="button button-orange">`;
                                 html += `<i class="fa-solid fa-edit me-2"></i>Edit</a>`;
-                                html += `<button type="button" onclick="delete_user(${row['id']});" class="button button-red">`;
+                                html += `<button type="button" onclick="delete_user(${row['id']});" class="button button-red" ${disabled}>`;
                                 html += `<i class="fa-solid fa-trash-can me-2"></i>Delete</button></div>`;
                             } else {
                                 html += `<a href="/panel/users/show/${row['id']}" class="button button-blue w-100">`;
@@ -175,8 +182,20 @@
         });
 
         function delete_user(id) {
-            alert(id);
+            $("#modal-delete .modal-header .modal-title").text("Delete user");
+            $("#modal-delete .modal-content p").text("Are you sure you want to delete this user?");
+            $("#modal-delete .modal-footer form").attr("action", `/panel/users/destroy/${id}`);
+            $("#modal-delete").toggle();
         }
+
+        @if(session()->has("user_deleted"))
+        $(".alert .fa-check").removeClass("d-none");
+        $(".alert p").text("{{ session("user_deleted") }}");
+        $(".alert").removeClass("d-none");
+        setTimeout( function () {
+            $(".alert").addClass("animate__fadeOutRight");
+        }, 5000);
+        @endif
 
     </script>
 

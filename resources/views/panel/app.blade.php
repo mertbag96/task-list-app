@@ -18,10 +18,52 @@
 </head>
 <body class="container-fluid">
 
+<!-- Alerts -->
 <div class="alert animate__animated animate__fadeInRight d-none" role="alert">
     <i class="fa-solid fa-check d-none"></i>
     <i class="fa-solid fa-exclamation d-none"></i>
     <p></p>
+    <button type="button" class="close-alert">
+        <i class="fa-solid fa-times"></i>
+    </button>
+</div>
+
+<!-- Modals -->
+<div class="modal" id="modal-delete" data-bs-backdrop="static"
+     data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-sm animate__animated animate__pulse">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h1 class="modal-title fs-5"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <p class="m-0"></p>
+            </div>
+
+            <div class="modal-footer">
+
+                <form action="" method="POST" autocomplete="off">
+
+                    @csrf
+
+                    @method("DELETE")
+
+                    <button type="button" class="button-red" data-bs-dismiss="modal">No</button>
+                    <button type="submit" class="button-green">Yes</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
 @include("panel.layout.header")

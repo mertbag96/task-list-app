@@ -36,6 +36,7 @@
                 {{ auth()->user()["first_name"] . " " . auth()->user()["last_name"] }}
             </p>
             <p class="role">
+                <i class="fa-solid fa-circle-check me-1"></i>
                 {{ auth()->user()->role["name"] ?? '' }}
             </p>
         </li>

@@ -71,6 +71,7 @@ Route::middleware('auth')->prefix('panel')->name('panel.')->group( function () {
         Route::get('/show/{id}', [UserController::class, 'show'])->name('show');
         Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
         Route::put('/update', [UserController::class, 'update'])->name('update');
+        Route::delete('/destroy/{user}', [UserController::class, 'destroy'])->name('destroy');
     });
     /* Teams */
     Route::prefix('teams')->name('teams.')->group( function () {

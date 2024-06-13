@@ -96,6 +96,7 @@ main {
 
 section {
     min-height: calc(100dvh - 130px);
+    max-height: calc(100dvh - 130px);
 }
 
 header {
@@ -166,7 +167,7 @@ header {
                             text-align: center;
                         }
                         .role {
-                            font-family: $font300;
+                            font-family: $font600;
                             font-size: .85rem;
                             color: $color1;
                             text-align: center;
@@ -207,6 +208,7 @@ header {
     border-right: 1px solid $color8;
     width: 240px;
     min-height: calc(100dvh - 90px);
+    max-height: calc(100dvh - 90px);
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -234,7 +236,7 @@ header {
             }
             .role {
                 margin-top: .25rem;
-                font-family: $font300;
+                font-family: $font600;
                 font-size: .85rem;
                 color: $color1;
                 text-align: center;
@@ -307,6 +309,7 @@ footer {
     .panel-content {
         background-color: $color7;
         padding: 2rem;
+        overflow-y: auto;
         .card {
             -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
             -moz-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
@@ -636,6 +639,10 @@ footer {
         background-color: $color4;
         margin-left: 1rem;
     }
+    .button:disabled {
+        background-color: $color9;
+        cursor: not-allowed;
+    }
 }
 
 /* Alerts & Modals */
@@ -665,6 +672,73 @@ footer {
         font-family: $font400;
         font-size: 1.15rem;
         color: $color6;
+    }
+    .close-alert {
+        background-color: $color5;
+        border: 2px solid $color8;
+        border-radius: 50%;
+        position: absolute;
+        top: -.75rem;
+        right: -1rem;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        i{
+            color: $color9;
+        }
+    }
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.25);
+    .modal-dialog {
+        .modal-content {
+            .modal-header {
+                .btn-close,
+                .btn-close:focus {
+                    -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
+                    -o-box-shadow: none;
+                    box-shadow: none;
+                    border: none;
+                    outline: none;
+                }
+            }
+            .modal-footer {
+                width: 100%;
+                form {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    button {
+                        border-radius: .25rem;
+                        border: none;
+                        outline: none;
+                        padding: .25rem .5rem;
+                        width: 48%;
+                        font-family: $font400;
+                        font-size: 1rem;
+                        color: $color5;
+                        text-align: center;
+                        transition: .25s ease;
+                        &:hover {
+                            filter: brightness(108%);
+                        }
+                    }
+                    .button-red {
+                        background-color: $color4;
+                    }
+                    .button-green {
+                        background-color: $color3;
+                    }
+                }
+            }
+        }
     }
 }
 

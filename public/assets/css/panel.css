@@ -75,6 +75,7 @@ main {
 
 section {
   min-height: calc(100dvh - 130px);
+  max-height: calc(100dvh - 130px);
 }
 
 header nav {
@@ -147,7 +148,7 @@ header nav .menu li .profile .user-details .full-name {
   text-align: center;
 }
 header nav .menu li .profile .user-details .role {
-  font-family: "RobotoCondensed-Light";
+  font-family: "RobotoCondensed-SemiBold";
   font-size: 0.85rem;
   color: #4772fa;
   text-align: center;
@@ -180,6 +181,7 @@ header nav .menu li .profile-menu li .dropdown-item:hover {
   border-right: 1px solid #dadada;
   width: 240px;
   min-height: calc(100dvh - 90px);
+  max-height: calc(100dvh - 90px);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -208,7 +210,7 @@ header nav .menu li .profile-menu li .dropdown-item:hover {
 }
 .aside .side-menu .side-menu-top .role {
   margin-top: 0.25rem;
-  font-family: "RobotoCondensed-Light";
+  font-family: "RobotoCondensed-SemiBold";
   font-size: 0.85rem;
   color: #4772fa;
   text-align: center;
@@ -279,6 +281,7 @@ footer p span {
 .panel-container .panel-content {
   background-color: #ececec;
   padding: 2rem;
+  overflow-y: auto;
 }
 .panel-container .panel-content .card {
   -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
@@ -599,6 +602,10 @@ footer p span {
   background-color: #ff3180;
   margin-left: 1rem;
 }
+.table-actions .button:disabled {
+  background-color: #777777;
+  cursor: not-allowed;
+}
 
 /* Alerts & Modals */
 .alert {
@@ -628,6 +635,67 @@ footer p span {
   font-family: "RobotoCondensed-Regular";
   font-size: 1.15rem;
   color: #333333;
+}
+.alert .close-alert {
+  background-color: #f5f5f5;
+  border: 2px solid #dadada;
+  border-radius: 50%;
+  position: absolute;
+  top: -0.75rem;
+  right: -1rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.alert .close-alert i {
+  color: #777777;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.modal .modal-dialog .modal-content .modal-header .btn-close,
+.modal .modal-dialog .modal-content .modal-header .btn-close:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+.modal .modal-dialog .modal-content .modal-footer {
+  width: 100%;
+}
+.modal .modal-dialog .modal-content .modal-footer form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal .modal-dialog .modal-content .modal-footer form button {
+  border-radius: 0.25rem;
+  border: none;
+  outline: none;
+  padding: 0.25rem 0.5rem;
+  width: 48%;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 1rem;
+  color: #f5f5f5;
+  text-align: center;
+  transition: 0.25s ease;
+}
+.modal .modal-dialog .modal-content .modal-footer form button:hover {
+  filter: brightness(108%);
+}
+.modal .modal-dialog .modal-content .modal-footer form .button-red {
+  background-color: #ff3180;
+}
+.modal .modal-dialog .modal-content .modal-footer form .button-green {
+  background-color: #06ce90;
 }
 
 /* Responsive */

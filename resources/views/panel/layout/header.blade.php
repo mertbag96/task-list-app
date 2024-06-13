@@ -61,6 +61,7 @@
                         </span>
 
                         <span class="role">
+                            <i class="fa-solid fa-circle-check me-1"></i>
                             {{ auth()->user()->role["name"] ?? '' }}
                         </span>
 
