@@ -515,6 +515,140 @@ footer {
     }
 }
 
+/* Users */
+.users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    .card-user {
+        width: 48%;
+        .form-user {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: start;
+            .form-element-gender {
+                margin-bottom: 2rem;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: start;
+                .gender {
+                    background-color: white;
+                    border: 2px solid $color8;
+                    border-radius: 1rem;
+                    outline: none;
+                    padding: .75rem 0 .5rem 0;
+                    width: 32%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        border-radius: 50%;
+                        width: 72px;
+                        height: 72px;
+                    }
+                    span {
+                        margin-top: .5rem;
+                        font-size: 1.25rem;
+                        color: $color6;
+                    }
+                }
+                .active {
+                    border-color: $color6;
+                }
+                .form-error {
+                    margin: 1rem 0 0 0;
+                    font-family: $font400;
+                    font-size: .85rem;
+                    color: $color4;
+                }
+            }
+            .form-element {
+                margin-bottom: 2rem;
+                width: 48%;
+                display: flex;
+                flex-direction: column;
+                label {
+                    width: 100%;
+                    margin-bottom: .25rem;
+                    font-family: $font400;
+                    font-size: 1rem;
+                    color: $color6;
+                }
+                input, select {
+                    border: 1px solid $color6;
+                    border-radius: .25rem;
+                    padding: .5rem 1rem;
+                    width: 100%;
+                }
+                .form-error {
+                    margin: .5rem 0 0 0;
+                    font-family: $font400;
+                    font-size: .85rem;
+                    color: $color4;
+                }
+                .change-password {
+                    display: flex;
+                    align-items: center;
+                    label {
+                        margin: 0 0 0 .5rem;
+                        width: unset;
+                    }
+                    input {
+                        width: 1rem;
+                        height: 1rem;
+                        accent-color: $color1;
+                    }
+                }
+            }
+        }
+        .list-group {
+            a {
+                color: $color6;
+            }
+        }
+        .user-information {
+            padding: 2rem 0 1rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            img {
+                border: 2px solid $color8;
+                border-radius: 50%;
+                margin-bottom: 2rem;
+                width: 144px;
+                height: 144px;
+            }
+            .information {
+                background-color: $color7;
+                border: 2px solid $color8;
+                border-radius: .25rem;
+                padding: .75rem 1rem;
+                margin-bottom: 1.75rem;
+                width: 48%;
+            }
+        }
+        .team-information {
+            padding: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .no-team {
+                font-size: 1.25rem;
+                color: $color4;
+                text-align: center;
+            }
+        }
+    }
+}
+
 /* Custom */
 .btn-save {
     background-color: $color3;
@@ -593,6 +727,13 @@ footer {
     }
     .dataTables_paginate {
         margin-top: .5rem;
+        .paginate_button {
+            &:hover {
+                border-color: $color1;
+                background: $color1;
+                color: $color5;
+            }
+        }
     }
 }
 
@@ -637,7 +778,6 @@ footer {
     }
     .button-red {
         background-color: $color4;
-        margin-left: 1rem;
     }
     .button:disabled {
         background-color: $color9;

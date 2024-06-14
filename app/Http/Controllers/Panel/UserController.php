@@ -3,15 +3,14 @@
 namespace App\Http\Controllers\Panel;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Panel\User\StoreUserRequest;
+use App\Http\Requests\Panel\User\UpdateUserRequest;
 use App\Models\User;
-use App\Policies\UserPolicy;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\View\View;
-use Ramsey\Uuid\Type\Integer;
 use Yajra\DataTables\DataTables;
 
 class UserController extends Controller
@@ -23,7 +22,16 @@ class UserController extends Controller
 
     public function get_users(): JsonResponse
     {
-        $users = User::all();
+        if (Auth::user()->role->name === "Admin") {
+            $users = User::all();
+        } else {
+            if (Auth::user()->team === null) {
+                $users = User::whereNull("team_id")->get();
+            } else {
+                $users = User::where("team_id", Auth::user()->team->id)->get();
+            }
+        }
+
         return DataTables::of($users)
             ->editColumn("role_id", function ($row) {
                 $user = User::where("id", $row->id)->first();
@@ -51,7 +59,7 @@ class UserController extends Controller
             ->editColumn("created_at", function ($row) {
                 return $row->created_at;
             })
-            ->addColumn("action", function ($row) {
+            ->addColumn("action", function () {
                 $user = User::where("id", Auth::user()["id"])->first();
                 return $user->role->name;
             })
@@ -65,34 +73,37 @@ class UserController extends Controller
             abort(403);
         }
 
-        return view("panel.user.create");
+        $recent_users = User::latest()->take(10)->get();
+
+        return view("panel.user.create", ["recent_users" => $recent_users]);
     }
 
-    public function store(): Integer
+    public function store(StoreUserRequest $request): RedirectResponse
     {
-        return 1;
+        User::create($request->validated());
+
+        return redirect()->route("panel.users.list")->with("user_created", "User was successfully created.");
     }
 
-    public function show($id): View
+    public function show(User $user): View
     {
-        $user = User::where("id", $id)->first();
         return view("panel.user.show", ["user" => $user]);
     }
 
-    public function edit(User $user, $id): View
+    public function edit(User $user): View
     {
         if (Gate::denies('update-users', $user)) {
             abort(403);
         }
 
-        $user = User::where("id", $id)->first();
-
         return view("panel.user.edit", ["user" => $user]);
     }
 
-    public function update(): Integer
+    public function update(User $user, UpdateUserRequest $request): RedirectResponse
     {
-        return 1;
+        $user->update($request->validated());
+
+        return redirect()->back()->with("user_updated", "User was successfully updated.");
     }
 
     public function destroy(User $user): RedirectResponse

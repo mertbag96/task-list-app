@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Gate::define('create-users', function (User $user) {
-            return in_array($user->role->name, ["Admin", "Team Leader"]);
+            return $user->role->name === "Admin";
         });
         Gate::define('update-users', function (User $user) {
             return in_array($user->role->name, ["Admin", "Team Leader"]);

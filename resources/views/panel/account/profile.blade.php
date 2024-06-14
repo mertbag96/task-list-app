@@ -193,7 +193,7 @@
                     </div>
 
                     <div class="form-element">
-                        <label for="password-confirmation">Confirm Password</label>
+                        <label for="password-confirmation">Confirm password</label>
                         <input type="password" name="password_confirmation" id="password-confirmation"
                                minlength="8" maxlength="24" required>
                     </div>

@@ -163,8 +163,16 @@
                                 disabled = "disabled";
                             }
 
+                            if("{{ auth()->user()->role->name }}" == "Team Leader") {
+                                if (["", " ", null].includes(row['team_id']) || row['team_id'] != {{ auth()->user()->role->id }}) {
+                                    disabled = "disabled";
+                                }
+                            }
+
                             if (["Admin", "Team Leader"].includes(data)) {
-                                html += `<a href="/panel/users/edit/${row['id']}" class="button button-orange">`;
+                                html += `<a href="/panel/users/show/${row['id']}" class="button button-blue me-2">`;
+                                html += `<i class="fa-solid fa-edit me-2"></i>Show</a>`;
+                                html += `<a href="/panel/users/edit/${row['id']}" class="button button-orange me-2" ${disabled}>`;
                                 html += `<i class="fa-solid fa-edit me-2"></i>Edit</a>`;
                                 html += `<button type="button" onclick="delete_user(${row['id']});" class="button button-red" ${disabled}>`;
                                 html += `<i class="fa-solid fa-trash-can me-2"></i>Delete</button></div>`;
@@ -191,6 +199,15 @@
         @if(session()->has("user_deleted"))
         $(".alert .fa-check").removeClass("d-none");
         $(".alert p").text("{{ session("user_deleted") }}");
+        $(".alert").removeClass("d-none");
+        setTimeout( function () {
+            $(".alert").addClass("animate__fadeOutRight");
+        }, 5000);
+        @endif
+
+        @if(session()->has("user_created"))
+        $(".alert .fa-check").removeClass("d-none");
+        $(".alert p").text("{{ session("user_created") }}");
         $(".alert").removeClass("d-none");
         setTimeout( function () {
             $(".alert").addClass("animate__fadeOutRight");

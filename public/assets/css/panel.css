@@ -486,6 +486,138 @@ footer p span {
   margin-bottom: 2rem;
 }
 
+/* Users */
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+}
+.users .card-user {
+  width: 48%;
+}
+.users .card-user .form-user {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+}
+.users .card-user .form-user .form-element-gender {
+  margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+}
+.users .card-user .form-user .form-element-gender .gender {
+  background-color: white;
+  border: 2px solid #dadada;
+  border-radius: 1rem;
+  outline: none;
+  padding: 0.75rem 0 0.5rem 0;
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.users .card-user .form-user .form-element-gender .gender img {
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+}
+.users .card-user .form-user .form-element-gender .gender span {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+  color: #333333;
+}
+.users .card-user .form-user .form-element-gender .active {
+  border-color: #333333;
+}
+.users .card-user .form-user .form-element-gender .form-error {
+  margin: 1rem 0 0 0;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 0.85rem;
+  color: #ff3180;
+}
+.users .card-user .form-user .form-element {
+  margin-bottom: 2rem;
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+}
+.users .card-user .form-user .form-element label {
+  width: 100%;
+  margin-bottom: 0.25rem;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 1rem;
+  color: #333333;
+}
+.users .card-user .form-user .form-element input, .users .card-user .form-user .form-element select {
+  border: 1px solid #333333;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+.users .card-user .form-user .form-element .form-error {
+  margin: 0.5rem 0 0 0;
+  font-family: "RobotoCondensed-Regular";
+  font-size: 0.85rem;
+  color: #ff3180;
+}
+.users .card-user .form-user .form-element .change-password {
+  display: flex;
+  align-items: center;
+}
+.users .card-user .form-user .form-element .change-password label {
+  margin: 0 0 0 0.5rem;
+  width: unset;
+}
+.users .card-user .form-user .form-element .change-password input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #4772fa;
+}
+.users .card-user .list-group a {
+  color: #333333;
+}
+.users .card-user .user-information {
+  padding: 2rem 0 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.users .card-user .user-information img {
+  border: 2px solid #dadada;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  width: 144px;
+  height: 144px;
+}
+.users .card-user .user-information .information {
+  background-color: #ececec;
+  border: 2px solid #dadada;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.75rem;
+  width: 48%;
+}
+.users .card-user .team-information {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.users .card-user .team-information .no-team {
+  font-size: 1.25rem;
+  color: #ff3180;
+  text-align: center;
+}
+
 /* Custom */
 .btn-save {
   background-color: #06ce90;
@@ -557,6 +689,11 @@ footer p span {
 .dataTables_wrapper .dataTables_paginate {
   margin-top: 0.5rem;
 }
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  border-color: #4772fa;
+  background: #4772fa;
+  color: #f5f5f5;
+}
 
 .table-avatar {
   display: flex;
@@ -600,7 +737,6 @@ footer p span {
 }
 .table-actions .button-red {
   background-color: #ff3180;
-  margin-left: 1rem;
 }
 .table-actions .button:disabled {
   background-color: #777777;

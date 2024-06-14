@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Panel\Account\ChangePasswordRequest;
 use App\Http\Requests\Panel\Account\UpdateAvatarRequest;
 use App\Http\Requests\Panel\Account\UpdateProfileRequest;
-use App\Models\Role;
-use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -16,14 +14,9 @@ class AccountController extends Controller
 {
     public function profile(): View
     {
-        $roles = Role::all();
-        $teams = Team::all();
         $user = User::where("id", auth()->user()["id"])->first();
-        return view("panel.account.profile", [
-            "roles" => $roles,
-            "teams" => $teams,
-            "user" => $user,
-        ]);
+
+        return view("panel.account.profile", ["user" => $user,]);
     }
 
     public function update_profile(UpdateProfileRequest $request): RedirectResponse
@@ -51,6 +44,7 @@ class AccountController extends Controller
     {
         $user = User::where("id", auth()->user()["id"])->first();
         $user->update(["password" => $request->password]);
+
         return redirect()->back()->with("password_change", "Your password was successfully changed.");
     }
 
@@ -58,6 +52,7 @@ class AccountController extends Controller
     {
         $user = User::where("id", auth()->user()["id"])->first();
         $user->update(["avatar" => $request->avatar]);
+
         return redirect()->back()->with("avatar_updated", "Your avatar was successfully updated.");
     }
 
